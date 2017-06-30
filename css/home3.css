@@ -1,0 +1,261 @@
+/******************************************
+    File Name: home3.css
+    Template Name: Engines
+    Created By: PSD Convert HTML Team
+    Envato Profile: http://themeforest.net/user/psdconverthtml
+    Website: https://psdconverthtml.com
+    Version: 1.0
+    Support: support@psdconverthtml.com
+/******************************************/
+
+hr.custom::after {
+    content: url(../images/hr1.png);
+}
+
+.pb30 hr.custom::after {
+    content: url(../images/hr2.png);
+}
+
+.color1 {
+    background-color: #fd6502;
+}
+
+.color2 {
+    background-color: #f16002;
+}
+
+.header {
+    border-top-color: #fd6502;
+}
+
+.banner-message .badge,
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+a.stock:hover,
+.loan-cart,
+a.stock:focus,
+.list-top .list-inline li:hover a,
+.list-top .list-inline li:focus a,
+.list-top .list-inline li.active a,
+.section.bg,
+.tags li:hover a,
+.owl-theme .owl-dots .owl-dot span,
+.car-km,
+.car-oil,
+.car-date,
+.car-price,
+#banner .contact_us,
+.btn-primary,
+.color1_bg,
+.hephaistos.tparrows .arrow-holder,
+.navbar-inverse .dropdown-menu > li > a:hover,
+.navbar-inverse .dropdown-menu > li > a:focus,
+.navbar-cart small {
+    color: #ffffff !important;
+    border-color: #406b91;
+    background-color: #406b91;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: #ffffff !important;
+    border-color: #366187;
+    background-color: #366187;
+}
+
+.cart .shop_cart_table .icon_holder,
+.post-share li a:hover,
+.post-share li a:focus,
+.blogread:hover,
+.blogread:focus,
+.blog-list .blog-details .alignleft,
+.custom-sidebar .tags a:hover,
+.custom-sidebar .tags a:focus,
+.faqs-wrapper li:hover,
+.faqs-wrapper li.active,
+.shop-wrapper:hover img,
+#banner .our_service.our_service2:hover,
+.shop-button:hover,
+.shop-button:focus,
+#banner.v2 .hephaistos.tparrows:hover::before,
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+#banner .version1title2 h1,
+#banner .tp-caption.version1title2 h1,
+.tabs-left > .nav-tabs .active > a:focus,
+.calculator-body .btn-default {
+    color: #ffffff !important;
+    border-color: #406b91 !important;
+    background-color: #406b91 !important;
+}
+
+.about-list .service-hover:hover {
+    background: #406b91 !important;
+}
+
+#banner .tp-caption.wbg,
+#banner .wbg,
+.comparebox .btn-info.active,
+.comparebox .btn-info:active,
+.comparebox .open > .dropdown-toggle.btn-info,
+.comparebox .btn-info:hover,
+.comparebox .btn-info:focus {
+    border-color: #406b91 !important;
+}
+
+.shop_single_page .product_details .product-review-tab .add_your_review ul li:hover,
+.newprice,
+.shop_single_page .product_details .product_top_section .item_description .item_price,
+.rating i,
+.author-details a,
+.blog-description li i,
+.blog-dark .blog-details li i,
+.blog-meta li i,
+.team-desc p,
+.widget-footer .val,
+.calculate-details span,
+.color,
+#accordion-first .accordion-heading .accordion-toggle > em,
+.special-offer small,
+.normallist i,
+.car-list-wrapper-2 li i,
+.car-table:hover i,
+.car-table:hover p,
+.brochures i,
+.totalpay,
+.custom-sidebar .search-tab a.customa,
+.glyphicon-time,
+a:hover,
+a:focus,
+.breadcrumb > li + li::before,
+.service-hours sup,
+.service-hours i,
+.search-wrapper small,
+.search-wrapper sup,
+.customlist i,
+.service-hover i,
+.contact-version i,
+.navbar-inverse .navbar-nav > li > a.active,
+.custom-title,
+.related-post small,
+.contact-widget li a,
+.footer .twitter-widget p a,
+.twitter-widget i,
+.rating i,
+.testimonial small,
+.readmore,
+.service-box small,
+.magnifier .magni-desc i,
+.car-wrapper:hover h4 a,
+.search-tab .dropdown-menu > li:hover a,
+.search-tab-nav.nav-tabs > li.active > a,
+.search-tab-nav.nav-tabs > li.active > a:focus,
+.search-tab-nav.nav-tabs > li.active > a:hover,
+.stat-wrap i,
+.copyrights .text-left a,
+.copyrights small,
+.hephaistos.tparrows.tp-rightarrow .arrow-holder:before,
+.hephaistos.tparrows.tp-leftarrow .arrow-holder:before,
+.navbar-inverse .navbar-nav > li:hover a:after,
+.navbar-inverse .navbar-nav li:hover a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover .navbar-inverse .navbar-nav > .active > a,
+.header-contact i {
+    color: #406b91 !important;
+}
+
+.search-tab .btn-info:hover,
+.search-tab .btn-info:focus,
+.search-tab .btn-info.active.focus,
+.search-tab .btn-info.active:focus,
+.search-tab .btn-info.active:hover,
+.search-tab .btn-info.focus:active,
+.search-tab .btn-info:active:focus,
+.search-tab .btn-info:active:hover,
+.search-tab .open > .dropdown-toggle.btn-info,
+.search-tab .open > .dropdown-toggle.btn-info.focus,
+.search-tab .open > .dropdown-toggle.btn-info:focus,
+.search-tab .open > .dropdown-toggle.btn-info:hover {
+    border-color: #406b91 !important;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav li:hover .dropdown-menu li a {
+    color: #222222 !important;
+}
+
+.navbar-inverse .navbar-nav li:hover .dropdown-menu > li > a:hover,
+.navbar-inverse .navbar-nav li:hover .dropdown-menu > li > a:focus {
+    color: #ffffff !important;
+    background-color: #406b91;
+}
+
+.colorized {
+    background-color: rgba(64, 107, 145, 0.8) !important;
+}
+
+.team-box {
+    border: 1px solid #f4f4f4;
+}
+
+.testimonial .testi-meta {
+    padding: 0 !important;
+}
+
+.testimonial .testi-meta small {
+    display: block;
+    padding-top: 10px;
+}
+
+.testimonial h3 {
+    padding: 10px 0 20px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1;
+    color: #1e2126;
+}
+
+.testimonial h3 i {
+    color: #f1f1f1;
+    vertical-align: middle;
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+.testimonial h4 {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1;
+    color: #1e2126;
+}
+
+.testimonial {
+    padding: 30px 40px;
+    background-color: #ffffff;
+}
+
+.testimonial p {
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 30px !important;
+    color: #999999 !important;
+    background-color: transparent !important;
+}
+
+.testimonial p:after {
+    display: none;
+}
+
+.section.pb140,
+.section.pb30 {
+    padding-bottom: 140px !important
+}
+
+.lightcolor h4 {
+    color: #ffffff !important;
+}

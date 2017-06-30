@@ -1,0 +1,96 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- SITE META -->
+    <title>Bourne Cars ltd. | @Umbraco.AssignedContentItem.Name</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    @*<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png">*@
+    <link rel="stylesheet" type="text/css" href="/js/revolution/settings.css">
+    <link rel="stylesheet" type="text/css" href="/js/revolution/layers.css">
+    <link rel="stylesheet" type="text/css" href="/js/revolution/navigation.css">
+    <!-- BOOTSTRAP STYLES -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- TEMPLATE STYLES -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- RESPONSIVE STYLES -->
+    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
+    <!-- COLORS -->
+    <link rel="stylesheet" type="text/css" href="/css/colors.css">
+    <!-- CUSTOM STYLES -->
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        @{ Html.RenderAction("RenderHeader", "SiteLayout");}
+        @{
+            if (Umbraco.AssignedContentItem.DocumentTypeAlias == "home")
+            {
+                { Html.RenderAction("RenderHomePageNavigation", "SiteLayout"); }
+            }
+            else
+            {
+                { Html.RenderAction("RenderNavigation", "SiteLayout"); }
+            }
+
+        }
+        @{ Html.RenderAction("RenderPageTitle", "SiteLayout");} 
+        @{if (Umbraco.AssignedContentItem.DocumentTypeAlias == "home")
+                { Html.RenderAction("RenderSlider", "Home");}
+        }
+        @RenderBody()
+
+        @{ Html.RenderAction("RenderFooter", "SiteLayout");}
+    </div>
+  
+    <!-- ******************************************
+    DEFAULT JAVASCRIPT FILES
+    ********************************************** -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap-select.js"></script>
+    <script src="/js/retina.js"></script>
+    <script src="/js/animate.js"></script>
+    <script src="/js/device.js"></script>
+    <script src="/js/parallax.js"></script>
+    <script src="/js/fitvid.js"></script>
+    <script src="/js/owl-carousel.js"></script>
+    <script src="/js/custom.js"></script>
+    @RenderSection("ScriptForGoogleMaps", false)
+    <!-- revolution -->
+    <script src="/js/revolution/jquery.themepunch.tools.min.js"></script>
+    <script src="/js/revolution/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="/js/revolution/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/js/revolution/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/js/revolution/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/js/revolution/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="/js/revolution/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="/js/revolution/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="/js/revolution/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="/js/revolution/RevolutionSliderConfig.js"></script>
+</body>
+</html>
+

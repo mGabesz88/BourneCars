@@ -1,0 +1,346 @@
+/******************************************
+    File Name: responsive.css
+    Template Name: Engines
+    Created By: PSD Convert HTML Team
+    Envato Profile: http://themeforest.net/user/psdconverthtml
+    Website: https://psdconverthtml.com
+    Version: 1.0
+    Support: support@psdconverthtml.com
+/******************************************/
+
+@media (max-width: 1400px) {
+    .message-box h3 {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .car-details li .fa {
+        display: none;
+    }
+    .container {
+        width: 95%;
+    }
+    .callmewrap h2 {
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 1128px) {
+    .stock {
+        font-size: 12px;
+        margin-right: 5px;
+        padding: 6px 9px;
+    }
+}
+
+@media (max-width: 1085px) {
+    .custom-sidebar .search-tab-nav.nav-tabs > li.active > a,
+    .custom-sidebar .search-tab-nav.nav-tabs > li.active > a:focus,
+    .custom-sidebar .search-tab-nav.nav-tabs > li.active > a:hover,
+    .custom-sidebar .search-tab-nav.nav-tabs > li > a {
+        font-size: 13px !important;
+    }
+    .callmewrap,
+    .message-box {
+        text-align: center;
+    }
+    .social-header,
+    .header-search {
+        display: none !important;
+    }
+    .header-contact p {
+        font-size: 12px;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: 13px;
+        padding: 20px 14px;
+    }
+    .header-contact {
+        width: 33%;
+        text-align: center;
+    }
+    .header-contact i {
+        display: none;
+    }
+    .transparent-header.header-2 {
+        position: relative !important;
+        background-color: #406b91;
+    }
+    .topbar .dropdown {
+        border:0;
+        margin:0;
+    }
+}
+
+@media (max-width: 928px) { 
+
+}
+
+@media (max-width: 865px) {
+    .bgcolor {
+        padding: 40px 20px;
+    }
+    .search-tab-nav.nav-tabs > li {
+        width: 50%;
+        margin: 0 !important;
+        border: 0 !important;
+    }
+    .search-tab-nav.nav-tabs > li.active a,
+    .search-tab-nav.nav-tabs > li:hover a,
+    .search-tab-nav.nav-tabs > li:focus a,
+    .search-tab-nav.nav-tabs > li.active > a:focus,
+    .search-tab-nav.nav-tabs > li.active > a:hover,
+    .search-tab-nav.nav-tabs > li.active,
+    .search-tab-nav.nav-tabs > li a {
+        border: 0 !important;
+        margin: 0 !important;
+    }
+    .navbar-right {
+        display: none;
+    }
+    .testi-carousel,
+    .stat-wrap,
+    .car-wrapper,
+    .service-box {
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 768px) {
+.transparent-header.header-2 .navbar-brand {
+    margin:4px 0 0 !important;
+    padding:0 !important;    
+}
+    .notfound h1 {
+        font-size: 60px;
+    }
+    .tabs-left > .nav-tabs > li {
+        width: 50%;
+        margin: 0;
+        float: left;
+    }
+    .tabs-left > .nav-tabs > li a:after {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .car-top,
+    .m30 {
+        margin-top: 30px;
+    }
+    .clients .col-xs-6:nth-child(1),
+    .clients .col-xs-6:nth-child(2),
+    .clients .col-xs-6:nth-child(3),
+    .clients .col-xs-6:nth-child(4),
+    .clients .col-xs-6:nth-child(5),
+    .clients .col-xs-6:nth-child(6),
+    .clients .col-xs-6:nth-child(7),
+    .clients .col-xs-6:nth-child(8),
+    .clients .col-xs-6:nth-child(9),
+    .clients .col-xs-6:nth-child(10) {
+        border: 0;
+    }
+    .service-hours {
+        margin-top: 30px;
+    }
+    .showhover {
+        position: relative;
+        bottom: -10px !important;
+    }
+    .service-hover {
+        position: relative;
+        top: 0 !important;
+        bottom: 0;
+        padding: 50px 20px !important;
+    }
+    .clients .col-xs-6,
+    .callmewrap .col-sm-12,
+    .footer .widget {
+        margin: 15px 0;
+    }
+    .copyrights .text-left,
+    .copyrights .text-right,
+    .copyrights {
+        text-align: center;
+    }
+    .copyrights .text-left,
+    .copyrights .text-right {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-toggle {
+        margin-top: 6px;
+    }
+    .navbar-nav .open .dropdown-menu .dropdown-header,
+    .navbar-nav .open .dropdown-menu > li > a {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .navbar-inverse {
+        position: relative;
+        background-color: #1e2126;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+        padding: 5px 15px;
+    }
+    .navbar-inverse .navbar-nav > li > a:after {
+        display: none;
+    }
+    .logo-wrapper .navbar-brand {
+        display: block;
+        text-align: center;
+        float: none;
+        margin: 0 auto 30px;
+    }
+    .logo-wrapper .navbar-brand img {
+        width: 186px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 665px) {
+    .banner-wrapper img {
+        width: 100%;
+    }
+    .car-details li {
+        border: 0 none;
+        display: inline-block;
+        margin: 10px 0;
+        padding: 0 12px;
+        width: 32.333% !important;
+    }
+    .testimonial .lead {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .search-tab-nav.nav-tabs > li {
+        width: 100%;
+        margin: 0 !important;
+        border: 0 !important;
+    }
+    #banner p,
+    #banner h1,
+    .header-contact {
+        display: none;
+    }
+    .logo-wrapper .navbar-brand {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-inverse .container {
+        padding: 0;
+    }
+    .navbar,
+    .navbar-collapse {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .transparent-header .hasmenu:hover > ul {
+        visibility: visible;
+        opacity: 1;
+        top: 100% !important;
+    }
+    .transparent-header .navbar-nav .hasmenu ul {
+        -webkit-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+        -moz-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+        -o-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+        transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+    }
+    .transparent-header .hasmenu .dropdown-menu {
+        min-width: 200px;
+        padding: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+    .transparent-header .hasmenu > ul {
+        position: absolute;
+        top: 140%;
+        visibility: hidden;
+        display: block;
+        opacity: 0;
+        left: 0;
+        margin-top: 0 !important;
+    }
+    .transparent-header .hasmenu > ul.start-right {
+        right: 0;
+        left: auto;
+    }
+    .transparent-header .hasmenu > ul li {
+        position: relative;
+    }
+    .transparent-header .hasmenu > ul li:hover > ul {
+        visibility: visible;
+        opacity: 1;
+        left: 100%;
+    }
+    .transparent-header .hasmenu > ul li:hover > ul.show-right {
+        right: 100%;
+    }
+    .transparent-header .navbar-nav .has-submenu {
+        margin-top: 0 !important;
+        position: relative;
+    }
+    .transparent-header .navbar-nav .has-submenu:hover > ul {
+        visibility: visible;
+        opacity: 1;
+        top: 100%;
+    }
+    .transparent-header .navbar-nav .has-submenu:hover > ul li ul {
+        margin-top: -1px;
+    }
+    .transparent-header .navbar-nav .has-submenu ul {
+        -webkit-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+        -moz-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+        -o-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+        transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
+    }
+    .transparent-header .navbar-nav .has-submenu .dropdown-menu {
+        min-width: 220px;
+        padding: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+    .transparent-header .navbar-nav .has-submenu > ul {
+        position: absolute;
+        top: 130%;
+        visibility: hidden;
+        display: block;
+        opacity: 0;
+        left: 0;
+    }
+    .transparent-header .navbar-nav .has-submenu > ul.start-right {
+        right: 0;
+        left: auto;
+    }
+    .transparent-header .navbar-nav .has-submenu > ul li {
+        position: relative;
+    }
+    .transparent-header .navbar-nav .has-submenu > ul li:hover > ul {
+        visibility: visible;
+        opacity: 1;
+        left: 105%;
+    }
+    .transparent-header .navbar-nav .has-submenu > ul li:hover > ul.show-right {
+        right: 100%;
+    }
+    .transparent-header .navbar-nav .has-submenu > ul li ul {
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        display: block;
+        opacity: 0;
+        left: 130%;
+    }
+    .transparent-header .navbar-nav .has-submenu > ul li ul.show-right {
+        right: 130%;
+        left: auto;
+    }
+}

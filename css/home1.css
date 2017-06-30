@@ -1,0 +1,451 @@
+/******************************************
+    File Name: home1.css
+    Template Name: Engines
+    Created By: PSD Convert HTML Team
+    Envato Profile: http://themeforest.net/user/psdconverthtml
+    Website: https://psdconverthtml.com
+    Version: 1.0
+    Support: support@psdconverthtml.com
+/******************************************/
+
+hr.custom::after {
+    content: url(../images/hr3.png);
+}
+
+.color1 {
+    background-color: #fd6502;
+}
+
+.color2 {
+    background-color: #f16002;
+}
+
+.header {
+    border-top-color: #fd6502;
+}
+
+.banner-message .badge,
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+a.stock:hover,
+.loan-cart,
+a.stock:focus,
+.list-top .list-inline li:hover a,
+.list-top .list-inline li:focus a,
+.list-top .list-inline li.active a,
+.section.bg,
+.tags li:hover a,
+.owl-theme .owl-dots .owl-dot span,
+.car-km,
+.car-oil,
+.car-date,
+.car-price,
+#banner .contact_us,
+.pabsolute h3,
+.btn-primary,
+.list-inline.social-icons li:hover a,
+.color1_bg,
+.hephaistos.tparrows .arrow-holder,
+.navbar-inverse .dropdown-menu > li > a:hover,
+.navbar-inverse .dropdown-menu > li > a:focus,
+.navbar-cart small {
+    color: #ffffff !important;
+    border-color: #1a86ca;
+    background-color: #1a86ca;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: #ffffff !important;
+    border-color: #0f7bbf;
+    background-color: #0f7bbf;
+}
+
+.light-tab.search-tab .btn-primary,
+.cart .shop_cart_table .icon_holder,
+.post-share li a:hover,
+.post-share li a:focus,
+.blogread:hover,
+.blogread:focus,
+.blog-list .blog-details .alignleft,
+.custom-sidebar .tags a:hover,
+.custom-sidebar .tags a:focus,
+.faqs-wrapper li:hover,
+.faqs-wrapper li.active,
+.shop-wrapper:hover img,
+#banner .our_service.our_service2:hover,
+.shop-button:hover,
+.topbar .badge,
+.shop-button:focus,
+#banner.v2 .hephaistos.tparrows:hover::before,
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+#banner .version1title2 h1,
+#banner .tp-caption.version1title2 h1,
+.tabs-left > .nav-tabs .active > a:focus,
+.calculator-body .btn-default {
+    color: #ffffff !important;
+    border-color: #1a86ca !important;
+    background-color: #1a86ca !important;
+}
+
+.about-list .service-hover:hover {
+    background: #1a86ca !important;
+}
+
+#banner .tp-caption.wbg,
+#banner .wbg,
+.comparebox .btn-info.active,
+.comparebox .btn-info:active,
+.comparebox .open > .dropdown-toggle.btn-info,
+.comparebox .btn-info:hover,
+.comparebox .btn-info:focus {
+    border-color: #1a86ca !important;
+}
+
+.shop_single_page .product_details .product-review-tab .add_your_review ul li:hover,
+.newprice,
+.shop_single_page .product_details .product_top_section .item_description .item_price,
+.rating i,
+.author-details a,
+.blog-description li i,
+.blog-dark .blog-details li i,
+.blog-meta li i,
+.team-desc p,
+.widget-footer .val,
+.calculate-details span,
+.color,
+#accordion-first .accordion-heading .accordion-toggle > em,
+.special-offer small,
+.normallist i,
+.car-list-wrapper-2 li i,
+.car-table:hover i,
+.car-table:hover p,
+.brochures i,
+.totalpay,
+.custom-sidebar .search-tab a.customa,
+.glyphicon-time,
+a:hover,
+a:focus,
+.breadcrumb > li + li::before,
+.service-hours sup,
+.service-hours i,
+.search-wrapper small,
+.search-wrapper sup,
+.customlist i,
+.service-hover i,
+.contact-version i,
+.navbar-inverse .navbar-nav > li > a.active,
+.custom-title,
+.related-post small,
+.contact-widget li a,
+.footer .twitter-widget p a,
+.twitter-widget i,
+.rating i,
+.testimonial small,
+.readmore,
+.service-box small,
+.magnifier .magni-desc i,
+.car-wrapper:hover h4 a,
+.search-tab .dropdown-menu > li:hover a,
+.search-tab-nav.nav-tabs > li.active > a,
+.search-tab-nav.nav-tabs > li.active > a:focus,
+.search-tab-nav.nav-tabs > li.active > a:hover,
+.stat-wrap i,
+.copyrights .text-left a,
+.copyrights small,
+.hephaistos.tparrows.tp-rightarrow .arrow-holder:before,
+.hephaistos.tparrows.tp-leftarrow .arrow-holder:before,
+.navbar-inverse .navbar-nav > li:hover a:after,
+.navbar-inverse .navbar-nav li:hover a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover .navbar-inverse .navbar-nav > .active > a,
+.header-contact i {
+    color: #1a86ca !important;
+}
+
+.search-tab .btn-info:hover,
+.search-tab .btn-info:focus,
+.search-tab .btn-info.active.focus,
+.search-tab .btn-info.active:focus,
+.search-tab .btn-info.active:hover,
+.search-tab .btn-info.focus:active,
+.search-tab .btn-info:active:focus,
+.search-tab .btn-info:active:hover,
+.search-tab .open > .dropdown-toggle.btn-info,
+.search-tab .open > .dropdown-toggle.btn-info.focus,
+.search-tab .open > .dropdown-toggle.btn-info:focus,
+.search-tab .open > .dropdown-toggle.btn-info:hover {
+    border-color: #1a86ca !important;
+    color: #ffffff;
+}
+
+.transparent-header.header-2 {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-bottom: 20px !important;
+}
+
+.navbar-inverse .navbar-nav li:hover .dropdown-menu li a {
+    color: #222222 !important;
+}
+
+.navbar-inverse .navbar-nav li:hover .dropdown-menu > li > a:hover,
+.navbar-inverse .navbar-nav li:hover .dropdown-menu > li > a:focus {
+    color: #ffffff !important;
+    background-color: #1a86ca;
+}
+
+li.social-header.last {
+    margin-right: 5px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.colorized {
+    background-color: rgba(26, 134, 202, 0.8) !important;
+}
+
+.topbar {
+    border: 0 solid transparent !important;
+    padding: 13px 0 3px;
+    margin-bottom: 20px !important;
+    background-color: #1e2126;
+}
+
+.navbar-inverse {
+    border: 0 !important;
+}
+
+.searchmenu .iconsearch {
+    margin-top: -5px;
+    border: 2px solid #ffffff;
+    color: #ffffff !important;
+    padding: 10px;
+    border-radius: 50%;
+    display: block;
+}
+
+.topbar .badge {
+    font-size: 12px;
+    margin-right: 10px;
+    margin-left: 3px;
+    padding: 5px 10px;
+    line-height: 1;
+    margin-top: -3px;
+    border-radius: 0;
+}
+
+.contactlink {
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-right: 10px;
+    padding-right: 15px !important;
+}
+
+.topbar span,
+.topbar a,
+.topbar li,
+.topbar p {
+    font-family: Open Sans !important;
+    font-size: 14px;
+    font-weight: 400 !important;
+}
+
+.copyrights .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-top: 20px;
+}
+
+.copyrights,
+.footer {
+    background-color: #191f23;
+}
+
+.footer {
+    padding: 120px 0 40px;
+}
+
+.posico a {
+    color: #9e9e9e;
+}
+
+.list-inline.social-icons li a {
+    color: #cbcbcb;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #cbcbcb;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+}
+
+.posico .text-right ul {
+    margin-top: 5px !important;
+}
+
+hr.invis4 {
+    margin: 80px 0 40px
+}
+
+.pb120 {
+    padding-bottom: 90px;
+}
+
+.posico ul li {
+    padding: 0;
+    margin: 3px 0 0 10px;
+}
+
+.posico {
+    position: absolute;
+    top: -30px;
+    background-color: #1f2529;
+    left: 0;
+    right: 0;
+    padding: 30px 40px;
+    margin: auto;
+    display: block;
+}
+
+.posico img {
+    margin: 2px auto 0;
+}
+
+.stat-wrap {
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    padding: 20px 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.stat-wrap small {
+    font-size: 18px;
+}
+
+.stat-wrap p {
+    padding: 10px 0;
+}
+
+.stat-wrap i {
+    font-size: 24px;
+    margin: 10px 10px 20px 0;
+    background: #1a86ca;
+    color: #fff !important;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.categorybox {
+    border-top: 1px dashed transparent;
+    border-left: 1px dashed transparent;
+    border-right: 1px dashed transparent;
+    width: 100%;
+    padding: 0px;
+}
+
+.categorybox:hover {
+    border-color: #1a86ca;
+}
+
+.categorybox span {
+    font-size: 14px;
+    line-height: 1;
+    margin: 20px -2px 0;
+    background-color: #ffffff;
+    display: block;
+    padding: 10px 0;
+    width: 102%;
+}
+
+.categorybox:hover span {
+    background-color: #1a86ca;
+    color: #fff;
+}
+
+.categorybox i {
+    font-size: 80px !important;
+    display: block;
+    color: #dedede;
+    vertical-align: middle;
+    padding: 30px 0px 10px;
+}
+
+.pabsolute {
+    margin-top: -256px;
+}
+
+@media (max-width: 998px) {
+    .categorybox {
+        margin: 15px 0;
+    }
+    .pabsolute {
+        margin-top: 40px;
+        bottom: 0;
+    }
+}
+
+.pabsolute h3 {
+    padding: 25px;
+    font-family: 'Montserrat-Regular' !important;
+}
+
+.pabsolute .search-tab {
+    padding: 40px 15px 10px;
+    background-color: #f4f4f4;
+}
+
+.light-tab .search-tab-nav.nav-tabs {
+    margin-left: 20px !important;
+}
+
+.light-tab .search-tab-nav.nav-tabs > li {
+    margin-right: 10px;
+}
+
+.light-tab .search-tab-nav.nav-tabs > li > a {
+    background-color: #1a86ca;
+    color: #ffffff;
+    padding: 13px 15px !important;
+}
+
+.light-tab .search-tab-nav.nav-tabs > li.active a,
+.light-tab .search-tab-nav.nav-tabs > li:hover a,
+.light-tab .search-tab-nav.nav-tabs > li:focus a,
+.light-tab .search-tab-nav.nav-tabs > li.active > a:focus,
+.light-tab .search-tab-nav.nav-tabs > li.active > a:hover {
+    padding: 13px 15px !important;
+}
+
+.light-tab .search-tab-nav.nav-tabs > li.active a,
+.light-tab .search-tab-nav.nav-tabs > li:hover a,
+.light-tab .search-tab-nav.nav-tabs > li:focus a,
+.light-tab .search-tab-nav.nav-tabs > li.active > a:focus,
+.light-tab .search-tab-nav.nav-tabs > li.active > a:hover {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+.pabsolute .search-tab .btn-info {
+    font-family: Open Sans !important;
+    color: #999999 !important;
+    margin-bottom: 11px !important
+}
+
+.light-tab.search-tab .btn-primary {
+    height: 50px;
+}
+
+@media (max-width: 1085px) {
+    .topbar {
+        margin-top: 0 !important;
+    }
+    .transparent-header.header-2 {
+        position: relative !important;
+        background-color: #1a86ca !important;
+        padding: 0 !important;
+    }
+}

@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "MasterTemplate.cshtml";
+}
+
+<!-- ******************************************
+       PAGE WRAPPER
+       ********************************************** -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            
+            @{Html.RenderAction("RenderServicesDescription", "Services");}
+
+            @{Html.RenderAction("RenderServicesRequestForm", "Services");}
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+
+

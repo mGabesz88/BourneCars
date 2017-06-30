@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<NavigationListItem>>
+@using BourneCars.Models
+<!-- ******************************************
+START FOOTER
+************************************************ -->
+<div class="copyrights">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 text-left">
+                <p>Copyrights <small>© @DateTime.Now.Year</small> All Rights reserved by <a>Bourne Cars ltd.</a>.</p>
+            </div><!-- end col -->
+            <div class="col-md-6 col-sm-6 col-xs-12 text-right">
+                <ul class="list-inline">
+                    @RenderChildItems(Model)
+                </ul>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end copyrights -->
+<div class="dmtop"><i class="fa fa-angle-up"></i></div>
+
+@helper RenderChildItems(List<NavigationListItem> listItems)
+{
+if (listItems != null)
+{
+    foreach (var item in listItems)
+    {
+            <li>
+                @if (!String.IsNullOrEmpty(item.Text))
+                {
+                    @item.Text
+                }
+                else if (item.Link != null)
+                {
+                    <a href="@item.Link.Url" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null) @(item.HasChildren ? "fh5co-sub-ddown" : null)" target="@item.Link.Target">@item.Link.Text</a>
+                }
+
+                @if (item.HasChildren)
+                {
+                    <ul class="sub-menu">
+                        @RenderChildItems(item.Items)
+                    </ul>
+                }
+            </li>
+    }
+}
+}

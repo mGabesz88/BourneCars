@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "MasterTemplate.cshtml";
+}
+
+<div class="section">
+    <div class="container">
+        @{ Html.RenderAction("RenderHomePageSearch", "Home");}
+        @{ Html.RenderAction("RenderFeaturedCars", "Home");}
+        @{ Html.RenderAction("RenderRecentlyAddedCars", "Home");}
+
+    </div><!-- end section -->
+</div><!-- end container -->

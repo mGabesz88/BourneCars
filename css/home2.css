@@ -1,0 +1,376 @@
+/******************************************
+    File Name: home2.css
+    Template Name: Engines
+    Created By: PSD Convert HTML Team
+    Envato Profile: http://themeforest.net/user/psdconverthtml
+    Website: https://psdconverthtml.com
+    Version: 1.0
+    Support: support@psdconverthtml.com
+/******************************************/
+
+hr.custom::after {
+    content: url(../images/hr4.png);
+}
+
+.color1 {
+    background-color: #fd6502;
+}
+
+.color2 {
+    background-color: #f16002;
+}
+
+.header {
+    border-top-color: #fd6502;
+}
+
+.banner-message .badge,
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+a.stock:hover,
+.loan-cart,
+a.stock:focus,
+.list-top .list-inline li:hover a,
+.list-top .list-inline li:focus a,
+.list-top .list-inline li.active a,
+.section.bg,
+.tags li:hover a,
+.owl-theme .owl-dots .owl-dot span,
+.car-km,
+.car-oil,
+.car-date,
+.car-price,
+#banner .contact_us,
+.pabsolute h3,
+.small-service-title,
+.btn-primary,
+.navbar-inverse .navbar-right > li > a.active,
+.navbar-inverse .navbar-right > li > a,
+.list-inline.social-icons li:hover a,
+.color1_bg,
+.hephaistos.tparrows .arrow-holder,
+.transparent-header.header-2 .dropdown-menu > li > a:hover,
+.transparent-header.header-2 .dropdown-menu > li > a:focus,
+.navbar-cart small {
+    color: #ffffff !important;
+    border-color: #fab23a !important;
+    background-color: #fab23a !important;
+}
+
+.navbar-inverse .navbar-right > li:hover a,
+.btn-primary:hover,
+.btn-primary:focus {
+    color: #ffffff !important;
+    border-color: #eaa127 !important;
+    background-color: #eaa127 !important;
+}
+
+.light-tab.search-tab .btn-primary,
+.cart .shop_cart_table .icon_holder,
+.post-share li a:hover,
+.post-share li a:focus,
+.blogread:hover,
+.blogread:focus,
+.blog-list .blog-details .alignleft,
+.custom-sidebar .tags a:hover,
+.custom-sidebar .tags a:focus,
+.faqs-wrapper li:hover,
+.faqs-wrapper li.active,
+.shop-wrapper:hover img,
+#banner .our_service.our_service2:hover,
+.shop-button:hover,
+.topbar .badge,
+.shop-button:focus,
+#banner.v2 .hephaistos.tparrows:hover::before,
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+#banner .version1title2 h1,
+#banner .tp-caption.version1title2 h1,
+.tabs-left > .nav-tabs .active > a:focus,
+.calculator-body .btn-default {
+    color: #ffffff !important;
+    border-color: #fab23a !important;
+    background-color: #fab23a !important;
+}
+
+.about-list .service-hover:hover {
+    background: #fab23a !important;
+}
+
+.cars-carousel.owl-theme .owl-nav [class*="owl-"]:hover,
+#banner .tp-caption.wbg,
+#banner .wbg,
+.comparebox .btn-info.active,
+.comparebox .btn-info:active,
+.comparebox .open > .dropdown-toggle.btn-info,
+.comparebox .btn-info:hover,
+.comparebox .btn-info:focus {
+    border-color: #fab23a !important;
+}
+
+.cars-carousel.owl-theme .owl-nav [class*="owl-"]:hover,
+.tp-caption.littletext,
+.littletext,
+.shop_single_page .product_details .product-review-tab .add_your_review ul li:hover,
+.newprice,
+.shop_single_page .product_details .product_top_section .item_description .item_price,
+.rating i,
+.author-details a,
+.blog-description li i,
+.blog-dark .blog-details li i,
+.blog-meta li i,
+.team-desc p,
+.widget-footer .val,
+.calculate-details span,
+.color,
+#accordion-first .accordion-heading .accordion-toggle > em,
+.special-offer small,
+.normallist i,
+.car-list-wrapper-2 li i,
+.car-table:hover i,
+.car-table:hover p,
+.brochures i,
+.totalpay,
+.custom-sidebar .search-tab a.customa,
+.glyphicon-time,
+a:hover,
+a:focus,
+.breadcrumb > li + li::before,
+.service-hours sup,
+.service-hours i,
+.search-wrapper small,
+.search-wrapper sup,
+.customlist i,
+.service-hover i,
+.contact-version i,
+.navbar-inverse .navbar-nav > li > a.active,
+.custom-title,
+.related-post small,
+.contact-widget li a,
+.footer .twitter-widget p a,
+.twitter-widget i,
+.rating i,
+.testimonial small,
+.readmore,
+.service-box small,
+.magnifier .magni-desc i,
+.car-wrapper:hover h4 a,
+.search-tab .dropdown-menu > li:hover a,
+.search-tab-nav.nav-tabs > li.active > a,
+.search-tab-nav.nav-tabs > li.active > a:focus,
+.search-tab-nav.nav-tabs > li.active > a:hover,
+.stat-wrap i,
+.copyrights .text-left a,
+.copyrights small,
+.hephaistos.tparrows.tp-rightarrow .arrow-holder:before,
+.hephaistos.tparrows.tp-leftarrow .arrow-holder:before,
+.navbar-inverse .navbar-nav > li:hover a:after,
+.navbar-inverse .navbar-nav li:hover a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover .navbar-inverse .navbar-nav > .active > a,
+.header-contact i {
+    color: #fab23a !important;
+}
+
+.search-tab .btn-info:hover,
+.search-tab .btn-info:focus,
+.search-tab .btn-info.active.focus,
+.search-tab .btn-info.active:focus,
+.search-tab .btn-info.active:hover,
+.search-tab .btn-info.focus:active,
+.search-tab .btn-info:active:focus,
+.search-tab .btn-info:active:hover,
+.search-tab .open > .dropdown-toggle.btn-info,
+.search-tab .open > .dropdown-toggle.btn-info.focus,
+.search-tab .open > .dropdown-toggle.btn-info:focus,
+.search-tab .open > .dropdown-toggle.btn-info:hover {
+    border-color: #fab23a !important;
+    color: #ffffff;
+}
+
+.transparent-header.header-2 {
+    background-color: #22252b !important;
+    position: relative !important;
+    padding-bottom: 20px !important;
+    border: 0 !important;
+}
+
+@media (max-width: 1098px) {
+    .transparent-header.header-2 {
+        padding-bottom: 0 !important;
+    }
+}
+
+.navbar-inverse {
+    border: 0 !important;
+}
+
+.topbar {
+    padding: 12px 0 2px !important;
+    background-color: #1e2126 !important;
+    border-bottom: 1px solid #1e2126 !important;
+    box-shadow: 0 3px #181b20 !important;
+}
+
+.topbar li,
+.topbar p {
+    color: #7c7c7c !important;
+    font-family: Open Sans !important;
+    font-weight: bold;
+}
+
+.topbar .text-right li i,
+.topbar p a {
+    color: #fab23a !important;
+}
+
+.topbar li.bord {
+    padding-right: 15px;
+    margin-right: 5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-inverse .navbar-right > li > a.active,
+.navbar-inverse .navbar-right > li > a {
+    color: #ffffff !important;
+    padding: 10px 30px !important;
+    margin-top: 11px;
+}
+
+.tp-caption.littletext p small,
+.littletext p small {
+    color: #fab23a !important;
+    font-size: 100%;
+}
+
+.tp-caption.littletext p small.dark,
+.littletext p small.dark {
+    color: #1f1f1f !important;
+    font-size: 100%;
+}
+
+#banner.v2 .hephaistos.tparrows {
+    top: 42% !important;
+}
+
+.small-service {
+    position: relative;
+}
+
+.small-service-title h3 span {
+    background-color: #ffffff;
+    color: #111111;
+    line-height: 1;
+    margin: 0 10px 0 0;
+    padding: 0;
+    display: inline-block;
+    width: 40px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.small-service-title {
+    background-color: #111;
+    z-index: 1;
+    position: absolute;
+    padding: 10px 30px 10px 5px;
+    bottom: 15%;
+    left: 0;
+}
+
+.small-service-title h3 {
+    font-family: 'Montserrat-SemiBold' !important;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 0 10px;
+    margin: 0;
+    line-height: 1;
+}
+
+.desc h3 i {
+    color: #f1f1f1;
+    font-size: 37px;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+.desc {
+    padding: 30px;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+}
+
+.desc:after,
+.desc:before {
+    top: 100%;
+    left: 15%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.desc:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.desc:before {
+    border-color: rgba(17, 17, 17, 0);
+    border-top-color: #f0f0f0;
+    border-width: 11px;
+    margin-left: -11px;
+}
+
+.testimonial h4 {
+    font-size: 18px;
+    font-family: 'Montserrat-SemiBold' !important;
+}
+
+.testimonial small {
+    margin-top: 7px;
+    font-size: 16px;
+    display: block;
+}
+
+.testimonial {
+    background-color: transparent;
+}
+
+.testimonial .lead {
+    background-color: transparent;
+    color: #999999;
+    display: block;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.testimonial p:after {
+    display: none;
+}
+
+.pb120 {
+    padding-bottom: 120px;
+}
+
+.team-carousel .owl-dots,
+.testi-carousel-2 .owl-dots {
+    bottom: -15%;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #f4f4f4 !important;
+}

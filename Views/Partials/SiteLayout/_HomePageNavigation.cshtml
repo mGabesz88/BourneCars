@@ -1,0 +1,59 @@
+﻿<!-- ******************************************
+START NAVIGATION
+************************************************ -->
+
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<NavigationListItem>>
+@using BourneCars.Models
+
+<div class="transparent-header">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @RenderChildItems(Model)
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav><!-- end nav -->
+</div><!-- end transparent header -->
+
+@helper RenderChildItems(List<NavigationListItem> listItems)
+{
+if (listItems != null)
+{
+    foreach (var item in listItems)
+    {
+            <li>
+                @if (!String.IsNullOrEmpty(item.Text))
+                {
+                    @item.Text
+                }
+                else if (item.Link != null)
+                {
+                    <a href="@item.Link.Url" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null) @(item.HasChildren ? "fh5co-sub-ddown" : null)" target="@item.Link.Target">@item.Link.Text</a>
+                }
+
+                @if (item.HasChildren)
+                {
+                    <ul class="sub-menu">
+                        @RenderChildItems(item.Items)
+                    </ul>
+                }
+            </li>
+    }
+}
+}
+@*.normal-header needs to be removed for the home page*@
+@*<div class="normal-header transparent-header">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about-us">About us</a></li>
+                    <li><a href="/contact-us">Contac us</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav><!-- end nav -->
+</div><!-- end transparent header -->*@

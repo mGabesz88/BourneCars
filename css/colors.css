@@ -1,0 +1,180 @@
+/******************************************
+    File Name: colors.css
+    Template Name: Engines
+    Created By: PSD Convert HTML Team
+    Envato Profile: http://themeforest.net/user/psdconverthtml
+    Website: https://psdconverthtml.com
+    Version: 1.0
+    Support: support@psdconverthtml.com
+/******************************************/
+
+.color1 {
+    background-color: #b30101;
+}
+
+.color2 {
+    background-color: #cc0000;
+}
+
+.header {
+    border-top-color: #b30101;
+}
+
+.banner-message .badge,
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+a.stock:hover,
+.loan-cart,
+a.stock:focus,
+.list-top .list-inline li:hover a,
+.list-top .list-inline li:focus a,
+.list-top .list-inline li.active a,
+.section.bg,
+.tags li:hover a,
+.owl-theme .owl-dots .owl-dot span,
+.car-km,
+.car-oil,
+.car-date,
+.car-price,
+#banner .contact_us,
+.btn-primary,
+.color1_bg,
+.hephaistos.tparrows .arrow-holder,
+.navbar-inverse .dropdown-menu > li > a:hover,
+.navbar-inverse .dropdown-menu > li > a:focus,
+.navbar-cart small {
+    color: #ffffff !important;
+    border-color: #b30101;
+    background-color: #b30101;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: #ffffff !important;
+    border-color: #ea5d01;
+    background-color: #ea5d01;
+}
+
+.cart .shop_cart_table .icon_holder,
+.post-share li a:hover,
+.post-share li a:focus,
+.blogread:hover,
+.blogread:focus,
+.blog-list .blog-details .alignleft,
+.custom-sidebar .tags a:hover,
+.custom-sidebar .tags a:focus,
+.faqs-wrapper li:hover,
+.faqs-wrapper li.active,
+.shop-wrapper:hover img,
+.shop-button:hover,
+.shop-button:focus,
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus,
+.calculator-body .btn-default {
+    color: #ffffff !important;
+    border-color: #b30101 !important;
+    background-color: #b30101 !important;
+}
+
+.about-list .service-hover:hover {
+    background: #b30101 !important;
+}
+
+.comparebox .btn-info.active,
+.comparebox .btn-info:active,
+.comparebox .open > .dropdown-toggle.btn-info,
+.comparebox .btn-info:hover,
+.comparebox .btn-info:focus {
+    border-color: #b30101 !important;
+}
+
+.shop_single_page .product_details .product-review-tab .add_your_review ul li:hover,
+.newprice,
+.shop_single_page .product_details .product_top_section .item_description .item_price,
+.rating i,
+.author-details a,
+.blog-description li i,
+.blog-dark .blog-details li i,
+.blog-meta li i,
+.team-desc p,
+.widget-footer .val,
+.calculate-details span,
+.color,
+#accordion-first .accordion-heading .accordion-toggle > em,
+.special-offer small,
+.normallist i,
+.car-list-wrapper-2 li i,
+.car-table:hover i,
+.car-table:hover p,
+.brochures i,
+.totalpay,
+.custom-sidebar .search-tab a.customa,
+.glyphicon-time,
+a:hover,
+a:focus,
+.breadcrumb > li + li::before,
+.service-hours sup,
+.service-hours i,
+.search-wrapper small,
+.search-wrapper sup,
+.customlist i,
+.service-hover i,
+.contact-version i,
+.navbar-inverse .navbar-nav > li > a.active,
+.custom-title,
+.related-post small,
+.contact-widget li a,
+.footer .twitter-widget p a,
+.twitter-widget i,
+.rating i,
+.testimonial small,
+.readmore,
+.service-box small,
+.magnifier .magni-desc i,
+.car-wrapper:hover h4 a,
+.search-tab .dropdown-menu > li:hover a,
+.search-tab-nav.nav-tabs > li.active > a,
+.search-tab-nav.nav-tabs > li.active > a:focus,
+.search-tab-nav.nav-tabs > li.active > a:hover,
+.stat-wrap i,
+.copyrights .text-left a,
+.copyrights small,
+.hephaistos.tparrows.tp-rightarrow .arrow-holder:before,
+.hephaistos.tparrows.tp-leftarrow .arrow-holder:before,
+.navbar-inverse .navbar-nav > li:hover a:after,
+.navbar-inverse .navbar-nav li:hover a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover .navbar-inverse .navbar-nav > .active > a,
+.header-contact i {
+    color: #b30101 !important;
+}
+
+.search-tab .btn-info:hover,
+.search-tab .btn-info:focus,
+.search-tab .btn-info.active.focus,
+.search-tab .btn-info.active:focus,
+.search-tab .btn-info.active:hover,
+.search-tab .btn-info.focus:active,
+.search-tab .btn-info:active:focus,
+.search-tab .btn-info:active:hover,
+.search-tab .open > .dropdown-toggle.btn-info,
+.search-tab .open > .dropdown-toggle.btn-info.focus,
+.search-tab .open > .dropdown-toggle.btn-info:focus,
+.search-tab .open > .dropdown-toggle.btn-info:hover {
+    border-color: #b30101 !important;
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav li:hover .dropdown-menu li a {
+    color: #222222 !important;
+}
+
+.navbar-inverse .navbar-nav li:hover .dropdown-menu > li > a:hover,
+.navbar-inverse .navbar-nav li:hover .dropdown-menu > li > a:focus {
+    color: #ffffff !important;
+    background-color: #fd6502;
+}
+
