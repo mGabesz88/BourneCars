@@ -15,7 +15,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
-    <!-- FAVICONS2 -->
     <!-- FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     @*<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
@@ -58,12 +57,13 @@
             }
 
         }
+       
         @{ Html.RenderAction("RenderPageTitle", "SiteLayout");} 
         @{if (Umbraco.AssignedContentItem.DocumentTypeAlias == "home")
                 { Html.RenderAction("RenderSlider", "Home");}
         }
+       
         @RenderBody()
-
         @{ Html.RenderAction("RenderFooter", "SiteLayout");}
     </div>
   

@@ -1,6 +1,10 @@
-﻿<!-- ******************************************
-        START HEADER
+﻿@inherits UmbracoTemplatePage
+<!-- ******************************************
+START HEADER
 ********************************************** -->
+@{
+    var homePage = @Umbraco.TypedContent(1086);
+}
 <div class="header">
     <div class="container">
         <div class="row">
@@ -11,13 +15,13 @@
             </div><!-- end col -->
             <div class="col-md-9 col-sm-9 col-xs-12">
                 <div class="header-contact clearfix">
-                    <p><i class="flaticon-pin alignleft"></i> 21 st Marrys Road,<br>Bournemouth, BH14QP</p>
+                    <p><i class="flaticon-pin alignleft"></i>@homePage.GetPropertyValue("addressLine1"),<br>@homePage.GetPropertyValue("addressLine2"), @homePage.GetPropertyValue("postcode")</p>
                 </div>
                 <div class="header-contact clearfix">
-                    <p><i class="flaticon-icon-818 alignleft"></i> Mon - Sat 9.00 - 20.00,<br>Sunday CLOSED</p>
+                    <p><i class="flaticon-icon-818 alignleft"></i>@homePage.GetPropertyValue("openingTimes"),<br>@homePage.GetPropertyValue("closingTime")</p>
                 </div><!-- end header-contact -->
                 <div class="header-contact clearfix">
-                    <p><i class="flaticon-technology alignleft"></i> +1 888 122 9000<br>Call us for enquiry</p>
+                    <p><i class="flaticon-technology alignleft"></i>@homePage.GetPropertyValue("phoneNumber")<br>@homePage.GetPropertyValue("textForPhoneNumber")</p>
                 </div><!-- end header-contact -->
             </div><!-- end col -->
         </div><!-- end row -->
