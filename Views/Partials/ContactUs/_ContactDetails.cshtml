@@ -1,4 +1,8 @@
-﻿<div class="col-md-4 col-sm-4 col-xs-12">
+﻿@inherits UmbracoTemplatePage
+@{
+    var homePage = @Umbraco.TypedContent(1086);
+}
+<div class="col-md-4 col-sm-4 col-xs-12">
     <div class="section-title clearfix">
         <h5>Contact Details</h5>
         <hr class="custom">
@@ -12,18 +16,18 @@
                     <li>
                         <i class="fa fa-map-marker alignleft"></i>
                         <strong>Address:</strong>
-                        21, st Marrys rd,<br>
-                        Sprinborn, Bournemouth
+                        @homePage.GetPropertyValue("addressLine1"),<br>
+                        @homePage.GetPropertyValue("addressLine2"),  @homePage.GetPropertyValue("postcode")
                     </li>
                     <li>
                         <i class="fa fa-envelope-o alignleft"></i>
                         <strong>Have any questions?</strong>
-                        support@cars.com
+                        @homePage.GetPropertyValue("email")
                     </li>
                     <li>
                         <i class="fa fa-phone alignleft"></i>
                         <strong>Call us </strong>
-                        0123456789
+                        @homePage.GetPropertyValue("phoneNumber")
                     </li>
                 </ul>
             </div>
@@ -31,7 +35,7 @@
         <div class="contact-version social-icons">
             <ul class="list-inline">
                 <li><strong>We Are Social:</strong></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a  target="_blank" href="@homePage.GetPropertyValue("facebookPage")"><i class="fa fa-facebook"></i></a></li>
             </ul>
         </div>
     </div>

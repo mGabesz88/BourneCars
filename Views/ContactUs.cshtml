@@ -3,6 +3,10 @@
 	Layout = "MasterTemplate.cshtml";
 }
 
+@{
+    var homePage = @Umbraco.TypedContent(1086);
+}
+
 <div class="section">
     <div class="container">
         <div class="row">
@@ -15,7 +19,7 @@
 
 <!-- ******************************************
         MAP
-        ********************************************** -->
+ ********************************************** -->
 <div id="map"></div>
 
 @section ScriptForGoogleMaps
@@ -27,8 +31,8 @@
             "use strict";
             var locations = [
             ['<div class="infobox"><div class="agent"><div class="image"><img class="img-thumbnail img-responsive" src="/upload/testi_01.png" alt=""></div><div class="agent_desc"><h3 class="title"><a href="#">Carolina Keegan</a></h3><small>$10.00/hr</small><a class="readmore" href="#">View Profile</a></div></div></div>',
-            50.732761,
-            -1.848300,
+            @homePage.GetPropertyValue("latitude"),
+            @homePage.GetPropertyValue("longitude"),
             1]
             ];
 

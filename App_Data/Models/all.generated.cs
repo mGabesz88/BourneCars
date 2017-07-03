@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ec030b16eb387dda")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2d8804dec79cd07e")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -93,6 +93,42 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// email: Please provide your email address
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContactInfo.GetEmail(this); }
+		}
+
+		///<summary>
+		/// Facebook Page: Please provide a URL to you Facebook page
+		///</summary>
+		[ImplementPropertyType("facebookPage")]
+		public string FacebookPage
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContactInfo.GetFacebookPage(this); }
+		}
+
+		///<summary>
+		/// Latitude: Please provide the latitude coordinate of your business
+		///</summary>
+		[ImplementPropertyType("latitude")]
+		public string Latitude
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContactInfo.GetLatitude(this); }
+		}
+
+		///<summary>
+		/// Longitude: Please provide the longitude coordinates of your business
+		///</summary>
+		[ImplementPropertyType("longitude")]
+		public string Longitude
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContactInfo.GetLongitude(this); }
+		}
+
+		///<summary>
 		/// Opening Times: Please provide your opening times
 		///</summary>
 		[ImplementPropertyType("openingTimes")]
@@ -131,7 +167,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>About us</summary>
 	[PublishedContentModel("aboutUs")]
-	public partial class AboutUs : PublishedContentModel
+	public partial class AboutUs : PublishedContentModel, IAboutUsProperties
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aboutUs";
@@ -152,6 +188,60 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUs, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Company name: Please provide the name of the company
+		///</summary>
+		[ImplementPropertyType("companyName")]
+		public string CompanyName
+		{
+			get { return Umbraco.Web.PublishedContentModels.AboutUsProperties.GetCompanyName(this); }
+		}
+
+		///<summary>
+		/// Page Content: Please provide some content
+		///</summary>
+		[ImplementPropertyType("pageContent")]
+		public IHtmlString PageContent
+		{
+			get { return Umbraco.Web.PublishedContentModels.AboutUsProperties.GetPageContent(this); }
+		}
+
+		///<summary>
+		/// Page Title: Please provide the title for this page
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.AboutUsProperties.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Position: Please provide your position within the company
+		///</summary>
+		[ImplementPropertyType("position")]
+		public string Position
+		{
+			get { return Umbraco.Web.PublishedContentModels.AboutUsProperties.GetPosition(this); }
+		}
+
+		///<summary>
+		/// Signature: Please provide a name fro the content
+		///</summary>
+		[ImplementPropertyType("signature")]
+		public string Signature
+		{
+			get { return Umbraco.Web.PublishedContentModels.AboutUsProperties.GetSignature(this); }
+		}
+
+		///<summary>
+		/// Team Photo: Please upload a photo
+		///</summary>
+		[ImplementPropertyType("teamPhoto")]
+		public IPublishedContent TeamPhoto
+		{
+			get { return Umbraco.Web.PublishedContentModels.AboutUsProperties.GetTeamPhoto(this); }
 		}
 	}
 
@@ -208,7 +298,7 @@ namespace Umbraco.Web.PublishedContentModels
 	}
 
 	// Mixin content Type 1103 with alias "contactInfo"
-	/// <summary>Contact info</summary>
+	/// <summary>Base info</summary>
 	public partial interface IContactInfo : IPublishedContent
 	{
 		/// <summary>Address line 1</summary>
@@ -219,6 +309,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Closing Time</summary>
 		string ClosingTime { get; }
+
+		/// <summary>email</summary>
+		string Email { get; }
+
+		/// <summary>Facebook Page</summary>
+		string FacebookPage { get; }
+
+		/// <summary>Latitude</summary>
+		string Latitude { get; }
+
+		/// <summary>Longitude</summary>
+		string Longitude { get; }
 
 		/// <summary>Opening Times</summary>
 		string OpeningTimes { get; }
@@ -233,7 +335,7 @@ namespace Umbraco.Web.PublishedContentModels
 		string TextForPhoneNumber { get; }
 	}
 
-	/// <summary>Contact info</summary>
+	/// <summary>Base info</summary>
 	[PublishedContentModel("contactInfo")]
 	public partial class ContactInfo : PublishedContentModel, IContactInfo
 	{
@@ -295,6 +397,54 @@ namespace Umbraco.Web.PublishedContentModels
 		public static string GetClosingTime(IContactInfo that) { return that.GetPropertyValue<string>("closingTime"); }
 
 		///<summary>
+		/// email: Please provide your email address
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return GetEmail(this); }
+		}
+
+		/// <summary>Static getter for email</summary>
+		public static string GetEmail(IContactInfo that) { return that.GetPropertyValue<string>("email"); }
+
+		///<summary>
+		/// Facebook Page: Please provide a URL to you Facebook page
+		///</summary>
+		[ImplementPropertyType("facebookPage")]
+		public string FacebookPage
+		{
+			get { return GetFacebookPage(this); }
+		}
+
+		/// <summary>Static getter for Facebook Page</summary>
+		public static string GetFacebookPage(IContactInfo that) { return that.GetPropertyValue<string>("facebookPage"); }
+
+		///<summary>
+		/// Latitude: Please provide the latitude coordinate of your business
+		///</summary>
+		[ImplementPropertyType("latitude")]
+		public string Latitude
+		{
+			get { return GetLatitude(this); }
+		}
+
+		/// <summary>Static getter for Latitude</summary>
+		public static string GetLatitude(IContactInfo that) { return that.GetPropertyValue<string>("latitude"); }
+
+		///<summary>
+		/// Longitude: Please provide the longitude coordinates of your business
+		///</summary>
+		[ImplementPropertyType("longitude")]
+		public string Longitude
+		{
+			get { return GetLongitude(this); }
+		}
+
+		/// <summary>Static getter for Longitude</summary>
+		public static string GetLongitude(IContactInfo that) { return that.GetPropertyValue<string>("longitude"); }
+
+		///<summary>
 		/// Opening Times: Please provide your opening times
 		///</summary>
 		[ImplementPropertyType("openingTimes")]
@@ -341,6 +491,127 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Text for phone number</summary>
 		public static string GetTextForPhoneNumber(IContactInfo that) { return that.GetPropertyValue<string>("textForPhoneNumber"); }
+	}
+
+	// Mixin content Type 1107 with alias "aboutUsProperties"
+	/// <summary>About Us Properties</summary>
+	public partial interface IAboutUsProperties : IPublishedContent
+	{
+		/// <summary>Company name</summary>
+		string CompanyName { get; }
+
+		/// <summary>Page Content</summary>
+		IHtmlString PageContent { get; }
+
+		/// <summary>Page Title</summary>
+		string PageTitle { get; }
+
+		/// <summary>Position</summary>
+		string Position { get; }
+
+		/// <summary>Signature</summary>
+		string Signature { get; }
+
+		/// <summary>Team Photo</summary>
+		IPublishedContent TeamPhoto { get; }
+	}
+
+	/// <summary>About Us Properties</summary>
+	[PublishedContentModel("aboutUsProperties")]
+	public partial class AboutUsProperties : PublishedContentModel, IAboutUsProperties
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "aboutUsProperties";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public AboutUsProperties(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUsProperties, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Company name: Please provide the name of the company
+		///</summary>
+		[ImplementPropertyType("companyName")]
+		public string CompanyName
+		{
+			get { return GetCompanyName(this); }
+		}
+
+		/// <summary>Static getter for Company name</summary>
+		public static string GetCompanyName(IAboutUsProperties that) { return that.GetPropertyValue<string>("companyName"); }
+
+		///<summary>
+		/// Page Content: Please provide some content
+		///</summary>
+		[ImplementPropertyType("pageContent")]
+		public IHtmlString PageContent
+		{
+			get { return GetPageContent(this); }
+		}
+
+		/// <summary>Static getter for Page Content</summary>
+		public static IHtmlString GetPageContent(IAboutUsProperties that) { return that.GetPropertyValue<IHtmlString>("pageContent"); }
+
+		///<summary>
+		/// Page Title: Please provide the title for this page
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return GetPageTitle(this); }
+		}
+
+		/// <summary>Static getter for Page Title</summary>
+		public static string GetPageTitle(IAboutUsProperties that) { return that.GetPropertyValue<string>("pageTitle"); }
+
+		///<summary>
+		/// Position: Please provide your position within the company
+		///</summary>
+		[ImplementPropertyType("position")]
+		public string Position
+		{
+			get { return GetPosition(this); }
+		}
+
+		/// <summary>Static getter for Position</summary>
+		public static string GetPosition(IAboutUsProperties that) { return that.GetPropertyValue<string>("position"); }
+
+		///<summary>
+		/// Signature: Please provide a name fro the content
+		///</summary>
+		[ImplementPropertyType("signature")]
+		public string Signature
+		{
+			get { return GetSignature(this); }
+		}
+
+		/// <summary>Static getter for Signature</summary>
+		public static string GetSignature(IAboutUsProperties that) { return that.GetPropertyValue<string>("signature"); }
+
+		///<summary>
+		/// Team Photo: Please upload a photo
+		///</summary>
+		[ImplementPropertyType("teamPhoto")]
+		public IPublishedContent TeamPhoto
+		{
+			get { return GetTeamPhoto(this); }
+		}
+
+		/// <summary>Static getter for Team Photo</summary>
+		public static IPublishedContent GetTeamPhoto(IAboutUsProperties that) { return that.GetPropertyValue<IPublishedContent>("teamPhoto"); }
 	}
 
 	/// <summary>Folder</summary>
