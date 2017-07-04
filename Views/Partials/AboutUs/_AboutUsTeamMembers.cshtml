@@ -1,6 +1,12 @@
-﻿<!-- ******************************************
-        TEAM SECTION
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- ******************************************
+TEAM SECTION
 ********************************************** -->
+@{
+    var currentPageId = UmbracoContext.Current.PageId;
+    var currentPage = Umbraco.TypedContent(currentPageId).Children;
+
+}
 <div class="section lb">
     <div class="container  aligncenter">
         <div class="row">
@@ -12,81 +18,68 @@
             </div><!-- end col -->
         </div><!-- end row -->
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="team-box clearfix">
-                    <div class="post-media entry">
-                        <img src="/uploads/team_01.jpg" alt="" class="img-responsive">
-                        <div class="magnifier colorized">
-                            <div class="social-hover">
+            @{
+                foreach (var teamMember in currentPage)
+                {
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="team-box clearfix">
+                            <div class="post-media entry">
+                                @{
+                                    var TeammeberPoto = teamMember.GetPropertyValue<IPublishedContent>("personalimage").Url;
+                                    if (TeammeberPoto != null)
+                                    {
+                                        <img src="@TeammeberPoto" alt="@teamMember.Name" class="img-responsive">
+                                    }
+
+                                }
+                                <div class="magnifier colorized">
+                                    <div class="social-hover">
+                                        <ul class="list-inline">
+                                            @if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("phoneNumber").ToString()))
+                                            {
+                                                <li><a data-toggle="tooltip" data-placement="top" title="@teamMember.GetPropertyValue("phoneNumber")" href="#"><i class="fa fa-phone"></i></a></li>
+                                            }
+                                            @if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("email").ToString()))
+                                            {
+                                                <li><a data-toggle="tooltip" data-placement="top" title="@teamMember.GetPropertyValue("email")" href="#"><i class="fa fa-envelope"></i></a></li>
+                                            }
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- end media -->
+                            <div class="team-desc text-center">
+                                <h4>@Html.Raw(teamMember.GetPropertyValue("teamMemberName"))</h4>
+                                <p>@Html.Raw(teamMember.GetPropertyValue("memberPosition"))</p>
                                 <ul class="list-inline">
-                                    <li><a data-toggle="tooltip" data-placement="top" title="+91 84569 14 527" href="#"><i class="fa fa-phone"></i></a></li>
-                                    <li><a data-toggle="tooltip" data-placement="top" title="info@yoursite.com" href="#"><i class="fa fa-envelope"></i></a></li>
+                                    @{
+                                        if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("facebook").ToString()))
+                                        {
+                                            <li><a href="@teamMember.GetPropertyValue("facebook")"><i class="fa fa-facebook"></i></a></li>
+
+                                        }
+                                        if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("twitter").ToString()))
+                                        {
+                                            <li><a href="@teamMember.GetPropertyValue("twitter")"><i class="fa fa-twitter"></i></a></li>
+
+                                        }
+                                        if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("gmail").ToString()))
+                                        {
+                                            <li><a href="@teamMember.GetPropertyValue("gmail")"><i class="fa fa-google-plus"></i></a></li>
+
+                                        }
+                                        if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("linkedIn").ToString()))
+                                        {
+                                            <li><a href="@teamMember.GetPropertyValue("linkedIn")"><i class="fa fa-linkedin"></i></a></li>
+
+                                        }
+                                    }
                                 </ul>
                             </div>
-                        </div>
-                    </div><!-- end media -->
-                    <div class="team-desc text-center">
-                        <h4>Pisti</h4>
-                        <p>CEO & Founder</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end clearfix -->
-            </div><!-- end col -->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="team-box clearfix">
-                    <div class="post-media entry">
-                        <img src="/uploads/team_02.jpg" alt="" class="img-responsive">
-                        <div class="magnifier colorized">
-                            <div class="social-hover">
-                                <ul class="list-inline">
-                                    <li><a data-toggle="tooltip" data-placement="top" title="+91 84569 14 527" href="#"><i class="fa fa-phone"></i></a></li>
-                                    <li><a data-toggle="tooltip" data-placement="top" title="info@yoursite.com" href="#"><i class="fa fa-envelope"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- end media -->
-                    <div class="team-desc text-center">
-                        <h4>Szilard</h4>
-                        <p>Team Leader</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end clearfix -->
-            </div><!-- end col -->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="team-box clearfix">
-                    <div class="post-media entry">
-                        <img src="/uploads/team_03.jpg" alt="" class="img-responsive">
-                        <div class="magnifier colorized">
-                            <div class="social-hover">
-                                <ul class="list-inline">
-                                    <li><a data-toggle="tooltip" data-placement="top" title="+91 84569 14 527" href="#"><i class="fa fa-phone"></i></a></li>
-                                    <li><a data-toggle="tooltip" data-placement="top" title="info@yoursite.com" href="#"><i class="fa fa-envelope"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- end media -->
-                    <div class="team-desc text-center">
-                        <h4>Pisti</h4>
-                        <p>VP Sales & Marketing</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end clearfix -->
-            </div><!-- end col -->
+                        </div><!-- end clearfix -->
+                    </div><!-- end col -->
+                }
+            }
         </div><!-- end col -->
     </div><!-- end row -->
 </div><!-- end container -->

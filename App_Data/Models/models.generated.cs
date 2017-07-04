@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "756e4b80a9ce0ff6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a4e861e84f6fbfa3")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -624,6 +624,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Email: Please provide the email address of a team mamber
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return this.GetPropertyValue<string>("email"); }
+		}
+
+		///<summary>
 		/// Facebook Profile: Please provide the Facebook profile of a team member
 		///</summary>
 		[ImplementPropertyType("facebook")]
@@ -653,10 +662,28 @@ namespace Umbraco.Web.PublishedContentModels
 		///<summary>
 		/// Position: Please provide a position of a team meber
 		///</summary>
-		[ImplementPropertyType("position")]
-		public string Position
+		[ImplementPropertyType("memberPosition")]
+		public string MemberPosition
 		{
-			get { return this.GetPropertyValue<string>("position"); }
+			get { return this.GetPropertyValue<string>("memberPosition"); }
+		}
+
+		///<summary>
+		/// Personal image: Please provide an image about you team member
+		///</summary>
+		[ImplementPropertyType("personalImage")]
+		public IPublishedContent PersonalImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("personalImage"); }
+		}
+
+		///<summary>
+		/// Phone number: Please provide a phone number of a team member
+		///</summary>
+		[ImplementPropertyType("phoneNumber")]
+		public string PhoneNumber
+		{
+			get { return this.GetPropertyValue<string>("phoneNumber"); }
 		}
 
 		///<summary>

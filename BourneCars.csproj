@@ -3433,7 +3433,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\AboutUs\" />
     <Folder Include="Views\Services\" />
   </ItemGroup>
   <PropertyGroup>
