@@ -84,7 +84,7 @@ namespace BourneCars.Controllers
         private List<NavigationListItem> GetChildNavigationList(IPublishedContent page)
         {
             List<NavigationListItem> listItems = null;
-            var childPages = page.Children.Where("Visible");
+            var childPages = page.Children.Where("Visible").Where(x => x.Level <= 2);
             if (childPages != null && childPages.Any() && childPages.Count() > 0)
             {
                 listItems = new List<NavigationListItem>();

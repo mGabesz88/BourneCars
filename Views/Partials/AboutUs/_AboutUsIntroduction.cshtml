@@ -1,34 +1,42 @@
-﻿@inherits UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
 <!-- ******************************************
 ABOUT US INTRODUCTION
 ********************************************** -->
 @{
-    var aboutUs = @Umbraco.TypedContent(1090);
-    var teamPhoto = aboutUs.GetPropertyValue("teamPhoto");
-    
+    var currentPageId = UmbracoContext.Current.PageId;
+    var aboutUs = Umbraco.TypedContent(currentPageId);
 
 }
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="welcome-widget clearfix">
-                    <div class="section-title clearfix">
-                        <h4>@aboutUs.GetPropertyValue("pageTitle")</h4>
-                        <hr class="custom">
-                    </div><!-- end section-title -->
-                    @aboutUs.GetPropertyValue("pageContent")
-                    <div class="widget-footer row">
-                        <div class="col-md-5">
-                            <strong>@aboutUs.GetPropertyValue("signature"), <small>@aboutUs.GetPropertyValue("position")</small></strong>
-                            <small class="val">@aboutUs.GetPropertyValue("companyName")</small>
-                        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="welcome-widget clearfix">
+                            <div class="section-title clearfix">
+                                <h4>@aboutUs.GetPropertyValue("pageTitle")</h4>
+                                <hr class="custom">
+                            </div><!-- end section-title -->
+                            @aboutUs.GetPropertyValue("pageContent")
+                            <div class="widget-footer row">
+                                <div class="col-md-5">
+                                    <strong>@aboutUs.GetPropertyValue("signature"), <small>@aboutUs.GetPropertyValue("position")</small></strong>
+                                    <small class="val">@aboutUs.GetPropertyValue("companyName")</small>
+                                </div>
+                            </div>
+                        </div><!-- end welcome-widget -->
+                    </div><!-- end col -->
+                    <div class="col-md-6 col-sm-12 welcome-widget wow fadeIn">
+                        
+                       @{
+                           var teamPhoto = aboutUs.GetPropertyValue<IPublishedContent>("teamPhoto").Url;
+                           if (teamPhoto != null)
+                           {
+                            <img src="@teamPhoto" alt="" class="img-responsive">
+                           }
+                    }
+                        
                     </div>
-                </div><!-- end welcome-widget -->
-            </div><!-- end col -->
-            <div class="col-md-6 col-sm-12 welcome-widget wow fadeIn">
-                <img src="" alt="" class="img-responsive">
-            </div>
-        </div><!-- end row -->
-    </div><!-- end container -->
-</div><!-- end section -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end section -->

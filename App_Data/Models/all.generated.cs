@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2d8804dec79cd07e")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "756e4b80a9ce0ff6")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -612,6 +612,86 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Team Photo</summary>
 		public static IPublishedContent GetTeamPhoto(IAboutUsProperties that) { return that.GetPropertyValue<IPublishedContent>("teamPhoto"); }
+	}
+
+	/// <summary>Team Member Properties</summary>
+	[PublishedContentModel("teamMemberProperties")]
+	public partial class TeamMemberProperties : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "teamMemberProperties";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public TeamMemberProperties(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TeamMemberProperties, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Facebook Profile: Please provide the Facebook profile of a team member
+		///</summary>
+		[ImplementPropertyType("facebook")]
+		public string Facebook
+		{
+			get { return this.GetPropertyValue<string>("facebook"); }
+		}
+
+		///<summary>
+		/// Gmail Profile: Please provide the gmail profile of a team  member
+		///</summary>
+		[ImplementPropertyType("gmail")]
+		public string Gmail
+		{
+			get { return this.GetPropertyValue<string>("gmail"); }
+		}
+
+		///<summary>
+		/// Linked in Profile: Please provide the linked in profile of a team meber
+		///</summary>
+		[ImplementPropertyType("linkedIn")]
+		public string LinkedIn
+		{
+			get { return this.GetPropertyValue<string>("linkedIn"); }
+		}
+
+		///<summary>
+		/// Position: Please provide a position of a team meber
+		///</summary>
+		[ImplementPropertyType("position")]
+		public string Position
+		{
+			get { return this.GetPropertyValue<string>("position"); }
+		}
+
+		///<summary>
+		/// Team Member Name: Please provide the name of a Team me,ber
+		///</summary>
+		[ImplementPropertyType("teamMemberName")]
+		public string TeamMemberName
+		{
+			get { return this.GetPropertyValue<string>("teamMemberName"); }
+		}
+
+		///<summary>
+		/// Twitter Profile: Please Provide the twitter profile of a team member
+		///</summary>
+		[ImplementPropertyType("twitter")]
+		public string Twitter
+		{
+			get { return this.GetPropertyValue<string>("twitter"); }
+		}
 	}
 
 	/// <summary>Folder</summary>
