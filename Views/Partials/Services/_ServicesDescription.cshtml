@@ -1,17 +1,18 @@
-﻿<div class="col-md-6 col-sm-12 col-xs-12">
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- ******************************************
+SERVICE CONTENT
+********************************************** -->
+@{
+    var currentPageId = UmbracoContext.Current.PageId;
+    var service = Umbraco.TypedContent(currentPageId);
+}
+
+<div class="col-md-6 col-sm-12 col-xs-12">
     <div class="welcome-widget clearfix">
         <div class="section-title clearfix">
-            <h4>Welcome to Bourne Cars</h4>
+            <h4>@service.GetPropertyValue("servicesTitle")</h4>
             <hr class="custom">
         </div><!-- end section-title -->
-        <p><strong>Vitae adipiscing turpis. Aenean ligula nibh, molestie id viverra a, dapibus at dolor. In iaculis viverra neque, ac eleifend ante lobortis id. In viverra ipsum ac eros tristique digniss mi dictum.</strong></p>
-        <p>How all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual se teachings of the great explorer of the truth, the m rejects, dislikes, avoids pleasure itself mistaken idea sed off denouncing pleasure.</p>
-        <div class="widget-footer row">
-            <div class="col-md-5">
-                <strong>William Shocks, <small>Founder</small></strong>
-                <small class="val">Engines.</small>
-            </div>
-
-        </div>
+        <p>@service.GetPropertyValue("mainContent")</p>
     </div><!-- end welcome-widget -->
 </div><!-- end col -->

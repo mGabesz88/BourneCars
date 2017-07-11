@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a4e861e84f6fbfa3")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5ec8e809859a6fdc")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -92,6 +92,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string FacebookPage
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContactInfo.GetFacebookPage(this); }
+		}
+
+		///<summary>
+		/// Image Picker: Please select images from the media library
+		///</summary>
+		[ImplementPropertyType("imagePicker")]
+		public IEnumerable<IPublishedContent> ImagePicker
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContactInfo.GetImagePicker(this); }
 		}
 
 		///<summary>
@@ -257,7 +266,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Service</summary>
 	[PublishedContentModel("service")]
-	public partial class Service : PublishedContentModel
+	public partial class Service : PublishedContentModel, IServicesProperties
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "service";
@@ -279,10 +288,28 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Main Content: Please provide the main service content
+		///</summary>
+		[ImplementPropertyType("mainContent")]
+		public IHtmlString MainContent
+		{
+			get { return Umbraco.Web.PublishedContentModels.ServicesProperties.GetMainContent(this); }
+		}
+
+		///<summary>
+		/// Title: Please provide the title of the page
+		///</summary>
+		[ImplementPropertyType("servicesTitle")]
+		public string ServicesTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.ServicesProperties.GetServicesTitle(this); }
+		}
 	}
 
 	// Mixin content Type 1103 with alias "contactInfo"
-	/// <summary>Base info</summary>
+	/// <summary>Base Properties</summary>
 	public partial interface IContactInfo : IPublishedContent
 	{
 		/// <summary>Address line 1</summary>
@@ -299,6 +326,9 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Facebook Page</summary>
 		string FacebookPage { get; }
+
+		/// <summary>Image Picker</summary>
+		IEnumerable<IPublishedContent> ImagePicker { get; }
 
 		/// <summary>Latitude</summary>
 		string Latitude { get; }
@@ -319,7 +349,7 @@ namespace Umbraco.Web.PublishedContentModels
 		string TextForPhoneNumber { get; }
 	}
 
-	/// <summary>Base info</summary>
+	/// <summary>Base Properties</summary>
 	[PublishedContentModel("contactInfo")]
 	public partial class ContactInfo : PublishedContentModel, IContactInfo
 	{
@@ -403,6 +433,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Facebook Page</summary>
 		public static string GetFacebookPage(IContactInfo that) { return that.GetPropertyValue<string>("facebookPage"); }
+
+		///<summary>
+		/// Image Picker: Please select images from the media library
+		///</summary>
+		[ImplementPropertyType("imagePicker")]
+		public IEnumerable<IPublishedContent> ImagePicker
+		{
+			get { return GetImagePicker(this); }
+		}
+
+		/// <summary>Static getter for Image Picker</summary>
+		public static IEnumerable<IPublishedContent> GetImagePicker(IContactInfo that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("imagePicker"); }
 
 		///<summary>
 		/// Latitude: Please provide the latitude coordinate of your business
@@ -633,7 +675,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Facebook Profile: Please provide the Facebook profile of a team member
+		/// Facebook Profile: Please provide the Facebook profile of a team member. Copy and past it from the browser
 		///</summary>
 		[ImplementPropertyType("facebook")]
 		public string Facebook
@@ -642,7 +684,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Gmail Profile: Please provide the gmail profile of a team  member
+		/// Gmail Profile: Please provide the gmail profile of a team  member. Copy and past it from the browser
 		///</summary>
 		[ImplementPropertyType("gmail")]
 		public string Gmail
@@ -651,7 +693,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Linked in Profile: Please provide the linked in profile of a team meber
+		/// Linked in Profile: Please provide the linked in profile of a team member. Copy and past it from the browser
 		///</summary>
 		[ImplementPropertyType("linkedIn")]
 		public string LinkedIn
@@ -696,13 +738,74 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Twitter Profile: Please Provide the twitter profile of a team member
+		/// Twitter Profile: Please Provide the twitter profile of a team member. Copy and past it from the browser
 		///</summary>
 		[ImplementPropertyType("twitter")]
 		public string Twitter
 		{
 			get { return this.GetPropertyValue<string>("twitter"); }
 		}
+	}
+
+	// Mixin content Type 1121 with alias "servicesProperties"
+	/// <summary>Services Properties</summary>
+	public partial interface IServicesProperties : IPublishedContent
+	{
+		/// <summary>Main Content</summary>
+		IHtmlString MainContent { get; }
+
+		/// <summary>Title</summary>
+		string ServicesTitle { get; }
+	}
+
+	/// <summary>Services Properties</summary>
+	[PublishedContentModel("servicesProperties")]
+	public partial class ServicesProperties : PublishedContentModel, IServicesProperties
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "servicesProperties";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ServicesProperties(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ServicesProperties, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Main Content: Please provide the main service content
+		///</summary>
+		[ImplementPropertyType("mainContent")]
+		public IHtmlString MainContent
+		{
+			get { return GetMainContent(this); }
+		}
+
+		/// <summary>Static getter for Main Content</summary>
+		public static IHtmlString GetMainContent(IServicesProperties that) { return that.GetPropertyValue<IHtmlString>("mainContent"); }
+
+		///<summary>
+		/// Title: Please provide the title of the page
+		///</summary>
+		[ImplementPropertyType("servicesTitle")]
+		public string ServicesTitle
+		{
+			get { return GetServicesTitle(this); }
+		}
+
+		/// <summary>Static getter for Title</summary>
+		public static string GetServicesTitle(IServicesProperties that) { return that.GetPropertyValue<string>("servicesTitle"); }
 	}
 
 	/// <summary>Folder</summary>
@@ -861,6 +964,131 @@ namespace Umbraco.Web.PublishedContentModels
 		public string UmbracoFile
 		{
 			get { return this.GetPropertyValue<string>("umbracoFile"); }
+		}
+	}
+
+	/// <summary>Image For home page</summary>
+	[PublishedContentModel("Image1")]
+	public partial class Image1 : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "Image1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+#pragma warning restore 0109
+
+		public Image1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Big text: Please provide the second line of big text
+		///</summary>
+		[ImplementPropertyType("bigText")]
+		public string BigText
+		{
+			get { return this.GetPropertyValue<string>("bigText"); }
+		}
+
+		///<summary>
+		/// Button Link: Please select a destination for the button
+		///</summary>
+		[ImplementPropertyType("buttonLink")]
+		public IPublishedContent ButtonLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("buttonLink"); }
+		}
+
+		///<summary>
+		/// Button Text: Please provide some text for the button
+		///</summary>
+		[ImplementPropertyType("buttonText")]
+		public string ButtonText
+		{
+			get { return this.GetPropertyValue<string>("buttonText"); }
+		}
+
+		///<summary>
+		/// Big Text: Please provide the some text (Large Letters)
+		///</summary>
+		[ImplementPropertyType("mainText")]
+		public string MainText
+		{
+			get { return this.GetPropertyValue<string>("mainText"); }
+		}
+
+		///<summary>
+		/// Small Text: Please provide some text (small text)
+		///</summary>
+		[ImplementPropertyType("smallText")]
+		public string SmallText
+		{
+			get { return this.GetPropertyValue<string>("smallText"); }
+		}
+
+		///<summary>
+		/// Small text 2: Please provide the second line of small text
+		///</summary>
+		[ImplementPropertyType("smallText2")]
+		public string SmallText2
+		{
+			get { return this.GetPropertyValue<string>("smallText2"); }
+		}
+
+		///<summary>
+		/// Size
+		///</summary>
+		[ImplementPropertyType("umbracoBytes")]
+		public string UmbracoBytes
+		{
+			get { return this.GetPropertyValue<string>("umbracoBytes"); }
+		}
+
+		///<summary>
+		/// Type
+		///</summary>
+		[ImplementPropertyType("umbracoExtension")]
+		public string UmbracoExtension
+		{
+			get { return this.GetPropertyValue<string>("umbracoExtension"); }
+		}
+
+		///<summary>
+		/// Upload image
+		///</summary>
+		[ImplementPropertyType("umbracoFile")]
+		public Umbraco.Web.Models.ImageCropDataSet UmbracoFile
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("umbracoFile"); }
+		}
+
+		///<summary>
+		/// Height
+		///</summary>
+		[ImplementPropertyType("umbracoHeight")]
+		public string UmbracoHeight
+		{
+			get { return this.GetPropertyValue<string>("umbracoHeight"); }
+		}
+
+		///<summary>
+		/// Width
+		///</summary>
+		[ImplementPropertyType("umbracoWidth")]
+		public string UmbracoWidth
+		{
+			get { return this.GetPropertyValue<string>("umbracoWidth"); }
 		}
 	}
 

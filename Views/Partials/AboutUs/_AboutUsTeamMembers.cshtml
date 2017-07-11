@@ -55,22 +55,22 @@ TEAM SECTION
                                     @{
                                         if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("facebook").ToString()))
                                         {
-                                            <li><a href="@teamMember.GetPropertyValue("facebook")"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="@teamMember.GetPropertyValue("facebook")" target="_blank"><i class="fa fa-facebook"></i></a></li>
 
                                         }
                                         if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("twitter").ToString()))
                                         {
-                                            <li><a href="@teamMember.GetPropertyValue("twitter")"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="@teamMember.GetPropertyValue("twitter")" target="_blank"><i class="fa fa-twitter"></i></a></li>
 
                                         }
                                         if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("gmail").ToString()))
                                         {
-                                            <li><a href="@teamMember.GetPropertyValue("gmail")"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="@teamMember.GetPropertyValue("gmail")" target="_blank"><i class="fa fa-google-plus"></i></a></li>
 
                                         }
                                         if (!string.IsNullOrWhiteSpace(teamMember.GetPropertyValue("linkedIn").ToString()))
                                         {
-                                            <li><a href="@teamMember.GetPropertyValue("linkedIn")"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="@teamMember.GetPropertyValue("linkedIn")" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 
                                         }
                                     }

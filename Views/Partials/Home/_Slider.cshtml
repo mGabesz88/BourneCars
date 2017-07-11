@@ -1,124 +1,99 @@
-﻿<!-- ******************************************
-    START SLIDER
-    ********************************************** -->
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<!-- ******************************************
+START SLIDER
+********************************************** -->
+@{
+    var imageItems = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("imagePicker");
+}
 <div class="slider-section">
     <div id="banner">
         <div class="rev_slider_wrapper">
             <!-- START REVOLUTION SLIDER 5.0 auto mode -->
             <div id="main_slider" class="rev_slider" data-version="5.0">
                 <ul>
-                    <li data-index='rs-377' data-transition='curtain-1' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default' data-thumb='uploads/slider_01.jpg' data-rotate='0' data-saveperformance='off' data-title='Business Solutions' data-description=''>
-                        <!-- MAIN IMAGE -->
-                        <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-5-series-1_1.jpg?itok=KxuBwY5Y" alt="image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
-                        <!-- LAYERS -->
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption tp-resizeme hidden-xs"
-                             data-x="['left','left','left','left']" data-hoffset="['-2','0','35','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-82']"
-                             data-width="none"
-                             data-height="none"
-                             data-transform_idle="o:1;"
-                             data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                             data-start="1000"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             data-elementdelay="0.05"
-                             style="z-index: 5;">
-                            <h1>Buy New and Used<br>Car at Borunemouth</h1>
-                        </div>
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption tp-resizeme hidden-xs"
-                             data-x="['left','left','left','left']" data-hoffset="['0','0','35','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['96','96','96','65']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 6; white-space: nowrap;">
-                            <p>We’re here to offer the best support,<br>and make your purchase easy.</p>
-                        </div>
-                        <div class="tp-caption tp-resizeme hidden-xs"
-                             data-x="['left','left','left','left']" data-hoffset="['0','0','35','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['199','199','199','169']"
-                             data-transform_idle="o:1;"
-                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                             data-style_hover="c:rgba(0, 154, 238, 1.00);bc:rgba(0, 154, 238, 1.00);cursor:pointer;"
-                             data-transform_in="x:[-100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2500;e:Power3.easeInOut;"
-                             data-transform_out="auto:auto;s:1000;e:Power2.easeInOut;"
-                             data-start="2500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on">
-                            <a href="#" class="contact_us btn btn-default">Contact us</a>
-                        </div>
-                    </li>
-                    <li data-index='rs-376' data-transition='curtain-1' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default' data-thumb='uploads/slider_01.jpg' data-rotate='0' data-saveperformance='off' data-title='Business Solutions' data-description=''>
-                        <!-- MAIN IMAGE -->
-                        <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-m2-road-test-0273.jpg?itok=GodP4h1Z" alt="image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
-                        <!-- LAYERS -->
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption tp-resizeme hidden-xs"
-                             data-x="['left','left','left','left']" data-hoffset="['-2','0','35','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-82']"
-                             data-width="none"
-                             data-height="none"
-                             data-transform_idle="o:1;"
-                             data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                             data-start="1000"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             data-elementdelay="0.05"
-                             style="z-index: 5;">
-                            <h1>Buy your next car with us<br>and you will get a free cake</h1>
-                        </div>
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption tp-resizeme hidden-xs"
-                             data-x="['left','left','left','left']" data-hoffset="['0','0','35','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['96','96','96','65']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 6; white-space: nowrap;">
-                            <p>We’re here to offer the best support, to help<br> you troubleshoot any business issues.</p>
-                        </div>
-                        <div class="tp-caption tp-resizeme hidden-xs"
-                             data-x="['left','left','left','left']" data-hoffset="['0','0','35','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['199','199','199','169']"
-                             data-transform_idle="o:1;"
-                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                             data-style_hover="c:rgba(0, 154, 238, 1.00);bc:rgba(0, 154, 238, 1.00);cursor:pointer;"
-                             data-transform_in="x:[-100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2500;e:Power3.easeInOut;"
-                             data-transform_out="auto:auto;s:1000;e:Power2.easeInOut;"
-                             data-start="2500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on">
-                            <a href="#" class="contact_us btn btn-default">Contact us</a>
-                        </div>
-                    </li>
+                    @{
+                        foreach (var imageitem in imageItems)
+                        {
+                            <li data-index='rs-@imageitem.Id' data-transition='curtain-1' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default' data-thumb='uploads/slider_01.jpg' data-rotate='0' data-saveperformance='off' data-title='Business Solutions' data-description=''>
+                                <!-- MAIN IMAGE -->
+                                <img src="@imageitem.Url" alt="@imageitem.Name" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+                                <!-- LAYERS -->
+                                <!-- LAYER NR. 1 -->
+                                <div class="tp-caption tp-resizeme hidden-xs"
+                                     data-x="['left','left','left','left']" data-hoffset="['-2','0','35','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-82']"
+                                     data-width="none"
+                                     data-height="none"
+                                     data-transform_idle="o:1;"
+                                     data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
+                                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                     data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                                     data-start="1000"
+                                     data-splitout="none"
+                                     data-responsive_offset="on"
+                                     data-elementdelay="0.05"
+                                     style="z-index: 5;">
+                                    <h1>
+                                        @{
+                                            if (!string.IsNullOrWhiteSpace(imageitem.GetProperty("mainText").Value.ToString()))
+                                            {
+                                                <span>@imageitem.GetProperty("mainText").Value</span> <br /><span> Car at Borunemouth</span>
+                                            }
+
+                                        }
+                                    </h1>
+                                </div>
+                                <!-- LAYER NR. 2 -->
+                                <div class="tp-caption tp-resizeme hidden-xs"
+                                     data-x="['left','left','left','left']" data-hoffset="['0','0','35','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['96','96','96','65']"
+                                     data-width="none"
+                                     data-height="none"
+                                     data-whitespace="nowrap"
+                                     data-transform_idle="o:1;"
+                                     data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                     data-mask_in="x:0px;y:[100%];"
+                                     data-mask_out="x:inherit;y:inherit;"
+                                     data-start="1500"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-responsive_offset="on"
+                                     style="z-index: 6; white-space: nowrap;">
+                                    <p>
+                                       @{if (!string.IsNullOrWhiteSpace(imageitem.GetProperty("smallText").Value.ToString()))
+                                           {
+                                            <span>@imageitem.GetProperty("smallText").Value</span><br><span>and make your purchase easy</span>
+                                           }
+                                    }
+                                    </p>
+                                </div>
+                                <div class="tp-caption tp-resizeme hidden-xs"
+                                     data-x="['left','left','left','left']" data-hoffset="['0','0','35','0']"
+                                     data-y="['middle','middle','middle','middle']" data-voffset="['199','199','199','169']"
+                                     data-transform_idle="o:1;"
+                                     data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                                     data-style_hover="c:rgba(0, 154, 238, 1.00);bc:rgba(0, 154, 238, 1.00);cursor:pointer;"
+                                     data-transform_in="x:[-100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2500;e:Power3.easeInOut;"
+                                     data-transform_out="auto:auto;s:1000;e:Power2.easeInOut;"
+                                     data-start="2500"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-responsive_offset="on">
+                                    @{
+                                        if (imageitem.HasProperty("buttonLink") && !string.IsNullOrEmpty(imageitem.HasProperty("buttonLink").ToString()))
+                                        {
+                                            var nodeId = Umbraco.Content(imageitem.GetPropertyValue<int>("buttonLink"));
+                                            <a href="@nodeId.Url" class="contact_us btn btn-default">@imageitem.GetProperty("buttonText").Value</a>
+                                        }
+                                    }
+                                </div>
+                            </li>
+                        }
+                    }
+                    
                 </ul>
             </div>
         </div>
