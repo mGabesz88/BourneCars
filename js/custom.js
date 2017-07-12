@@ -1,13 +1,3 @@
-/******************************************
-    File Name: custom.js
-    Template Name: Engines
-    Created By: PSD Convert HTML Team
-    Envato Profile: http://themeforest.net/user/psdconverthtml
-    Website: https://psdconverthtml.com
-    Version: 1.0
-    Support: support@psdconverthtml.com
-/******************************************/
-
 (function($) {
     "use strict";
 

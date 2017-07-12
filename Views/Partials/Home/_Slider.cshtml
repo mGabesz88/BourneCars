@@ -37,9 +37,9 @@ START SLIDER
                                      style="z-index: 5;">
                                     <h1>
                                         @{
-                                            if (!string.IsNullOrWhiteSpace(imageitem.GetProperty("mainText").Value.ToString()))
+                                            if (!string.IsNullOrWhiteSpace(imageitem.GetProperty("mainText").Value.ToString()) || !string.IsNullOrWhiteSpace(imageitem.GetProperty("bigText").Value.ToString()))
                                             {
-                                                <span>@imageitem.GetProperty("mainText").Value</span> <br /><span> Car at Borunemouth</span>
+                                                <span>@imageitem.GetProperty("mainText").Value</span> <br /><span>@imageitem.GetProperty("bigText").Value</span>
                                             }
 
                                         }
@@ -63,33 +63,33 @@ START SLIDER
                                      data-responsive_offset="on"
                                      style="z-index: 6; white-space: nowrap;">
                                     <p>
-                                       @{if (!string.IsNullOrWhiteSpace(imageitem.GetProperty("smallText").Value.ToString()))
-                                           {
-                                            <span>@imageitem.GetProperty("smallText").Value</span><br><span>and make your purchase easy</span>
-                                           }
-                                    }
+                                        @{if (!string.IsNullOrWhiteSpace(imageitem.GetProperty("smallText").Value.ToString()) || !string.IsNullOrWhiteSpace(imageitem.GetProperty("smallText2").Value.ToString()))
+                                          {
+                                              <span>@imageitem.GetProperty("smallText").Value</span><br><span>@imageitem.GetProperty("smallText2").Value</span>
+                                          }
+                                        }
                                     </p>
                                 </div>
-                                <div class="tp-caption tp-resizeme hidden-xs"
-                                     data-x="['left','left','left','left']" data-hoffset="['0','0','35','0']"
-                                     data-y="['middle','middle','middle','middle']" data-voffset="['199','199','199','169']"
-                                     data-transform_idle="o:1;"
-                                     data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                                     data-style_hover="c:rgba(0, 154, 238, 1.00);bc:rgba(0, 154, 238, 1.00);cursor:pointer;"
-                                     data-transform_in="x:[-100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2500;e:Power3.easeInOut;"
-                                     data-transform_out="auto:auto;s:1000;e:Power2.easeInOut;"
-                                     data-start="2500"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-responsive_offset="on">
-                                    @{
-                                        if (imageitem.HasProperty("buttonLink") && !string.IsNullOrEmpty(imageitem.HasProperty("buttonLink").ToString()))
-                                        {
-                                            var nodeId = Umbraco.Content(imageitem.GetPropertyValue<int>("buttonLink"));
-                                            <a href="@nodeId.Url" class="contact_us btn btn-default">@imageitem.GetProperty("buttonText").Value</a>
-                                        }
+                                @{
+                                    if (!string.IsNullOrWhiteSpace(imageitem.GetProperty("buttonLink").ToString()) && !string.IsNullOrEmpty(imageitem.GetProperty("buttonText").Value.ToString()))
+                                    {
+                                        var nodeId = Umbraco.Content(imageitem.GetPropertyValue<int>("buttonLink"));
+                                        <div class="tp-caption tp-resizeme hidden-xs"
+                                             data-x="['left','left','left','left']" data-hoffset="['0','0','35','0']"
+                                             data-y="['middle','middle','middle','middle']" data-voffset="['199','199','199','169']"
+                                             data-transform_idle="o:1;"
+                                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+                                             data-style_hover="c:rgba(0, 154, 238, 1.00);bc:rgba(0, 154, 238, 1.00);cursor:pointer;"
+                                             data-transform_in="x:[-100%];z:0;rX:0deg;rY:0deg;rZ:0deg;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2500;e:Power3.easeInOut;"
+                                             data-transform_out="auto:auto;s:1000;e:Power2.easeInOut;"
+                                             data-start="2500"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-responsive_offset="on">
+                                           <a href="@nodeId.Url" class="contact_us btn btn-default">@imageitem.GetProperty("buttonText").Value</a>
+                                        </div>
                                     }
-                                </div>
+                                }
                             </li>
                         }
                     }
