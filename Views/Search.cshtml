@@ -1,0 +1,13 @@
+﻿@using BourneCars.Controllers
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "MasterTemplate.cshtml";
+}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            @{Html.RenderAction("RenderMainSearchForm", "Search");}
+            @{Html.RenderAction("RenderSearchListing", "Search");}
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->

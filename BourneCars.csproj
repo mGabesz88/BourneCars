@@ -598,6 +598,10 @@
     <Content Include="Views\Services.cshtml" />
     <Content Include="Views\Partials\Services\_ServicesDescription.cshtml" />
     <Content Include="Views\Partials\Services\_ServicesRequestForm.cshtml" />
+    <Content Include="Views\Search.cshtml" />
+    <Content Include="Views\Partials\Search\_MainSearchForm.cshtml" />
+    <Content Include="Views\Partials\Search\_SearchLiting.cshtml" />
+    <Content Include="Views\CarDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3418,6 +3422,7 @@
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Models\NavigationLink.cs" />
@@ -3433,7 +3438,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
