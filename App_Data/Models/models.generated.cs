@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6b081aa88b9b3698")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "89fb8135d36d7bd8")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -836,7 +836,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Car Details</summary>
 	[PublishedContentModel("carDetails")]
-	public partial class CarDetails : PublishedContentModel
+	public partial class CarDetails : PublishedContentModel, ICarFeatures
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "carDetails";
@@ -858,6 +858,253 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Fuel
+		///</summary>
+		[ImplementPropertyType("fuel")]
+		public string Fuel
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetFuel(this); }
+		}
+
+		///<summary>
+		/// Last serviced
+		///</summary>
+		[ImplementPropertyType("lastServiced")]
+		public string LastServiced
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetLastServiced(this); }
+		}
+
+		///<summary>
+		/// Milage
+		///</summary>
+		[ImplementPropertyType("milage")]
+		public string Milage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetMilage(this); }
+		}
+
+		///<summary>
+		/// MOT
+		///</summary>
+		[ImplementPropertyType("mOT")]
+		public string MOT
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetMOT(this); }
+		}
+
+		///<summary>
+		/// Owner
+		///</summary>
+		[ImplementPropertyType("owner")]
+		public string Owner
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetOwner(this); }
+		}
+
+		///<summary>
+		/// Service Hitory
+		///</summary>
+		[ImplementPropertyType("serviceHitory")]
+		public string ServiceHitory
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetServiceHitory(this); }
+		}
+
+		///<summary>
+		/// Transmission
+		///</summary>
+		[ImplementPropertyType("transmission")]
+		public string Transmission
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetTransmission(this); }
+		}
+
+		///<summary>
+		/// Vehicle description: Please provide a short description of the car
+		///</summary>
+		[ImplementPropertyType("vehicleDescription")]
+		public string VehicleDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetVehicleDescription(this); }
+		}
+
+		///<summary>
+		/// Warranty
+		///</summary>
+		[ImplementPropertyType("warranty")]
+		public string Warranty
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetWarranty(this); }
+		}
+	}
+
+	// Mixin content Type 4133 with alias "carFeatures"
+	/// <summary>Car Features</summary>
+	public partial interface ICarFeatures : IPublishedContent
+	{
+		/// <summary>Fuel</summary>
+		string Fuel { get; }
+
+		/// <summary>Last serviced</summary>
+		string LastServiced { get; }
+
+		/// <summary>Milage</summary>
+		string Milage { get; }
+
+		/// <summary>MOT</summary>
+		string MOT { get; }
+
+		/// <summary>Owner</summary>
+		string Owner { get; }
+
+		/// <summary>Service Hitory</summary>
+		string ServiceHitory { get; }
+
+		/// <summary>Transmission</summary>
+		string Transmission { get; }
+
+		/// <summary>Vehicle description</summary>
+		string VehicleDescription { get; }
+
+		/// <summary>Warranty</summary>
+		string Warranty { get; }
+	}
+
+	/// <summary>Car Features</summary>
+	[PublishedContentModel("carFeatures")]
+	public partial class CarFeatures : PublishedContentModel, ICarFeatures
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "carFeatures";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public CarFeatures(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CarFeatures, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Fuel
+		///</summary>
+		[ImplementPropertyType("fuel")]
+		public string Fuel
+		{
+			get { return GetFuel(this); }
+		}
+
+		/// <summary>Static getter for Fuel</summary>
+		public static string GetFuel(ICarFeatures that) { return that.GetPropertyValue<string>("fuel"); }
+
+		///<summary>
+		/// Last serviced
+		///</summary>
+		[ImplementPropertyType("lastServiced")]
+		public string LastServiced
+		{
+			get { return GetLastServiced(this); }
+		}
+
+		/// <summary>Static getter for Last serviced</summary>
+		public static string GetLastServiced(ICarFeatures that) { return that.GetPropertyValue<string>("lastServiced"); }
+
+		///<summary>
+		/// Milage
+		///</summary>
+		[ImplementPropertyType("milage")]
+		public string Milage
+		{
+			get { return GetMilage(this); }
+		}
+
+		/// <summary>Static getter for Milage</summary>
+		public static string GetMilage(ICarFeatures that) { return that.GetPropertyValue<string>("milage"); }
+
+		///<summary>
+		/// MOT
+		///</summary>
+		[ImplementPropertyType("mOT")]
+		public string MOT
+		{
+			get { return GetMOT(this); }
+		}
+
+		/// <summary>Static getter for MOT</summary>
+		public static string GetMOT(ICarFeatures that) { return that.GetPropertyValue<string>("mOT"); }
+
+		///<summary>
+		/// Owner
+		///</summary>
+		[ImplementPropertyType("owner")]
+		public string Owner
+		{
+			get { return GetOwner(this); }
+		}
+
+		/// <summary>Static getter for Owner</summary>
+		public static string GetOwner(ICarFeatures that) { return that.GetPropertyValue<string>("owner"); }
+
+		///<summary>
+		/// Service Hitory
+		///</summary>
+		[ImplementPropertyType("serviceHitory")]
+		public string ServiceHitory
+		{
+			get { return GetServiceHitory(this); }
+		}
+
+		/// <summary>Static getter for Service Hitory</summary>
+		public static string GetServiceHitory(ICarFeatures that) { return that.GetPropertyValue<string>("serviceHitory"); }
+
+		///<summary>
+		/// Transmission
+		///</summary>
+		[ImplementPropertyType("transmission")]
+		public string Transmission
+		{
+			get { return GetTransmission(this); }
+		}
+
+		/// <summary>Static getter for Transmission</summary>
+		public static string GetTransmission(ICarFeatures that) { return that.GetPropertyValue<string>("transmission"); }
+
+		///<summary>
+		/// Vehicle description: Please provide a short description of the car
+		///</summary>
+		[ImplementPropertyType("vehicleDescription")]
+		public string VehicleDescription
+		{
+			get { return GetVehicleDescription(this); }
+		}
+
+		/// <summary>Static getter for Vehicle description</summary>
+		public static string GetVehicleDescription(ICarFeatures that) { return that.GetPropertyValue<string>("vehicleDescription"); }
+
+		///<summary>
+		/// Warranty
+		///</summary>
+		[ImplementPropertyType("warranty")]
+		public string Warranty
+		{
+			get { return GetWarranty(this); }
+		}
+
+		/// <summary>Static getter for Warranty</summary>
+		public static string GetWarranty(ICarFeatures that) { return that.GetPropertyValue<string>("warranty"); }
 	}
 
 	/// <summary>Folder</summary>
