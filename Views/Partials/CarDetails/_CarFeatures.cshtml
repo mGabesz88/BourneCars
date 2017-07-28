@@ -1,4 +1,13 @@
-﻿<div class="car-table clearfix">
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- ******************************************
+    CAR DETAILS - FEATURES
+********************************************** -->
+@{
+    var currentPageId = UmbracoContext.Current.PageId;
+    var feature = Umbraco.TypedContent(currentPageId);
+
+}
+<div class="car-table clearfix">
     <strong>Key Features</strong>
     <i class="fa fa-angle-down"></i>
 </div><!-- end car-table -->
@@ -7,27 +16,27 @@
         <tbody>
             <tr>
                 <td>Milage</td>
-                <td><strong>48000</strong></td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("milage"))</strong></td>
                 <td>Owner</td>
-                <td><strong>1 registered</strong></td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("owner"))</strong></td>
             </tr>
             <tr>
                 <td>Transmission</td>
-                <td><strong>Manual</strong></td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("transmission"))</strong></td>
                 <td>Fuel</td>
                 <td><strong>Petrol</strong></td>
             </tr>
             <tr>
                 <td>MOT</td>
-                <td><strong>28/09/2017</strong></td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue<DateTime>("mot").ToString("dd-MM-yyyy"))</strong></td>
                 <td>Last serviced</td>
-                <td><strong>47453 miles</strong></td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("lastServiced")) miles</strong></td>
             </tr>
             <tr>
                 <td>Service Hitory</td>
-                <td><strong>Full service history</strong></td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("serviceHistory"))</strong></td>
                 <td>Warranty</td>
-                <td><strong>3 month</strong></td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("warranty"))</strong></td>
             </tr>
         </tbody>
     </table>
@@ -189,4 +198,4 @@
             <li><i class="fa fa-check"></i> <strong>Rear Traffic Alert</strong></li>
         </ul><!-- end ul -->
     </div><!-- end col -->
-</div><!-- end row -->
+</div><!-- end row -->                          

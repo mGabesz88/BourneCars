@@ -1,34 +1,52 @@
-﻿<div class="col-md-9 col-sm-12">
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- ******************************************
+    SEARCH LISTING
+********************************************** -->
+@{
+    var currentPageId = UmbracoContext.Current.PageId;
+    var currentPage = Umbraco.TypedContent(currentPageId).Children;
+
+}
+<div class="col-md-9 col-sm-12">
     <div class="car-list-wrapper clearfix">
         <div class="car-list clearfix row">
-            <div class="col-md-4">
-                <div class="post-media entry">
-                    <a href="#"><img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-5-series-1_1.jpg?itok=KxuBwY5Y" alt="" class="img-responsive"></a>
-                </div><!-- end post-media -->
-            </div><!-- end col -->
-            <div class="col-md-8">
-                <div class="car-top clearfix">
-                    <div class="pull-left">
-                        <h3><a href="#">BMW F12 6 Series Midsized</a></h3>
-                    </div><!-- end pull-left -->
-                </div><!-- end car-top -->
-                <div class="car-details clearfix">
-                    <div class="car-price"><p>$78900</p></div>
-                </div><!-- end details -->
-                <div class="car-details clearfix">
-                    <ul class="list-inline">
-                        <li><i class="fa fa-road"></i> Mileage&nbsp; <small>850000</small></li>
-                        <li><i class="fa fa-car"></i> Fuel Type <small>Petrol</small></li>
-                        <li><i class="fa fa-clock-o"></i> Reg.Year <small>2013</small></li>
-                        <li><i class="fa fa-gears"></i> Transmission <small>Automatic</small></li>
-                    </ul>
-                </div><!-- end car-details -->
-                <div class="car-bottom clearfix">
-                    <div class="pull-left">
-                        <a href="#" class="stock">MORE INFO</a>
-                    </div><!-- end pull-left -->
-                </div><!-- end car-top -->
-            </div><!-- end col -->
+            @{
+                foreach (var carDetails in currentPage)
+                {
+                    var urlTo = carDetails.Url;
+                    <div class="col-md-4">
+                        <div class="post-media entry">
+                            <a href=@urlTo><img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-5-series-1_1.jpg?itok=KxuBwY5Y" alt="" class="img-responsive"></a>
+                        </div><!-- end post-media -->
+                    </div><!-- end col -->
+                    <div class="col-md-8">
+                        <div class="car-top clearfix">
+                            <div class="pull-left">
+                                <h3><a href=@urlTo>@Html.Raw(carDetails.GetPropertyValue("model"))</a>
+                                </h3>
+                            </div><!-- end pull-left -->
+                        </div><!-- end car-top -->
+                        <div class="car-details clearfix">
+                            <div class="car-price">
+                                <p>£@Html.Raw(carDetails.GetPropertyValue("price"))</p>
+                            </div>
+                        </div><!-- end details -->
+                        <div class="car-details clearfix">
+                            <ul class="list-inline">
+                                <li><i class="fa fa-road"></i> Mileage&nbsp; <small>@Html.Raw(carDetails.GetPropertyValue("milage"))</small></li>
+                                <li><i class="fa fa-car"></i> Fuel Type <small>@Html.Raw(carDetails.GetPropertyValue("fuel"))</small></li>
+                                <li><i class="fa fa-clock-o"></i> Reg.Year <small>@Html.Raw(carDetails.GetPropertyValue<DateTime>("registrationYear").ToString("yyyy"))</small></li>
+                                <li><i class="fa fa-gears"></i> Transmission <small>@Html.Raw(carDetails.GetPropertyValue("transmission"))</small></li>
+                            </ul>
+                        </div><!-- end car-details -->
+                        <div class="car-bottom clearfix">
+                            <div class="pull-left">
+                                <a href="@urlTo" class="stock">MORE INFO</a>
+                            </div><!-- end pull-left -->
+                        </div><!-- end car-top -->
+                    </div><!-- end col -->
+                }
+            }
         </div><!-- end car-list -->
     </div><!-- end car-list-wrapper -->
 </div><!-- end col -->

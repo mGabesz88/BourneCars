@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "89fb8135d36d7bd8")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2bf63b07778455be")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
 
 
 // FILE: models.generated.cs
@@ -897,18 +897,27 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Milage
 		///</summary>
 		[ImplementPropertyType("milage")]
-		public string Milage
+		public int Milage
 		{
 			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetMilage(this); }
 		}
 
 		///<summary>
+		/// Model
+		///</summary>
+		[ImplementPropertyType("model")]
+		public string Model
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetModel(this); }
+		}
+
+		///<summary>
 		/// MOT
 		///</summary>
-		[ImplementPropertyType("mOT")]
-		public string MOT
+		[ImplementPropertyType("mot")]
+		public DateTime Mot
 		{
-			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetMOT(this); }
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetMot(this); }
 		}
 
 		///<summary>
@@ -921,12 +930,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Service Hitory
+		/// Price
 		///</summary>
-		[ImplementPropertyType("serviceHitory")]
-		public string ServiceHitory
+		[ImplementPropertyType("price")]
+		public int Price
 		{
-			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetServiceHitory(this); }
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetPrice(this); }
+		}
+
+		///<summary>
+		/// Registration year
+		///</summary>
+		[ImplementPropertyType("registrationYear")]
+		public DateTime RegistrationYear
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetRegistrationYear(this); }
+		}
+
+		///<summary>
+		/// Service History
+		///</summary>
+		[ImplementPropertyType("serviceHistory")]
+		public string ServiceHistory
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetServiceHistory(this); }
 		}
 
 		///<summary>
@@ -968,16 +995,25 @@ namespace Umbraco.Web.PublishedContentModels
 		string LastServiced { get; }
 
 		/// <summary>Milage</summary>
-		string Milage { get; }
+		int Milage { get; }
+
+		/// <summary>Model</summary>
+		string Model { get; }
 
 		/// <summary>MOT</summary>
-		string MOT { get; }
+		DateTime Mot { get; }
 
 		/// <summary>Owner</summary>
 		string Owner { get; }
 
-		/// <summary>Service Hitory</summary>
-		string ServiceHitory { get; }
+		/// <summary>Price</summary>
+		int Price { get; }
+
+		/// <summary>Registration year</summary>
+		DateTime RegistrationYear { get; }
+
+		/// <summary>Service History</summary>
+		string ServiceHistory { get; }
 
 		/// <summary>Transmission</summary>
 		string Transmission { get; }
@@ -1042,25 +1078,37 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Milage
 		///</summary>
 		[ImplementPropertyType("milage")]
-		public string Milage
+		public int Milage
 		{
 			get { return GetMilage(this); }
 		}
 
 		/// <summary>Static getter for Milage</summary>
-		public static string GetMilage(ICarFeatures that) { return that.GetPropertyValue<string>("milage"); }
+		public static int GetMilage(ICarFeatures that) { return that.GetPropertyValue<int>("milage"); }
+
+		///<summary>
+		/// Model
+		///</summary>
+		[ImplementPropertyType("model")]
+		public string Model
+		{
+			get { return GetModel(this); }
+		}
+
+		/// <summary>Static getter for Model</summary>
+		public static string GetModel(ICarFeatures that) { return that.GetPropertyValue<string>("model"); }
 
 		///<summary>
 		/// MOT
 		///</summary>
-		[ImplementPropertyType("mOT")]
-		public string MOT
+		[ImplementPropertyType("mot")]
+		public DateTime Mot
 		{
-			get { return GetMOT(this); }
+			get { return GetMot(this); }
 		}
 
 		/// <summary>Static getter for MOT</summary>
-		public static string GetMOT(ICarFeatures that) { return that.GetPropertyValue<string>("mOT"); }
+		public static DateTime GetMot(ICarFeatures that) { return that.GetPropertyValue<DateTime>("mot"); }
 
 		///<summary>
 		/// Owner
@@ -1075,16 +1123,40 @@ namespace Umbraco.Web.PublishedContentModels
 		public static string GetOwner(ICarFeatures that) { return that.GetPropertyValue<string>("owner"); }
 
 		///<summary>
-		/// Service Hitory
+		/// Price
 		///</summary>
-		[ImplementPropertyType("serviceHitory")]
-		public string ServiceHitory
+		[ImplementPropertyType("price")]
+		public int Price
 		{
-			get { return GetServiceHitory(this); }
+			get { return GetPrice(this); }
 		}
 
-		/// <summary>Static getter for Service Hitory</summary>
-		public static string GetServiceHitory(ICarFeatures that) { return that.GetPropertyValue<string>("serviceHitory"); }
+		/// <summary>Static getter for Price</summary>
+		public static int GetPrice(ICarFeatures that) { return that.GetPropertyValue<int>("price"); }
+
+		///<summary>
+		/// Registration year
+		///</summary>
+		[ImplementPropertyType("registrationYear")]
+		public DateTime RegistrationYear
+		{
+			get { return GetRegistrationYear(this); }
+		}
+
+		/// <summary>Static getter for Registration year</summary>
+		public static DateTime GetRegistrationYear(ICarFeatures that) { return that.GetPropertyValue<DateTime>("registrationYear"); }
+
+		///<summary>
+		/// Service History
+		///</summary>
+		[ImplementPropertyType("serviceHistory")]
+		public string ServiceHistory
+		{
+			get { return GetServiceHistory(this); }
+		}
+
+		/// <summary>Static getter for Service History</summary>
+		public static string GetServiceHistory(ICarFeatures that) { return that.GetPropertyValue<string>("serviceHistory"); }
 
 		///<summary>
 		/// Transmission
