@@ -14,9 +14,13 @@
                 foreach (var carDetails in currentPage)
                 {
                     var urlTo = carDetails.Url;
+
                     <div class="col-md-4">
                         <div class="post-media entry">
-                            <a href=@urlTo><img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-5-series-1_1.jpg?itok=KxuBwY5Y" alt="" class="img-responsive"></a>
+                            @{
+                                var image = carDetails.GetPropertyValue<IPublishedContent>("podImage");
+                            }
+                            <a href=@urlTo><img src="@image.Url" alt="@image.Name" class="img-responsive"></a>
                         </div><!-- end post-media -->
                     </div><!-- end col -->
                     <div class="col-md-8">

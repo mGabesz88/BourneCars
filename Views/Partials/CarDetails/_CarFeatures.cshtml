@@ -60,27 +60,27 @@
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             CO2 Emission
-                            <strong>159 g/km</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("cO2Emission")) g/km</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Vehicle tax band
-                            <strong>151-170</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("vehicleTaxBand"))</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Engin size
-                            <strong>15598 cc</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("enginSize")) cc</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
-                            Number of seats
-                            <strong>5</strong>
+                           Number of seats
+                            <strong>@Html.Raw(feature.GetPropertyValue("numberOfSeats"))</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
-                            Tyre Size:
-                            <strong>218/53 R15 ( With Stepney)</strong>
+                            Tyre Size
+                            <strong>@Html.Raw(feature.GetPropertyValue("tyreSize"))</strong>
                         </li>
                     </ul>
                 </div><!-- end col -->
@@ -93,27 +93,27 @@
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Fuel Consumption(urban)
-                            <strong>32.5 mpg</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("fuelConsumptionUrban")) mpg</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Fuel Consumption (extra urban)
-                            <strong>50.4 mpg</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("fuelConsumptionExtraUrban")) mpg</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Fuel Consumption (combined)
-                            <strong>42.2 mpg</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("fuelConsumptionCombined")) mpg</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             0-60
-                            <strong>10.8 sec</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("zeroToSixty")) sec</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Top Speed
-                            <strong>119mph</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("topSpeed")) mph</strong>
                         </li>
                     </ul>
                 </div><!-- end col -->
@@ -122,12 +122,12 @@
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Engin Power
-                            <strong>113 bhp</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("enginPower")) bhp</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Number of Valves
-                            <strong>16</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("numberOfValves"))</strong>
                         </li>
                     </ul>
                 </div><!-- end col -->
@@ -140,27 +140,27 @@
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Height
-                            <strong>1479mm</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("height")) mm</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Lenght
-                            <strong>4204mm</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("length")) mm</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Width
-                            <strong>1759mm</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("width")) mm</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Fuel tank capaity
-                            <strong>55 liters</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("fuelTankCapacity")) liters</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
                             Laugage capacity
-                            <strong>350 liters</strong>
+                            <strong>@Html.Raw(feature.GetPropertyValue("luggageCapacity")) liters</strong>
                         </li>
                     </ul>
                 </div><!-- end col -->
@@ -176,7 +176,14 @@
 <div class="row-fluid row-content clearfix">
     <div class="col-md-4 col-sm-4 col-xs-12">
         <ul class="normallist">
-            <li><i class="fa fa-check"></i> <strong>Air conditioning, climate semi- Automatic control</strong></li>
+            @*@{
+                string tags = feature.GetPropertyValue("extraFeatures");
+                foreach (var tag in tags)
+                {
+                    <li><i class="fa fa-check"></i> <strong>@tag</strong></li>
+                }
+            }*@
+            <li><i class="fa fa-check"></i> <strong></strong></li>
             <li><i class="fa fa-check"></i> <strong>heat insulated inted glass</strong></li>
             <li><i class="fa fa-check"></i> <strong>Radio CD player</strong></li>
             <li><i class="fa fa-check"></i> <strong>Electric windows, Front</strong></li>

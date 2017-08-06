@@ -1,0 +1,196 @@
+﻿ 2017-08-04 17:27:00,200 [P11028/D2/T911] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type BourneCars.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2017-08-04 17:27:10,662 [P11028/D2/T911] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:27:10,663 [P11028/D2/T911] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 17:27:10,663 [P11028/D2/T911] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Deploy.IServiceConnector
+ 2017-08-04 17:27:10,665 [P11028/D2/T911] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Deploy.IServiceConnector (took 1ms)
+ 2017-08-04 17:27:36,899 [P11028/D2/T884] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1
+ 2017-08-04 17:27:50,546 [P11028/D2/T862] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1
+ 2017-08-04 17:28:03,205 [P11028/D2/T870] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1
+ 2017-08-04 17:28:04,758 [P11028/D2/T868] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1
+ 2017-08-04 17:28:21,630 [P11028/D2/T867] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:28:35,306 [P11028/D2/T877] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:01,677 [P11028/D2/T863] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:09,342 [P11028/D2/T862] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:15,940 [P11028/D2/T883] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:24,806 [P11028/D2/T884] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:26,896 [P11028/D2/T866] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:35,364 [P11028/D2/T867] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:38,362 [P11028/D2/T872] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:56,150 [P11028/D2/T864] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:58,636 [P11028/D2/T866] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:59,369 [P11028/D2/T877] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:29:59,491 [P11028/D2/T936] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:30:02,382 [P11028/D2/T863] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:30:03,916 [P11028/D2/T872] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:30:41,391 [P11028/D2/T870] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:31:23,384 [P11028/D2/T911] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:31:29,556 [P11028/D2/T869] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:31:36,662 [P11028/D2/T911] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:31:46,843 [P11028/D2/T866] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:31:48,860 [P11028/D2/T865] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:33:28,827 [P11028/D2/T872] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type BourneCars.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2017-08-04 17:33:42,333 [P11028/D2/T868] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:33:53,143 [P11028/D2/T880] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:33:56,037 [P11028/D2/T911] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:34:07,529 [P11028/D2/T883] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:35:18,163 [P11028/D2/T936] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Admin from IP address 127.0.0.1
+ 2017-08-04 17:35:27,476 [P11028/D2/T866] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username admin from IP address 127.0.0.1
+ 2017-08-04 17:35:32,663 [P11028/D2/T936] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username admin from IP address 127.0.0.1
+ 2017-08-04 17:37:14,075 [P11028/D2/T863] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:37:21,457 [P11028/D2/T911] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:38:30,994 [P11028/D2/T880] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:38:49,322 [P11028/D2/T868] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:38:51,799 [P11028/D2/T866] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:39:33,825 [P11028/D2/T883] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:39:35,605 [P11028/D2/T875] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:39:35,990 [P11028/D2/T875] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:39:36,131 [P11028/D2/T861] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:39:36,262 [P11028/D2/T856] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:39:36,373 [P11028/D2/T936] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:39:36,495 [P11028/D2/T856] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:39:36,605 [P11028/D2/T936] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:41:24,071 [P11028/D2/T877] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:41:24,072 [P11028/D2/T877] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 17:41:24,072 [P11028/D2/T877] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.ICacheRefresher
+ 2017-08-04 17:41:24,073 [P11028/D2/T877] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.ICacheRefresher (took 1ms)
+ 2017-08-04 17:41:24,087 [P11028/D2/T877] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Pisti from IP address 127.0.0.1
+ 2017-08-04 17:41:40,136 [P11028/D2/T883] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Pisti from IP address 127.0.0.1
+ 2017-08-04 17:42:01,122 [P11028/D2/T866] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:42:11,402 [P11028/D2/T883] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:42:17,341 [P11028/D2/T936] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:42:25,284 [P11028/D2/T867] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:42:34,714 [P11028/D2/T875] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:42:36,000 [P11028/D2/T877] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:43:20,861 [P11028/D2/T911] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:43:30,572 [P11028/D2/T872] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:43:39,671 [P11028/D2/T936] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:45:58,549 [P11028/D2/T877] INFO  Umbraco.Core.MainDom - Stopping...
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2017-08-04 17:45:58,565 [P11028/D2/T877] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2017-08-04 17:45:58,565 [P11028/D2/T866] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2017-08-04 17:45:58,565 [P11028/D2/T867] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2017-08-04 17:45:58,565 [P11028/D2/T911] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2017-08-04 17:45:58,565 [P11028/D2/T858] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2017-08-04 17:45:58,565 [P11028/D2/T865] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2017-08-04 17:49:53,668 [P8968/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.6.3 application starting on LT-14-24
+ 2017-08-04 17:49:53,685 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-08-04 17:49:53,698 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 13ms)
+ 2017-08-04 17:49:53,742 [P8968/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-08-04 17:49:53,742 [P8968/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-08-04 17:49:53,745 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:49:53,862 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 117ms)
+ 2017-08-04 17:49:53,863 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2017-08-04 17:49:53,865 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 1ms)
+ 2017-08-04 17:49:53,903 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:49:53,904 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 1ms)
+ 2017-08-04 17:49:53,905 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-08-04 17:49:53,905 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2017-08-04 17:49:53,906 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:49:53,906 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 17:49:53,906 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-08-04 17:49:53,909 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 2ms)
+ 2017-08-04 17:49:53,919 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:49:53,920 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 17:49:53,920 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2017-08-04 17:49:53,921 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
+ 2017-08-04 17:49:53,922 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:49:53,922 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 17:49:53,922 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2017-08-04 17:49:53,923 [P8968/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
+ 2017-08-04 17:49:55,456 [P8968/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-08-04 17:49:55,669 [P8968/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-08-04 17:49:55,809 [P8968/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-08-04 17:49:55,992 [P8968/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-08-04 17:49:56,036 [P8968/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2462ms)
+ 2017-08-04 17:49:57,752 [P8968/D2/T14] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://bournecars.web.local:80/umbraco (UmbracoModule request)
+ 2017-08-04 17:50:01,395 [P8968/D2/T14] INFO  umbraco.content - Load Xml from file...
+ 2017-08-04 17:50:01,400 [P8968/D2/T14] INFO  umbraco.content - Loaded Xml from file.
+ 2017-08-04 17:50:02,030 [P8968/D2/T14] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:50:02,030 [P8968/D2/T14] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 17:50:02,031 [P8968/D2/T14] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-08-04 17:50:02,032 [P8968/D2/T14] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 1ms)
+ 2017-08-04 17:50:02,588 [P8968/D2/T14] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type BourneCars.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2017-08-04 17:50:03,277 [P8968/D2/T14] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:50:03,277 [P8968/D2/T14] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 17:50:03,277 [P8968/D2/T14] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Deploy.IServiceConnector
+ 2017-08-04 17:50:03,278 [P8968/D2/T14] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Deploy.IServiceConnector (took 0ms)
+ 2017-08-04 17:50:17,155 [P8968/D2/T18] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:50:17,156 [P8968/D2/T18] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 1ms)
+ 2017-08-04 17:50:17,157 [P8968/D2/T18] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IAction
+ 2017-08-04 17:50:17,158 [P8968/D2/T18] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IAction (took 1ms)
+ 2017-08-04 17:50:23,257 [P8968/D2/T15] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 17:50:23,257 [P8968/D2/T15] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 17:50:23,258 [P8968/D2/T15] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-08-04 17:50:23,258 [P8968/D2/T15] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 0ms)
+ 2017-08-04 17:50:23,489 [P8968/D2/T15] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:51:01,448 [P8968/D2/T10] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-08-03 17:51:01
+ 2017-08-04 17:52:58,960 [P8968/D2/T24] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:00,564 [P8968/D2/T31] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:09,467 [P8968/D2/T22] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:10,916 [P8968/D2/T31] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:20,897 [P8968/D2/T7] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:27,016 [P8968/D2/T18] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:32,008 [P8968/D2/T28] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:32,907 [P8968/D2/T19] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:33,520 [P8968/D2/T24] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:35,388 [P8968/D2/T29] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:35,508 [P8968/D2/T7] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 17:53:40,866 [P8968/D2/T18] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:07:52,098 [P8968/D2/T116] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:07:57,081 [P8968/D2/T126] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:08:01,686 [P8968/D2/T130] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:08:04,663 [P8968/D2/T113] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:13:10,938 [P8968/D2/T179] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:13:25,446 [P8968/D2/T162] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username gabormolnar from IP address 127.0.0.1
+ 2017-08-04 18:13:45,052 [P8968/D2/T174] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:14:05,107 [P8968/D2/T179] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:14:10,642 [P8968/D2/T186] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:16:13,938 [P8968/D2/T201] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1
+ 2017-08-04 18:16:35,939 [P8968/D2/T204] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1
+ 2017-08-04 18:16:55,128 [P8968/D2/T213] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username admin from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:17:19,947 [P8968/D2/T206] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username admin from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:20:47,324 [P8968/D2/T241] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username admin from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:24:42,510 [P8968/D2/T270] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username admin from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:24:51,348 [P8968/D2/T261] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username admin from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:24:57,117 [P8968/D2/T281] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username admin from IP address 127.0.0.1, the user is locked
+ 2017-08-04 18:41:07,981 [P8968/D2/T299] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username Gabor from IP address 127.0.0.1
+ 2017-08-04 18:41:13,259 [P8968/D2/T314] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username Gabor from IP address 127.0.0.1
+ 2017-08-04 18:41:13,259 [P8968/D2/T314] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: Gabor logged in from IP address 127.0.0.1
+ 2017-08-04 18:41:13,457 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 18:41:13,457 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 18:41:13,458 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Web.Trees.TreeAttribute]Umbraco.Web.Trees.TreeController
+ 2017-08-04 18:41:13,460 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Web.Trees.TreeAttribute]Umbraco.Web.Trees.TreeController (took 2ms)
+ 2017-08-04 18:41:13,638 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 18:41:13,638 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 18:41:13,639 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.ITree
+ 2017-08-04 18:41:13,640 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.ITree (took 1ms)
+ 2017-08-04 18:41:13,640 [P8968/D2/T283] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 18:41:13,641 [P8968/D2/T283] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 18:41:13,641 [P8968/D2/T283] INFO  Umbraco.Core.PluginManager - Resolving [umbraco.businesslogic.ApplicationAttribute]umbraco.interfaces.IApplication
+ 2017-08-04 18:41:13,642 [P8968/D2/T283] INFO  Umbraco.Core.PluginManager - Resolved [umbraco.businesslogic.ApplicationAttribute]umbraco.interfaces.IApplication (took 0ms)
+ 2017-08-04 18:41:13,667 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 18:41:13,667 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 18:41:13,668 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Web.Trees.TreeAttribute]Umbraco.Web.Trees.TreeController
+ 2017-08-04 18:41:13,669 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Web.Trees.TreeAttribute]Umbraco.Web.Trees.TreeController (took 1ms)
+ 2017-08-04 18:41:13,673 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2017-08-04 18:41:13,674 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2017-08-04 18:41:13,674 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolving [umbraco.businesslogic.TreeAttribute]umbraco.interfaces.ITree
+ 2017-08-04 18:41:13,675 [P8968/D2/T307] INFO  Umbraco.Core.PluginManager - Resolved [umbraco.businesslogic.TreeAttribute]umbraco.interfaces.ITree (took 0ms)
+ 2017-08-04 18:42:14,747 [P8968/D2/T283] INFO  Umbraco.Web.Editors.AuthenticationController - User Gabor from IP address 127.0.0.1 has logged out
+ 2017-08-04 18:42:19,891 [P8968/D2/T321] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username Gabor from IP address 127.0.0.1
+ 2017-08-04 18:42:19,891 [P8968/D2/T321] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: Gabor logged in from IP address 127.0.0.1
+ 2017-08-04 18:42:51,986 [P8968/D2/T327] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type BourneCars.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2017-08-04 18:42:54,175 [P8968/D2/T335] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type aboutUs matches a locally declared controller of type BourneCars.Controllers.AboutUsController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2017-08-04 18:43:05,733 [P8968/D2/T305] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type contactUs matches a locally declared controller of type BourneCars.Controllers.ContactUsController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2017-08-04 18:43:11,638 [P8968/D2/T335] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type search matches a locally declared controller of type BourneCars.Controllers.SearchController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2017-08-04 19:01:52,747 [P8968/D2/T513] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: Gabor, IP Address: 127.0.0.1
+ 2017-08-04 19:01:58,747 [P8968/D2/T512] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: Gabor, IP Address: 127.0.0.1

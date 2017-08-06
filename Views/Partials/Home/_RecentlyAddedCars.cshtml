@@ -1,6 +1,14 @@
-﻿<!-- ******************************************
-      RECENTLY ADDED CARS
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- ******************************************
+RECENTLY ADDED CARS
 ************************************************ -->
+
+@{
+
+    var searchNodeId = "3135";
+    var cars = Umbraco.TypedContent(searchNodeId).Children.Take(4).OrderByDescending(n => n.CreateDate);
+}
 <hr class="invis">
 <div class="row">
     <div class="col-md-12">
@@ -10,78 +18,41 @@
         </div><!-- end section-title -->
     </div><!-- end col -->
 </div><!-- end row -->
-<div class="row">
-    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn">
-        <div class="car-wrapper clearfix">
-            <div class="post-media entry">
-                <img src="http://pictures2.autotrader.co.uk/imgser-uk/servlet/media.jpg?id=ab8bacb448144d3f9a1b09a470d5e445&width=360&height=270 alt=" class="img-responsive">
-                <div class="magnifier">
-                </div><!-- end magnifier -->
-                <div class="car-price"><p>$65000</p></div>
-                <ul class="list-inline">
-                    <li class="car-km"><p><i class="fa fa-road"></i> 26000</p></li>
-                    <li class="car-oil"><p><i class="fa fa-car"></i> Diesel</p></li>
-                    <li class="car-date"><p><i class="fa fa-clock-o"></i> 2014</p></li>
-                </ul>
-            </div><!-- end post-media -->
-            <div class="car-title clearfix">
-                <h4><a href="#">Ford Fiesta Hatchback Eco Sports Car</a></h4>
-            </div><!-- end car-title -->
-        </div><!-- end clearfix -->
-    </div><!-- end col -->
-    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn">
-        <div class="car-wrapper clearfix">
-            <div class="post-media entry">
-                <img src="http://pictures2.autotrader.co.uk/imgser-uk/servlet/media.jpg?id=ab8bacb448144d3f9a1b09a470d5e445&width=360&height=270" alt="" class="img-responsive">
-                <div class="magnifier">
-                </div><!-- end magnifier -->
-                <div class="car-price"><p>$74900</p></div>
-                <ul class="list-inline">
-                    <li class="car-km"><p><i class="fa fa-road"></i> 26000</p></li>
-                    <li class="car-oil"><p><i class="fa fa-car"></i> Diesel</p></li>
-                    <li class="car-date"><p><i class="fa fa-clock-o"></i> 2014</p></li>
-                </ul>
-            </div><!-- end post-media -->
-            <div class="car-title clearfix">
-                <h4><a href="#">Hyndai Grand i10 2010 Model Cross Sport</a></h4>
-            </div><!-- end car-title -->
-        </div><!-- end clearfix -->
-    </div><!-- end col -->
-    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn">
-        <div class="car-wrapper clearfix">
-            <div class="post-media entry">
-                <img src="http://pictures2.autotrader.co.uk/imgser-uk/servlet/media.jpg?id=885e455beb774e9b9f2b8f29458265d9&width=360&height=270" alt="" class="img-responsive">
-                <div class="magnifier">
-                </div><!-- end magnifier -->
-                <div class="car-price"><p>$82000</p></div>
-                <ul class="list-inline">
-                    <li class="car-km"><p><i class="fa fa-road"></i> 26000</p></li>
-                    <li class="car-oil"><p><i class="fa fa-car"></i> Diesel</p></li>
-                    <li class="car-date"><p><i class="fa fa-clock-o"></i> 2014</p></li>
-                </ul>
-            </div><!-- end post-media -->
-            <div class="car-title clearfix">
-                <h4><a href="#">Audi A4 1.8 TFSI S-Line Upon Multitronic</a></h4>
-            </div><!-- end car-title -->
-        </div><!-- end clearfix -->
-    </div><!-- end col -->
-    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn">
-        <div class="car-wrapper clearfix">
-            <div class="post-media entry">
-                <img src="http://pictures2.autotrader.co.uk/imgser-uk/servlet/media.jpg?id=ab8bacb448144d3f9a1b09a470d5e445&width=360&height=270" alt="" class="img-responsive">
-                <div class="magnifier">
-                </div><!-- end magnifier -->
-                <div class="car-price"><p>$58900</p></div>
-                <ul class="list-inline">
-                    <li class="car-km"><p><i class="fa fa-road"></i> 26000</p></li>
-                    <li class="car-oil"><p><i class="fa fa-car"></i> Diesel</p></li>
-                    <li class="car-date"><p><i class="fa fa-clock-o"></i> 2014</p></li>
-                </ul>
-            </div><!-- end post-media -->
-            <div class="car-title clearfix">
-                <h4><a href="#">Caterham 7 Superlight R300 2009 Model</a></h4>
-            </div><!-- end car-title -->
-        </div><!-- end clearfix -->
-    </div><!-- end col -->
-</div><!-- end row -->
+@{
+    foreach (var car in cars)
+    { 
+        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn">
+            <div class="car-wrapper clearfix">
+                <div class="post-media entry">
+                    @{
+                        var image = car.GetPropertyValue<IPublishedContent>("podImage");
+                    }
+                    <a href="@car.Url"><img src="@image.Url" alt="@image.Name" class="img-responsive">
+                    <div class="magnifier">
+                    </div></a><!-- end magnifier -->
+                    <div class="car-price">
+                        <p>£@Html.Raw(car.GetPropertyValue("price"))</p>
+                    </div>
+                    <ul class="list-inline">
+                        <li class="car-km">
+                            <p><i class="fa fa-road"></i> @Html.Raw(car.GetPropertyValue("milage"))
+                            </p></li>
+                        <li class="car-oil">
+                            <p><i class="fa fa-car"></i> @Html.Raw(car.GetPropertyValue("fuel"))
+                            </p></li>
+                        <li class="car-date">
+                            <p><i class="fa fa-clock-o"></i> @Html.Raw(car.GetPropertyValue<DateTime>("registrationYear").ToString("yyyy"))
+                            </p></li>
+                    </ul>
+                </div><!-- end post-media -->
+                <div class="car-title clearfix">
+                    <h4><a href="@car.Url">@Html.Raw(car.GetPropertyValue("model"))</a></h4>
+                </div><!-- end car-title -->
+            </div><!-- end clearfix -->
+        </div><!-- end col -->
+    }
+}
+
+
+
 

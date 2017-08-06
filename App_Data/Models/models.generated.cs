@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2bf63b07778455be")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "86415f4db6445b88")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -860,6 +860,51 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// CO2 Emission
+		///</summary>
+		[ImplementPropertyType("cO2Emission")]
+		public int CO2Emission
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetCO2Emission(this); }
+		}
+
+		///<summary>
+		/// Engin Power
+		///</summary>
+		[ImplementPropertyType("enginPower")]
+		public int EnginPower
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetEnginPower(this); }
+		}
+
+		///<summary>
+		/// Engin size
+		///</summary>
+		[ImplementPropertyType("enginSize")]
+		public int EnginSize
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetEnginSize(this); }
+		}
+
+		///<summary>
+		/// Extra features
+		///</summary>
+		[ImplementPropertyType("extraFeatures")]
+		public IEnumerable<string> ExtraFeatures
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetExtraFeatures(this); }
+		}
+
+		///<summary>
+		/// Featured
+		///</summary>
+		[ImplementPropertyType("featured")]
+		public bool Featured
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetFeatured(this); }
+		}
+
+		///<summary>
 		/// Fuel
 		///</summary>
 		[ImplementPropertyType("fuel")]
@@ -869,12 +914,75 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Fuel Consumption (combined)
+		///</summary>
+		[ImplementPropertyType("fuelConsumptionCombined")]
+		public int FuelConsumptionCombined
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetFuelConsumptionCombined(this); }
+		}
+
+		///<summary>
+		/// Fuel Consumption (extra urban)
+		///</summary>
+		[ImplementPropertyType("fuelConsumptionExtraUrban")]
+		public int FuelConsumptionExtraUrban
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetFuelConsumptionExtraUrban(this); }
+		}
+
+		///<summary>
+		/// Fuel Consumption(urban)
+		///</summary>
+		[ImplementPropertyType("fuelConsumptionUrban")]
+		public int FuelConsumptionUrban
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetFuelConsumptionUrban(this); }
+		}
+
+		///<summary>
+		/// Fuel tank capacity
+		///</summary>
+		[ImplementPropertyType("fuelTankCapacity")]
+		public int FuelTankCapacity
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetFuelTankCapacity(this); }
+		}
+
+		///<summary>
+		/// Height
+		///</summary>
+		[ImplementPropertyType("height")]
+		public int Height
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetHeight(this); }
+		}
+
+		///<summary>
 		/// Last serviced
 		///</summary>
 		[ImplementPropertyType("lastServiced")]
 		public string LastServiced
 		{
 			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetLastServiced(this); }
+		}
+
+		///<summary>
+		/// Length
+		///</summary>
+		[ImplementPropertyType("length")]
+		public int Length
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetLength(this); }
+		}
+
+		///<summary>
+		/// Luggage capacity
+		///</summary>
+		[ImplementPropertyType("luggageCapacity")]
+		public int LuggageCapacity
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetLuggageCapacity(this); }
 		}
 
 		///<summary>
@@ -905,12 +1013,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Number of seats
+		///</summary>
+		[ImplementPropertyType("numberOfSeats")]
+		public int NumberOfSeats
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetNumberOfSeats(this); }
+		}
+
+		///<summary>
+		/// Number of Valves
+		///</summary>
+		[ImplementPropertyType("numberOfValves")]
+		public int NumberOfValves
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetNumberOfValves(this); }
+		}
+
+		///<summary>
 		/// Owner
 		///</summary>
 		[ImplementPropertyType("owner")]
 		public string Owner
 		{
 			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetOwner(this); }
+		}
+
+		///<summary>
+		/// Pod Image
+		///</summary>
+		[ImplementPropertyType("podImage")]
+		public IPublishedContent PodImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetPodImage(this); }
 		}
 
 		///<summary>
@@ -941,12 +1076,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Top Speed
+		///</summary>
+		[ImplementPropertyType("topSpeed")]
+		public int TopSpeed
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetTopSpeed(this); }
+		}
+
+		///<summary>
 		/// Transmission
 		///</summary>
 		[ImplementPropertyType("transmission")]
 		public string Transmission
 		{
 			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetTransmission(this); }
+		}
+
+		///<summary>
+		/// Tyre Size
+		///</summary>
+		[ImplementPropertyType("tyreSize")]
+		public string TyreSize
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetTyreSize(this); }
 		}
 
 		///<summary>
@@ -959,6 +1112,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Vehicle tax band
+		///</summary>
+		[ImplementPropertyType("vehicleTaxBand")]
+		public string VehicleTaxBand
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetVehicleTaxBand(this); }
+		}
+
+		///<summary>
 		/// Warranty
 		///</summary>
 		[ImplementPropertyType("warranty")]
@@ -966,17 +1128,71 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetWarranty(this); }
 		}
+
+		///<summary>
+		/// Width
+		///</summary>
+		[ImplementPropertyType("width")]
+		public int Width
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetWidth(this); }
+		}
+
+		///<summary>
+		/// 0-60
+		///</summary>
+		[ImplementPropertyType("zeroToSixty")]
+		public int ZeroToSixty
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetZeroToSixty(this); }
+		}
 	}
 
 	// Mixin content Type 4133 with alias "carFeatures"
 	/// <summary>Car Features</summary>
 	public partial interface ICarFeatures : IPublishedContent
 	{
+		/// <summary>CO2 Emission</summary>
+		int CO2Emission { get; }
+
+		/// <summary>Engin Power</summary>
+		int EnginPower { get; }
+
+		/// <summary>Engin size</summary>
+		int EnginSize { get; }
+
+		/// <summary>Extra features</summary>
+		IEnumerable<string> ExtraFeatures { get; }
+
+		/// <summary>Featured</summary>
+		bool Featured { get; }
+
 		/// <summary>Fuel</summary>
 		string Fuel { get; }
 
+		/// <summary>Fuel Consumption (combined)</summary>
+		int FuelConsumptionCombined { get; }
+
+		/// <summary>Fuel Consumption (extra urban)</summary>
+		int FuelConsumptionExtraUrban { get; }
+
+		/// <summary>Fuel Consumption(urban)</summary>
+		int FuelConsumptionUrban { get; }
+
+		/// <summary>Fuel tank capacity</summary>
+		int FuelTankCapacity { get; }
+
+		/// <summary>Height</summary>
+		int Height { get; }
+
 		/// <summary>Last serviced</summary>
 		string LastServiced { get; }
+
+		/// <summary>Length</summary>
+		int Length { get; }
+
+		/// <summary>Luggage capacity</summary>
+		int LuggageCapacity { get; }
 
 		/// <summary>Milage</summary>
 		int Milage { get; }
@@ -987,8 +1203,17 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>MOT</summary>
 		DateTime Mot { get; }
 
+		/// <summary>Number of seats</summary>
+		int NumberOfSeats { get; }
+
+		/// <summary>Number of Valves</summary>
+		int NumberOfValves { get; }
+
 		/// <summary>Owner</summary>
 		string Owner { get; }
+
+		/// <summary>Pod Image</summary>
+		IPublishedContent PodImage { get; }
 
 		/// <summary>Price</summary>
 		int Price { get; }
@@ -999,14 +1224,29 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>Service History</summary>
 		string ServiceHistory { get; }
 
+		/// <summary>Top Speed</summary>
+		int TopSpeed { get; }
+
 		/// <summary>Transmission</summary>
 		string Transmission { get; }
+
+		/// <summary>Tyre Size</summary>
+		string TyreSize { get; }
 
 		/// <summary>Vehicle description</summary>
 		string VehicleDescription { get; }
 
+		/// <summary>Vehicle tax band</summary>
+		string VehicleTaxBand { get; }
+
 		/// <summary>Warranty</summary>
 		string Warranty { get; }
+
+		/// <summary>Width</summary>
+		int Width { get; }
+
+		/// <summary>0-60</summary>
+		int ZeroToSixty { get; }
 	}
 
 	/// <summary>Car Features</summary>
@@ -1035,6 +1275,66 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// CO2 Emission
+		///</summary>
+		[ImplementPropertyType("cO2Emission")]
+		public int CO2Emission
+		{
+			get { return GetCO2Emission(this); }
+		}
+
+		/// <summary>Static getter for CO2 Emission</summary>
+		public static int GetCO2Emission(ICarFeatures that) { return that.GetPropertyValue<int>("cO2Emission"); }
+
+		///<summary>
+		/// Engin Power
+		///</summary>
+		[ImplementPropertyType("enginPower")]
+		public int EnginPower
+		{
+			get { return GetEnginPower(this); }
+		}
+
+		/// <summary>Static getter for Engin Power</summary>
+		public static int GetEnginPower(ICarFeatures that) { return that.GetPropertyValue<int>("enginPower"); }
+
+		///<summary>
+		/// Engin size
+		///</summary>
+		[ImplementPropertyType("enginSize")]
+		public int EnginSize
+		{
+			get { return GetEnginSize(this); }
+		}
+
+		/// <summary>Static getter for Engin size</summary>
+		public static int GetEnginSize(ICarFeatures that) { return that.GetPropertyValue<int>("enginSize"); }
+
+		///<summary>
+		/// Extra features
+		///</summary>
+		[ImplementPropertyType("extraFeatures")]
+		public IEnumerable<string> ExtraFeatures
+		{
+			get { return GetExtraFeatures(this); }
+		}
+
+		/// <summary>Static getter for Extra features</summary>
+		public static IEnumerable<string> GetExtraFeatures(ICarFeatures that) { return that.GetPropertyValue<IEnumerable<string>>("extraFeatures"); }
+
+		///<summary>
+		/// Featured
+		///</summary>
+		[ImplementPropertyType("featured")]
+		public bool Featured
+		{
+			get { return GetFeatured(this); }
+		}
+
+		/// <summary>Static getter for Featured</summary>
+		public static bool GetFeatured(ICarFeatures that) { return that.GetPropertyValue<bool>("featured"); }
+
+		///<summary>
 		/// Fuel
 		///</summary>
 		[ImplementPropertyType("fuel")]
@@ -1047,6 +1347,66 @@ namespace Umbraco.Web.PublishedContentModels
 		public static string GetFuel(ICarFeatures that) { return that.GetPropertyValue<string>("fuel"); }
 
 		///<summary>
+		/// Fuel Consumption (combined)
+		///</summary>
+		[ImplementPropertyType("fuelConsumptionCombined")]
+		public int FuelConsumptionCombined
+		{
+			get { return GetFuelConsumptionCombined(this); }
+		}
+
+		/// <summary>Static getter for Fuel Consumption (combined)</summary>
+		public static int GetFuelConsumptionCombined(ICarFeatures that) { return that.GetPropertyValue<int>("fuelConsumptionCombined"); }
+
+		///<summary>
+		/// Fuel Consumption (extra urban)
+		///</summary>
+		[ImplementPropertyType("fuelConsumptionExtraUrban")]
+		public int FuelConsumptionExtraUrban
+		{
+			get { return GetFuelConsumptionExtraUrban(this); }
+		}
+
+		/// <summary>Static getter for Fuel Consumption (extra urban)</summary>
+		public static int GetFuelConsumptionExtraUrban(ICarFeatures that) { return that.GetPropertyValue<int>("fuelConsumptionExtraUrban"); }
+
+		///<summary>
+		/// Fuel Consumption(urban)
+		///</summary>
+		[ImplementPropertyType("fuelConsumptionUrban")]
+		public int FuelConsumptionUrban
+		{
+			get { return GetFuelConsumptionUrban(this); }
+		}
+
+		/// <summary>Static getter for Fuel Consumption(urban)</summary>
+		public static int GetFuelConsumptionUrban(ICarFeatures that) { return that.GetPropertyValue<int>("fuelConsumptionUrban"); }
+
+		///<summary>
+		/// Fuel tank capacity
+		///</summary>
+		[ImplementPropertyType("fuelTankCapacity")]
+		public int FuelTankCapacity
+		{
+			get { return GetFuelTankCapacity(this); }
+		}
+
+		/// <summary>Static getter for Fuel tank capacity</summary>
+		public static int GetFuelTankCapacity(ICarFeatures that) { return that.GetPropertyValue<int>("fuelTankCapacity"); }
+
+		///<summary>
+		/// Height
+		///</summary>
+		[ImplementPropertyType("height")]
+		public int Height
+		{
+			get { return GetHeight(this); }
+		}
+
+		/// <summary>Static getter for Height</summary>
+		public static int GetHeight(ICarFeatures that) { return that.GetPropertyValue<int>("height"); }
+
+		///<summary>
 		/// Last serviced
 		///</summary>
 		[ImplementPropertyType("lastServiced")]
@@ -1057,6 +1417,30 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Last serviced</summary>
 		public static string GetLastServiced(ICarFeatures that) { return that.GetPropertyValue<string>("lastServiced"); }
+
+		///<summary>
+		/// Length
+		///</summary>
+		[ImplementPropertyType("length")]
+		public int Length
+		{
+			get { return GetLength(this); }
+		}
+
+		/// <summary>Static getter for Length</summary>
+		public static int GetLength(ICarFeatures that) { return that.GetPropertyValue<int>("length"); }
+
+		///<summary>
+		/// Luggage capacity
+		///</summary>
+		[ImplementPropertyType("luggageCapacity")]
+		public int LuggageCapacity
+		{
+			get { return GetLuggageCapacity(this); }
+		}
+
+		/// <summary>Static getter for Luggage capacity</summary>
+		public static int GetLuggageCapacity(ICarFeatures that) { return that.GetPropertyValue<int>("luggageCapacity"); }
 
 		///<summary>
 		/// Milage
@@ -1095,6 +1479,30 @@ namespace Umbraco.Web.PublishedContentModels
 		public static DateTime GetMot(ICarFeatures that) { return that.GetPropertyValue<DateTime>("mot"); }
 
 		///<summary>
+		/// Number of seats
+		///</summary>
+		[ImplementPropertyType("numberOfSeats")]
+		public int NumberOfSeats
+		{
+			get { return GetNumberOfSeats(this); }
+		}
+
+		/// <summary>Static getter for Number of seats</summary>
+		public static int GetNumberOfSeats(ICarFeatures that) { return that.GetPropertyValue<int>("numberOfSeats"); }
+
+		///<summary>
+		/// Number of Valves
+		///</summary>
+		[ImplementPropertyType("numberOfValves")]
+		public int NumberOfValves
+		{
+			get { return GetNumberOfValves(this); }
+		}
+
+		/// <summary>Static getter for Number of Valves</summary>
+		public static int GetNumberOfValves(ICarFeatures that) { return that.GetPropertyValue<int>("numberOfValves"); }
+
+		///<summary>
 		/// Owner
 		///</summary>
 		[ImplementPropertyType("owner")]
@@ -1105,6 +1513,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Owner</summary>
 		public static string GetOwner(ICarFeatures that) { return that.GetPropertyValue<string>("owner"); }
+
+		///<summary>
+		/// Pod Image
+		///</summary>
+		[ImplementPropertyType("podImage")]
+		public IPublishedContent PodImage
+		{
+			get { return GetPodImage(this); }
+		}
+
+		/// <summary>Static getter for Pod Image</summary>
+		public static IPublishedContent GetPodImage(ICarFeatures that) { return that.GetPropertyValue<IPublishedContent>("podImage"); }
 
 		///<summary>
 		/// Price
@@ -1143,6 +1563,18 @@ namespace Umbraco.Web.PublishedContentModels
 		public static string GetServiceHistory(ICarFeatures that) { return that.GetPropertyValue<string>("serviceHistory"); }
 
 		///<summary>
+		/// Top Speed
+		///</summary>
+		[ImplementPropertyType("topSpeed")]
+		public int TopSpeed
+		{
+			get { return GetTopSpeed(this); }
+		}
+
+		/// <summary>Static getter for Top Speed</summary>
+		public static int GetTopSpeed(ICarFeatures that) { return that.GetPropertyValue<int>("topSpeed"); }
+
+		///<summary>
 		/// Transmission
 		///</summary>
 		[ImplementPropertyType("transmission")]
@@ -1153,6 +1585,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Transmission</summary>
 		public static string GetTransmission(ICarFeatures that) { return that.GetPropertyValue<string>("transmission"); }
+
+		///<summary>
+		/// Tyre Size
+		///</summary>
+		[ImplementPropertyType("tyreSize")]
+		public string TyreSize
+		{
+			get { return GetTyreSize(this); }
+		}
+
+		/// <summary>Static getter for Tyre Size</summary>
+		public static string GetTyreSize(ICarFeatures that) { return that.GetPropertyValue<string>("tyreSize"); }
 
 		///<summary>
 		/// Vehicle description: Please provide a short description of the car
@@ -1167,6 +1611,18 @@ namespace Umbraco.Web.PublishedContentModels
 		public static string GetVehicleDescription(ICarFeatures that) { return that.GetPropertyValue<string>("vehicleDescription"); }
 
 		///<summary>
+		/// Vehicle tax band
+		///</summary>
+		[ImplementPropertyType("vehicleTaxBand")]
+		public string VehicleTaxBand
+		{
+			get { return GetVehicleTaxBand(this); }
+		}
+
+		/// <summary>Static getter for Vehicle tax band</summary>
+		public static string GetVehicleTaxBand(ICarFeatures that) { return that.GetPropertyValue<string>("vehicleTaxBand"); }
+
+		///<summary>
 		/// Warranty
 		///</summary>
 		[ImplementPropertyType("warranty")]
@@ -1177,6 +1633,30 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Warranty</summary>
 		public static string GetWarranty(ICarFeatures that) { return that.GetPropertyValue<string>("warranty"); }
+
+		///<summary>
+		/// Width
+		///</summary>
+		[ImplementPropertyType("width")]
+		public int Width
+		{
+			get { return GetWidth(this); }
+		}
+
+		/// <summary>Static getter for Width</summary>
+		public static int GetWidth(ICarFeatures that) { return that.GetPropertyValue<int>("width"); }
+
+		///<summary>
+		/// 0-60
+		///</summary>
+		[ImplementPropertyType("zeroToSixty")]
+		public int ZeroToSixty
+		{
+			get { return GetZeroToSixty(this); }
+		}
+
+		/// <summary>Static getter for 0-60</summary>
+		public static int GetZeroToSixty(ICarFeatures that) { return that.GetPropertyValue<int>("zeroToSixty"); }
 	}
 
 	/// <summary>Folder</summary>
