@@ -3872,7 +3872,7 @@ hr.custom::after {
 }
 
 .normallist li {
-    display: block;
+    display: inline;
     color: #1e2126;
     position: relative;
     margin-bottom: 15px;
