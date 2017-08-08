@@ -605,6 +605,7 @@
     <Content Include="Views\Partials\CarDetails\_CarCarousel.cshtml" />
     <Content Include="Views\Partials\CarDetails\_CarDescription.cshtml" />
     <Content Include="Views\Partials\CarDetails\_CarFeatures.cshtml" />
+    <Content Include="Views\Partials\CarDetails\_CarDetailsEnquireform.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

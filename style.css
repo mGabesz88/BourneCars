@@ -4784,3 +4784,7 @@ a img.aligncenter {
 .whitetext{
     background-color: #f1f1f1;
 }
+
+.validation-summary-errors {
+    color: red;
+}

@@ -1,7 +1,9 @@
-﻿
+﻿@using System.Web.UI.WebControls
+@inherits UmbracoViewPage<BourneCars.Models.ContactUsModel>
     
-@using (Html.BeginUmbracoForm<BourneCars.Models.ContactUsModel>("SubmitForm"))
+@using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="col-md-8 col-sm-8 col-xs-12">
         <div class="section-title clearfix">
             <h5>Send Message Us</h5>
@@ -10,37 +12,29 @@
 
         <div class="search-tab lightversion clearfix">
             <div class="search-wrapper">
-                <form class="row">
+                <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         @Html.ValidationSummary()
                     </div><!-- end col -->
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <input type="text" class="form-control" placeholder="Your Name *">
-                        @Html.TextBoxFor(m => m.Name, new { PlaceHolder = Html.DisplayNameFor(n => n.Name) })
+                        @Html.TextBoxFor(m => m.Name, null, new { id = "NameTextBox", @class = "form-control", PlaceHolder = "Your Name *" })
                     </div><!-- end col -->
-
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <input type="email" class="form-control" placeholder="Your Email *">
-                        @Html.TextBoxFor(m => m.EmailAddress, new { PlaceHolder = Html.DisplayNameFor(n => n.EmailAddress)})
+                        @Html.TextBoxFor(m => m.EmailAddress, null, new { id = "Your Email", @class = "form-control", PlaceHolder = "Your Email  *" })
                     </div><!-- end col -->
-
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <input type="text" class="form-control" placeholder="Phone Number *">
-                        @Html.TextBoxFor(m => m.PhoneNumber, new { PlaceHolder = Html.DisplayNameFor(n => n.PhoneNumber) })
+                        @Html.TextBoxFor(m => m.PhoneNumber, null, new { id = "Your Phone number", @class = "form-control", PlaceHolder = "Your Phone number  *" })
                     </div><!-- end col -->
-
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <textarea class="form-control" placeholder="Your Message"></textarea>
-                        @Html.TextBoxFor(m => m.Message, new { PlaceHolder = Html.DisplayNameFor(n => n.Message) })
+                        @Html.TextAreaFor(m => m.Message, new { id = "Your Message", @class = "form-control", PlaceHolder = "Your message *", cols = "20", rows = "25" })
                     </div><!-- end col -->
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <button class="btn btn-primary btn-block">SUBMIT NOW</button>
                     </div><!-- end col -->
-                </form>
+                </div>
             </div>
         </div>
     </div><!-- end col -->
-
 
 }

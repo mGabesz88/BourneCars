@@ -21,5 +21,10 @@ namespace BourneCars.Controllers
         {
             return PartialView(CarDetailsPartialViewFolder + "/_CarFeatures.cshtml");
         }
+
+        public ActionResult RenderCarDetailsForm()
+        {
+            return PartialView(CarDetailsPartialViewFolder + "/_CarDetailsEnquireform.cshtml");
+        }
     }
 }
