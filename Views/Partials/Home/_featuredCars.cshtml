@@ -7,7 +7,7 @@ RECENTLY ADDED CARS
 @{
 
     var searchNodeId = "3135";
-    var cars = Umbraco.TypedContent(searchNodeId).Children;
+    var cars = Umbraco.TypedContent(searchNodeId).Children.OrderByDescending(n => n.CreateDate).Where(n => (bool)n.GetPropertyValue("featured") == true).Take(4);
 }
 <hr class="invis">
 <div class="row">
@@ -21,9 +21,6 @@ RECENTLY ADDED CARS
 @{
     foreach (var car in cars)
     {
-        bool isFeatured = (bool)car.GetPropertyValue("featured");
-        if (isFeatured)
-        {
             <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn">
                 <div class="car-wrapper clearfix">
                     <div class="post-media entry">
@@ -57,11 +54,10 @@ RECENTLY ADDED CARS
                         </ul>
                     </div><!-- end post-media -->
                     <div class="car-title clearfix">
-                        <h4><a href="@car.Url">@Html.Raw(car.GetPropertyValue("model"))</a></h4>
+                        <h4><a href="@car.Url">@Html.Raw(car.GetPropertyValue("titleOfthePage"))</a></h4>
                     </div><!-- end car-title -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->
-        }
     }
 }
 

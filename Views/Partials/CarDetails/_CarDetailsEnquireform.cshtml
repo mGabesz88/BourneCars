@@ -22,6 +22,7 @@
                         </div><!-- end col -->
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             @Html.TextBoxFor(m => m.Name, null, new { id = "NameTextBox", @class = "form-control", PlaceHolder = "Your Name *" })
+                            @Html.TextBoxFor(m => m.HiddenField, null, new { id = "hiddenField", @class = "hidden" })
                         </div><!-- end col -->
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             @Html.TextBoxFor(m => m.EmailAddress, null, new { id = "Your Email", @class = "form-control", PlaceHolder = "Your Email  *" })
@@ -43,3 +44,4 @@
     </div>
     <!-- end col -->
 }
+

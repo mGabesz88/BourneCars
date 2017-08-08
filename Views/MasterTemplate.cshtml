@@ -57,8 +57,7 @@
             }
 
         }
-       
-        @{ Html.RenderAction("RenderPageTitle", "SiteLayout");} 
+   
         @{if (Umbraco.AssignedContentItem.DocumentTypeAlias == "home")
                 { Html.RenderAction("RenderSlider", "Home");}
         }

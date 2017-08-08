@@ -31,3 +31,7 @@
 	width: 80px;
 	color: #666699;
 	}
+
+.hidden {
+    display: none;
+}

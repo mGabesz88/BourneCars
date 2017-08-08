@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "86415f4db6445b88")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "3863b41709b21177")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -876,12 +876,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Body Type
+		///</summary>
+		[ImplementPropertyType("bodyType")]
+		public string BodyType
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetBodyType(this); }
+		}
+
+		///<summary>
 		/// CO2 Emission
 		///</summary>
 		[ImplementPropertyType("cO2Emission")]
 		public int CO2Emission
 		{
 			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetCO2Emission(this); }
+		}
+
+		///<summary>
+		/// Make
+		///</summary>
+		[ImplementPropertyType("companyMake")]
+		public string CompanyMake
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetCompanyMake(this); }
 		}
 
 		///<summary>
@@ -975,7 +993,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Last serviced
+		/// Last serviced: Milage when the car was serviced
 		///</summary>
 		[ImplementPropertyType("lastServiced")]
 		public string LastServiced
@@ -1011,15 +1029,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Model
-		///</summary>
-		[ImplementPropertyType("model")]
-		public string Model
-		{
-			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetModel(this); }
-		}
-
-		///<summary>
 		/// MOT
 		///</summary>
 		[ImplementPropertyType("mot")]
@@ -1044,15 +1053,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public int NumberOfValves
 		{
 			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetNumberOfValves(this); }
-		}
-
-		///<summary>
-		/// Owner
-		///</summary>
-		[ImplementPropertyType("owner")]
-		public string Owner
-		{
-			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetOwner(this); }
 		}
 
 		///<summary>
@@ -1089,6 +1089,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ServiceHistory
 		{
 			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetServiceHistory(this); }
+		}
+
+		///<summary>
+		/// Page title: This will be the title of the page
+		///</summary>
+		[ImplementPropertyType("titleOfthePage")]
+		public string TitleOfthePage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetTitleOfthePage(this); }
 		}
 
 		///<summary>
@@ -1137,15 +1146,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Warranty
-		///</summary>
-		[ImplementPropertyType("warranty")]
-		public string Warranty
-		{
-			get { return Umbraco.Web.PublishedContentModels.CarFeatures.GetWarranty(this); }
-		}
-
-		///<summary>
 		/// Width
 		///</summary>
 		[ImplementPropertyType("width")]
@@ -1168,8 +1168,14 @@ namespace Umbraco.Web.PublishedContentModels
 	/// <summary>Car Features</summary>
 	public partial interface ICarFeatures : IPublishedContent
 	{
+		/// <summary>Body Type</summary>
+		string BodyType { get; }
+
 		/// <summary>CO2 Emission</summary>
 		int CO2Emission { get; }
+
+		/// <summary>Make</summary>
+		string CompanyMake { get; }
 
 		/// <summary>Engin Power</summary>
 		int EnginPower { get; }
@@ -1213,9 +1219,6 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>Milage</summary>
 		int Milage { get; }
 
-		/// <summary>Model</summary>
-		string Model { get; }
-
 		/// <summary>MOT</summary>
 		DateTime Mot { get; }
 
@@ -1224,9 +1227,6 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Number of Valves</summary>
 		int NumberOfValves { get; }
-
-		/// <summary>Owner</summary>
-		string Owner { get; }
 
 		/// <summary>Pod Image</summary>
 		IPublishedContent PodImage { get; }
@@ -1239,6 +1239,9 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Service History</summary>
 		string ServiceHistory { get; }
+
+		/// <summary>Page title</summary>
+		string TitleOfthePage { get; }
 
 		/// <summary>Top Speed</summary>
 		int TopSpeed { get; }
@@ -1254,9 +1257,6 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Vehicle tax band</summary>
 		string VehicleTaxBand { get; }
-
-		/// <summary>Warranty</summary>
-		string Warranty { get; }
 
 		/// <summary>Width</summary>
 		int Width { get; }
@@ -1291,6 +1291,18 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Body Type
+		///</summary>
+		[ImplementPropertyType("bodyType")]
+		public string BodyType
+		{
+			get { return GetBodyType(this); }
+		}
+
+		/// <summary>Static getter for Body Type</summary>
+		public static string GetBodyType(ICarFeatures that) { return that.GetPropertyValue<string>("bodyType"); }
+
+		///<summary>
 		/// CO2 Emission
 		///</summary>
 		[ImplementPropertyType("cO2Emission")]
@@ -1301,6 +1313,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for CO2 Emission</summary>
 		public static int GetCO2Emission(ICarFeatures that) { return that.GetPropertyValue<int>("cO2Emission"); }
+
+		///<summary>
+		/// Make
+		///</summary>
+		[ImplementPropertyType("companyMake")]
+		public string CompanyMake
+		{
+			get { return GetCompanyMake(this); }
+		}
+
+		/// <summary>Static getter for Make</summary>
+		public static string GetCompanyMake(ICarFeatures that) { return that.GetPropertyValue<string>("companyMake"); }
 
 		///<summary>
 		/// Engin Power
@@ -1423,7 +1447,7 @@ namespace Umbraco.Web.PublishedContentModels
 		public static int GetHeight(ICarFeatures that) { return that.GetPropertyValue<int>("height"); }
 
 		///<summary>
-		/// Last serviced
+		/// Last serviced: Milage when the car was serviced
 		///</summary>
 		[ImplementPropertyType("lastServiced")]
 		public string LastServiced
@@ -1471,18 +1495,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public static int GetMilage(ICarFeatures that) { return that.GetPropertyValue<int>("milage"); }
 
 		///<summary>
-		/// Model
-		///</summary>
-		[ImplementPropertyType("model")]
-		public string Model
-		{
-			get { return GetModel(this); }
-		}
-
-		/// <summary>Static getter for Model</summary>
-		public static string GetModel(ICarFeatures that) { return that.GetPropertyValue<string>("model"); }
-
-		///<summary>
 		/// MOT
 		///</summary>
 		[ImplementPropertyType("mot")]
@@ -1517,18 +1529,6 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Number of Valves</summary>
 		public static int GetNumberOfValves(ICarFeatures that) { return that.GetPropertyValue<int>("numberOfValves"); }
-
-		///<summary>
-		/// Owner
-		///</summary>
-		[ImplementPropertyType("owner")]
-		public string Owner
-		{
-			get { return GetOwner(this); }
-		}
-
-		/// <summary>Static getter for Owner</summary>
-		public static string GetOwner(ICarFeatures that) { return that.GetPropertyValue<string>("owner"); }
 
 		///<summary>
 		/// Pod Image
@@ -1577,6 +1577,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Service History</summary>
 		public static string GetServiceHistory(ICarFeatures that) { return that.GetPropertyValue<string>("serviceHistory"); }
+
+		///<summary>
+		/// Page title: This will be the title of the page
+		///</summary>
+		[ImplementPropertyType("titleOfthePage")]
+		public string TitleOfthePage
+		{
+			get { return GetTitleOfthePage(this); }
+		}
+
+		/// <summary>Static getter for Page title</summary>
+		public static string GetTitleOfthePage(ICarFeatures that) { return that.GetPropertyValue<string>("titleOfthePage"); }
 
 		///<summary>
 		/// Top Speed
@@ -1637,18 +1649,6 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Vehicle tax band</summary>
 		public static string GetVehicleTaxBand(ICarFeatures that) { return that.GetPropertyValue<string>("vehicleTaxBand"); }
-
-		///<summary>
-		/// Warranty
-		///</summary>
-		[ImplementPropertyType("warranty")]
-		public string Warranty
-		{
-			get { return GetWarranty(this); }
-		}
-
-		/// <summary>Static getter for Warranty</summary>
-		public static string GetWarranty(ICarFeatures that) { return that.GetPropertyValue<string>("warranty"); }
 
 		///<summary>
 		/// Width

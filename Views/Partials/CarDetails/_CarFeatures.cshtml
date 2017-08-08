@@ -17,26 +17,26 @@
             <tr>
                 <td>Milage</td>
                 <td><strong>@Html.Raw(feature.GetPropertyValue("milage"))</strong></td>
-                <td>Owner</td>
-                <td><strong>@Html.Raw(feature.GetPropertyValue("owner"))</strong></td>
+                <td>Engine size</td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("enginSize")) cc</strong></td>
             </tr>
             <tr>
+                <td>Service Hitory</td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("serviceHistory"))</strong></td>
                 <td>Transmission</td>
                 <td><strong>@Html.Raw(feature.GetPropertyValue("transmission"))</strong></td>
+            </tr>
+            <tr>
+                <td>Last serviced</td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("lastServiced")) miles</strong></td>
                 <td>Fuel</td>
                 <td><strong>Petrol</strong></td>
             </tr>
             <tr>
                 <td>MOT</td>
                 <td><strong>@Html.Raw(feature.GetPropertyValue<DateTime>("mot").ToString("dd-MM-yyyy"))</strong></td>
-                <td>Last serviced</td>
-                <td><strong>@Html.Raw(feature.GetPropertyValue("lastServiced")) miles</strong></td>
-            </tr>
-            <tr>
-                <td>Service Hitory</td>
-                <td><strong>@Html.Raw(feature.GetPropertyValue("serviceHistory"))</strong></td>
-                <td>Warranty</td>
-                <td><strong>@Html.Raw(feature.GetPropertyValue("warranty"))</strong></td>
+                <td>Fuel consumption</td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("fuelConsumptionCombined"))</strong></td>
             </tr>
         </tbody>
     </table>
@@ -74,13 +74,13 @@
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
-                           Number of seats
-                            <strong>@Html.Raw(feature.GetPropertyValue("numberOfSeats"))</strong>
+                           Gearbox
+                            <strong>@Html.Raw(feature.GetPropertyValue("transmission"))</strong>
                         </li>
                         <li>
                             <i class="fa fa-angle-double-right alignleft"></i>
-                            Tyre Size
-                            <strong>@Html.Raw(feature.GetPropertyValue("tyreSize"))</strong>
+                            Body Style 
+                            <strong>@Html.Raw(feature.GetPropertyValue("bodyType"))</strong>
                         </li>
                     </ul>
                 </div><!-- end col -->

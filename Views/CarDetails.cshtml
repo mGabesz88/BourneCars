@@ -2,14 +2,20 @@
 @{
 	Layout = "MasterTemplate.cshtml";
 }
+
+@{
+    var currentPageId = UmbracoContext.Current.PageId;
+    var feature = Umbraco.TypedContent(currentPageId);
+
+}
 <div class="section">
 <div class="container">
     <div class="row">
         <div class="col-md-9 col-sm-12">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-title clearfix">
-                        <h5>Audi A8 3.0 TDI S12 Quattro Tiptronic</h5>
+                    <div class="section-title clearfix">                        
+                        <h5 id="carTitle">@feature.GetPropertyValue("titleOfthePage")</h5>
                         <hr class="custom">
                     </div><!-- end section-title -->
                 </div>
@@ -38,28 +44,34 @@
 {
     <script type="text/javascript">
         (function($) {
-        "use strict";
-        $('#myCarousel').carousel({
-            interval: 4000
+            "use strict";
+            $('#myCarousel').carousel({
+                interval: 4000
             });
 
             // handles the carousel thumbnails
             $('[id^=carousel-selector-]').click( function(){
-              var id_selector = $(this).attr("id");
-              var id = id_selector.substr(id_selector.length -1);
-              id = parseInt(id);
-              $('#myCarousel').carousel(id);
-              $('[id^=carousel-selector-]').removeClass('selected');
-              $(this).addClass('selected');
+                var id_selector = $(this).attr("id");
+                var id = id_selector.substr(id_selector.length -1);
+                id = parseInt(id);
+                $('#myCarousel').carousel(id);
+                $('[id^=carousel-selector-]').removeClass('selected');
+                $(this).addClass('selected');
             });
 
             // when the carousel slides, auto update
             $('#myCarousel').on('slid', function (e) {
-              var id = $('.item.active').data('slide-number');
-              id = parseInt(id);
-              $('[id^=carousel-selector-]').removeClass('selected');
-              $('[id=carousel-selector-'+id+']').addClass('selected');
-        });
+                var id = $('.item.active').data('slide-number');
+                id = parseInt(id);
+                $('[id^=carousel-selector-]').removeClass('selected');
+                $('[id=carousel-selector-'+id+']').addClass('selected');
+            });
         })(jQuery);
-</script>
+    </script>
+    <script>
+        var title = $('h5:first').text();
+        var hiddenTextbox = $('#hiddenField').val(title);
+        console.log(title);
+        console.log("textbox: " + hiddenTextbox);
+    </script>
 }

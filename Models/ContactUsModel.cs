@@ -18,5 +18,7 @@ namespace BourneCars.Models
 
         [Required]
         public string Message { get; set; }
+
+        public string HiddenField { get; set; }
     }
 }
