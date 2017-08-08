@@ -10,9 +10,18 @@
 <div class="section">
     <div class="container">
         <div class="row">
-        @{Html.RenderAction("RednerContactDetails", "ContactUs");}
+            @{Html.RenderAction("RednerContactDetails", "ContactUs");}
         
-        @{Html.RenderAction("RenderContactForm", "ContactUs");}
+            @{
+                if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+                {
+                    <p>Your message was sent successfully</p>
+                }
+                else
+                {
+                    Html.RenderAction("RenderContactForm", "ContactUs");
+                }
+            }
         </div><!-- end row -->
     </div><!-- end container -->
 </div><!-- end section -->
