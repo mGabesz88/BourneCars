@@ -1,65 +1,51 @@
-﻿<div class="custom-sidebar col-md-3 col-sm-12">
+﻿@inherits UmbracoViewPage<BourneCars.Models.SearchFormModel>
+<div class="custom-sidebar col-md-3 col-sm-12">
     <div class="widget clearfix">
         <div class="search-tab light-tab clearfix">
             <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane in active" id="tab01">
                     <div class="search-wrapper">
-                        <form class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-input">
-                                    <label>Make:</label>
-                                    <select name="orderby" class="selectpicker">
-                                        <option>All Makes</option>
-                                        <option>Select Dropdown 01</option>
-                                        <option>Select Dropdown 02</option>
-                                        <option>Select Dropdown 03</option>
-                                        <option>Select Dropdown 04</option>
-                                        <option>Select Dropdown 05</option>
-                                    </select>
-                                </div><!-- end form-input -->
+                    @{
+                        using (Html.BeginUmbracoForm("SubmitForm", "search", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-input">
+                                        <label>Make:</label>
+                                        @Html.DropDownListFor(m => m.CarManufactureType, Model.CarManufactureTypes, new { id = "carManufactures", @class = "selectpicker"})
+                                    </div><!-- end form-input -->
 
-                                <div class="form-input">
-                                    <label>Models:</label>
-                                    <select name="orderby" class="selectpicker">
-                                        <option>All Models</option>
-                                        <option>Select Dropdown 01</option>
-                                        <option>Select Dropdown 02</option>
-                                        <option>Select Dropdown 03</option>
-                                        <option>Select Dropdown 04</option>
-                                        <option>Select Dropdown 05</option>
-                                    </select>
-                                </div><!-- end form-input -->
-                            </div><!-- end col -->
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-input">
-                                    <label>Min Price:</label>
-                                    <select name="orderby" class="selectpicker">
-                                        <option>£30.000</option>
-                                        <option>£40.000</option>
-                                        <option>£50.000</option>
-                                        <option>£60.000</option>
-                                        <option>£70.000</option>
-                                        <option>£80.000</option>
-                                    </select>
-                                </div><!-- end form-input -->
-                                <div class="form-input">
-                                    <label>Max Price:</label>
-                                    <select name="orderby" class="selectpicker">
-                                        <option>£100.000</option>
-                                        <option>£200.000</option>
-                                        <option>£300.000</option>
-                                        <option>£400.000</option>
-                                        <option>£500.000</option>
-                                        <option>£600.000</option>
-                                    </select>
-                                </div><!-- end form-input -->
-                            </div><!-- end col -->
-                            <div class="col-md-12 col-xs-12">
-                                <button class="btn btn-primary btn-block">FIND A CAR</button>
-                                <a href="#" class="customa"><i class="fa fa-refresh"></i> Reset all</a>
-                            </div><!-- end col -->
-                        </form><!-- end row -->
+                                    <div class="form-input">
+                                        <label>Models:</label>
+                                        <select name="orderby" class="selectpicker">
+                                            <option>All Models</option>
+                                            <option>Select Dropdown 01</option>
+                                            <option>Select Dropdown 02</option>
+                                            <option>Select Dropdown 03</option>
+                                            <option>Select Dropdown 04</option>
+                                            <option>Select Dropdown 05</option>
+                                        </select>
+                                    </div><!-- end form-input -->
+                                </div><!-- end col -->
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-input">
+                                        <label>Min Price:</label>
+                                        @Html.DropDownListFor(m => m.MinPrice, Model.MinPrices, new { id = "minPrice", @class = "selectpicker" })
+                                    </div><!-- end form-input -->
+                                    <div class="form-input">
+                                        <label>Max Price:</label>
+                                         @Html.DropDownListFor(m => m.MaxPrice, Model.MaxPrices, new { id = "maxPrice", @class = "selectpicker" })
+                                    </div><!-- end form-input -->
+                                </div><!-- end col -->
+                                <div class="col-md-12 col-xs-12">
+                                    <button class="btn btn-primary btn-block">FIND A CAR</button>
+                                    <a href="#" class="customa"><i class="fa fa-refresh"></i> Reset all</a>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        }
+                    }
                     </div><!-- end search-wrapper -->
                 </div><!-- end tab-pane -->
             </div><!-- end tab content -->
