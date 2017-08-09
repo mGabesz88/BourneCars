@@ -1,10 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.UI.WebControls;
+using System.Linq;
+using System.Web;
 
-namespace BourneCars.Models
+namespace BourneCars.Models.ViewModels
 {
-    public class ContactUsModel
+    public class ContactUsViewModel
     {
         [Required]
         public string Name { get; set; }
@@ -12,13 +14,13 @@ namespace BourneCars.Models
         [EmailAddress]
         public string EmailAddress { get; set; }
 
-        [Required(ErrorMessage = "Phone Number is  required fieldd")]
         [RegularExpression(@"^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$", ErrorMessage = "Not a valid Phone number")]
-        public string RequiredPhoneNumber { get; set; }
+        public string NoneRequiredPhoneNumber { get; set; }
 
         [Required]
         public string Message { get; set; }
 
         public string HiddenField { get; set; }
+  
     }
 }

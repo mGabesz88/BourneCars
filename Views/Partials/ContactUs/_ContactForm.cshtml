@@ -1,7 +1,6 @@
-﻿@using System.Web.UI.WebControls
-@inherits UmbracoViewPage<BourneCars.Models.ContactUsModel>
+﻿@inherits UmbracoViewPage<BourneCars.Models.ViewModels.ContactUsViewModel>
     
-@using (Html.BeginUmbracoForm("SubmitForm", "ContactUs", FormMethod.Post))
+@using (Html.BeginUmbracoForm("ContactUsSubmitForm", "ContactUs", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <div class="col-md-8 col-sm-8 col-xs-12">
@@ -22,8 +21,8 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         @Html.TextBoxFor(m => m.EmailAddress, null, new { id = "Your Email", @class = "form-control", PlaceHolder = "Your Email  *" })
                     </div><!-- end col -->
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        @Html.TextBoxFor(m => m.PhoneNumber, null, new { id = "Your Phone number", @class = "form-control", PlaceHolder = "Your Phone number  *" })
+                    <div class="col-md-12 col-sm-12 col-xs-12">Contactus
+                        @Html.TextBoxFor(m => m.NoneRequiredPhoneNumber, null, new { id = "YourPhonenumber", @class = "form-control", PlaceHolder = "Your Phone number" })
                     </div><!-- end col -->
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         @Html.TextAreaFor(m => m.Message, new { id = "Your Message", @class = "form-control", PlaceHolder = "Your message *", cols = "20", rows = "25" })

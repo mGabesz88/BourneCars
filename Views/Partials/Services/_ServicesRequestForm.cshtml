@@ -18,7 +18,7 @@
                 <div class="search-wrapper">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            @Html.ValidationSummary()
+                           @Html.ValidationSummary()
                         </div><!-- end col -->
                         <div class="col-md-12 col-sm-12 col-xs-12">
                         @Html.TextBoxFor(m => m.Name, null, new { id = "NameTextBox", @class = "form-control", PlaceHolder = "Your Name *" })
@@ -26,11 +26,11 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             @Html.TextBoxFor(m => m.EmailAddress, null, new { id = "Your Email", @class = "form-control", PlaceHolder = "Your Email  *" })
                         </div><!-- end col -->
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            @Html.TextBoxFor(m => m.PhoneNumber, null, new { id = "Your Phone number", @class = "form-control", PlaceHolder = "Your Phone number  *" })
+                        <div class="col-md-12 col-sm-12 col-xs-12">ServiceRequest 
+                            @Html.TextBoxFor(m => m.RequiredPhoneNumber, null, new { id = "YourPhoneNumber", @class = "form-control", PlaceHolder = "Your Phone number  *" })
                         </div><!-- end col -->
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            @Html.TextAreaFor(m => m.Message, new { id = "Your Message", @class = "form-control", PlaceHolder = "Your message *", cols = "20", rows = "25" })
+                            @Html.TextAreaFor(m => m.Message, new { id = "YourMessage", @class = "form-control", PlaceHolder = "Your message *", cols = "20", rows = "25" })
                         </div><!-- end col -->
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <button class="btn btn-primary col-md-12 col-sm-12 col-xs-12">SUBMIT NOW</button>
