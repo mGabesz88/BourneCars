@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using BourneCars.Helpers;
 using BourneCars.Models;
 using Umbraco.Web.Mvc;
@@ -32,6 +33,13 @@ namespace BourneCars.Controllers
         public ActionResult RenderSlider()
         {
             return PartialView(HomePartialViewFolder + "/_Slider.cshtml");
+        }
+
+        public List<SelectListItem> GetPreValuesFromAppSettingName(string appSettingName)
+        {
+            int dataTypeId = AppSettingsHelper.GetIntFromAppSetting(appSettingName);
+            List<SelectListItem> preValues = DropDownHelper.GetPreValuesFromDataTypeId(dataTypeId);
+            return preValues;
         }
 
     }

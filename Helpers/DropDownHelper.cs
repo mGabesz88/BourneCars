@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Xml.XPath;
 using System.Web.Mvc;
 using System.Web.Configuration;
+using BourneCars.Helpers;
 
 namespace BourneCars.Helpers
 {
     public class DropDownHelper
     {
-        private const string APP_SETTING_ERROR_MESSAGE = "Invalid or missing appSetting, ";
-
-        public List<SelectListItem> GetPreValuesFromDataTypeId(int dataTypeId)
+        public static List<SelectListItem> GetPreValuesFromDataTypeId(int dataTypeId)
         {
             List<SelectListItem> preValueSelectorList = new List<SelectListItem>();
 
@@ -30,33 +29,14 @@ namespace BourneCars.Helpers
             return preValueSelectorList;
         }
 
-        public List<SelectListItem> GetPreValuesFromAppSettingName(string appSettingName)
+        public  List<SelectListItem> GetPreValuesFromAppSettingName(string appSettingName)
         {
-            int dataTypeId = GetIntFromAppSetting(appSettingName);
+            int dataTypeId = AppSettingsHelper.GetIntFromAppSetting(appSettingName);
             List<SelectListItem> preValues = GetPreValuesFromDataTypeId(dataTypeId);
             return preValues;
         }
 
-        private int GetIntFromAppSetting(string appSettingName)
-        {
-            int intValue = 0;
-            string setting = GetStringFromAppSetting(appSettingName);
-            if (!int.TryParse(setting, out intValue))
-            {
-                throw new Exception(APP_SETTING_ERROR_MESSAGE + appSettingName);
-            }
-            return intValue;
-        }
 
-        private string GetStringFromAppSetting(string appSettingName)
-        {
-            string setting = WebConfigurationManager.AppSettings[appSettingName] as string;
-            if (String.IsNullOrEmpty(setting))
-            {
-                throw new Exception(APP_SETTING_ERROR_MESSAGE + appSettingName);
-            }
-            return setting;
-        }
     }
 }
 

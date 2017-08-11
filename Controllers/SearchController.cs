@@ -7,11 +7,11 @@ namespace BourneCars.Controllers
 {
     public class SearchController : SurfaceController
     {
-        private DropDownHelper preValueHelper = new DropDownHelper();
+        private static DropDownHelper preValueHelper = new DropDownHelper();
 
         public const string SearchPartialViewFolder = "~/Views/Partials/Search";
 
-        public ActionResult RenderMainSearchForm()
+        public  ActionResult RenderMainSearchForm()
         {
             SearchFormModel model = new SearchFormModel();
             model.CarManufactureTypes = preValueHelper.GetPreValuesFromAppSettingName("carManufactureDropDownId");

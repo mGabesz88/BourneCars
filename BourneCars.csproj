@@ -3430,6 +3430,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SiteLayoutController.cs" />
+    <Compile Include="Helpers\AppSettingsHelper.cs" />
     <Compile Include="Helpers\DropDownHelper.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Models\HomePageSearchModel.cs" />
