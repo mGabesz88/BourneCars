@@ -35,8 +35,6 @@ namespace BourneCars.Helpers
             List<SelectListItem> preValues = GetPreValuesFromDataTypeId(dataTypeId);
             return preValues;
         }
-
-
     }
 }
 

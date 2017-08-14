@@ -3432,6 +3432,7 @@
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Helpers\AppSettingsHelper.cs" />
     <Compile Include="Helpers\DropDownHelper.cs" />
+    <Compile Include="Models\Cars.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Models\HomePageSearchModel.cs" />
     <Compile Include="Models\NavigationLink.cs" />

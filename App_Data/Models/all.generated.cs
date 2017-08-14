@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a21909cc909888e7")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bbff7a85ca2a69a1")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1698,6 +1698,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Configuration, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Max Price
+		///</summary>
+		[ImplementPropertyType("maxPrice")]
+		public IEnumerable<string> MaxPrice
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("maxPrice"); }
+		}
+
+		///<summary>
+		/// Min Price
+		///</summary>
+		[ImplementPropertyType("minPrice")]
+		public IEnumerable<string> MinPrice
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("minPrice"); }
 		}
 
 		///<summary>
