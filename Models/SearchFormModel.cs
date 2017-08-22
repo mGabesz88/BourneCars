@@ -19,6 +19,5 @@ namespace BourneCars.Models
 
         public List<SelectListItem> MaxPrices { get; set; }
 
-        public string JsonObject { get; set; }
     }
 }

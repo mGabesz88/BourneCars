@@ -21,7 +21,6 @@ namespace BourneCars.Controllers
             model.CarManufactureTypes = GetMakesFromCms();
             model.MinPrices = GetMinPriceSetting();
             model.MaxPrices = GetMaxPriceSetting();
-            model.JsonObject = JsonFormData();
             return PartialView(SearchPartialViewFolder + "/_MainSearchForm.cshtml", model);
         }
 
@@ -86,27 +85,6 @@ namespace BourneCars.Controllers
                 minPriceList.Add(new SelectListItem { Value = child, Text = child });
             }
             return minPriceList;
-        }
-
-        private string JsonFormData()
-        {
-            List<Cars> listOfMakes = new List<Cars>();
-            string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
-
-            IPublishedContent configurationNode = Umbraco.TypedContent(AppSettingsHelper.GetIntFromAppSetting("configurationFolder"));
-
-            foreach (var child in configurationNode.Children)
-            {
-                var cars = new Cars
-                {
-                    make = child.Name,
-                    model = (string[])child.GetPropertyValue("model")
-                };
-
-                listOfMakes.Add(cars);
-            }
-            string output = JsonConvert.SerializeObject(listOfMakes);
-            return output;
         }
     }
 }

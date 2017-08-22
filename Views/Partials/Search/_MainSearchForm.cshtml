@@ -19,13 +19,8 @@
 
                                     <div class="form-input">
                                         <label>Models:</label>
-                                        <select name="orderby" class="selectpicker">
-                                            <option>All Models</option>
-                                            <option>Select Dropdown 01</option>
-                                            <option>Select Dropdown 02</option>
-                                            <option>Select Dropdown 03</option>
-                                            <option>Select Dropdown 04</option>
-                                            <option>Select Dropdown 05</option>
+                                       <select id="models" class="selectpicker">
+                                           <option>All Models</option>
                                         </select>
                                     </div><!-- end form-input -->
                                 </div><!-- end col -->
@@ -41,7 +36,6 @@
                                 </div><!-- end col -->
                                 <div class="col-md-12 col-xs-12">
                                     <button class="btn btn-primary btn-block">FIND A CAR</button>
-                                    <a href="#" class="customa"><i class="fa fa-refresh"></i> Reset all</a>
                                 </div><!-- end col -->
                             </div><!-- end row -->
                         }
@@ -52,6 +46,4 @@
         </div>
     </div><!-- end widget -->
 </div><!-- end col -->
-<script>
-    var formData = @Html.Raw(Model.JsonObject);
-</script>
+
