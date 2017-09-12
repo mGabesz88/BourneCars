@@ -19,7 +19,6 @@
             $('#carManufactures').change(function() {
                 var make = $('#carManufactures').val();
                 var modelDropDown = $('#models');
-                var hiddenTextbox = $('#hiddenField').val(make);
                 if (make !== "Please Select") {
                     $('#models').empty();
                     $.ajax({
@@ -27,17 +26,19 @@
                         type: 'GET',
                         dataType: 'json',
                         contentType: 'application/json; charset=utf-8',
-                        success: function (data) {
+                        success: function(data) {
                             var json = JSON.parse(data); //Parse json
                             var models = json[0].model; //Get models
                             modelDropDown.append($("<option />").val('Please Select').text('Please Select'));
                             $.each(models,
-                                function (key, value) {
+                                function(key, value) {
                                     modelDropDown.append($("<option />").val(value).text(value));
-                                });//iterate throught models
+                                }); //iterate throught models
                             $('#models').selectpicker('refresh');
                         }
                     });
+                } else if(make.change) {
+                    modelDropDown.append($("<option />").val('Please Select').text('Please Select'));
                 }
             });
         });

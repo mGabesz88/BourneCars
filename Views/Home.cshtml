@@ -10,3 +10,36 @@
         @{ Html.RenderAction("RenderRecentlyAddedCars", "Home");}
     </div><!-- end section -->
 </div><!-- end container -->
+@section ScriptForSearchForm
+{
+    <script>
+        $(document).ready(function() {
+            $('#carManufactures').change(function() {
+                var make = $('#carManufactures').val();
+                var modelDropDown = $('#models');
+                if (make !== "Please Select") {
+                    $('#models').empty();
+                    $.ajax({
+                        url: '/Umbraco/Api/FormData/GetAllProducts/' + make,
+                        type: 'GET',
+                        dataType: 'json',
+                        contentType: 'application/json; charset=utf-8',
+                        success: function(data) {
+                            var json = JSON.parse(data); //Parse json
+                            var models = json[0].model; //Get models
+                            modelDropDown.append($("<option />").val('Please Select').text('Please Select'));
+                            $.each(models,
+                                function(key, value) {
+                                    modelDropDown.append($("<option />").val(value).text(value));
+                                }); //iterate throught models
+                            $('#models').selectpicker('refresh');
+                        }
+                    });
+                } else if(make.change) {
+                    modelDropDown.append($("<option />").val('Please Select').text('Please Select'));
+                }
+            });
+        });
+    </script>
+
+}

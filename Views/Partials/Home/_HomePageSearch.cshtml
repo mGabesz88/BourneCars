@@ -19,13 +19,8 @@
                                     @Html.DropDownListFor(m => m.CarManufactureType, Model.CarManufactureTypes, new {id = "carManufactures", @class = "selectpicker"})
                                 </div><!-- end col -->
                                 <div class="col-md-2 col-sm-6 col-xs-12">
-                                    <select name="orderby" class="selectpicker">
+                                    <select id="models" class="selectpicker">
                                         <option>All Models</option>
-                                        <option>Mercedes</option>
-                                        <option>Opel</option>
-                                        <option>Maseratti</option>
-                                        <option>Ferrari</option>
-                                        <option>Porche</option>
                                     </select>
                                 </div><!-- end col -->
                                 <div class="col-md-2 col-sm-6 col-xs-12">
@@ -51,3 +46,4 @@
     var formData = @Html.Raw(Model.JsonObject);
 </script>
 <hr class="invis">
+
