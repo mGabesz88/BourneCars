@@ -329,6 +329,11 @@
             Gets the comparison type for checking the value.
             </summary>
         </member>
+        <member name="P:Umbraco.Web.HealthCheck.Checks.Config.AbstractConfigCheck.ValidIfConfigMissing">
+            <summary>
+            Gets the flag indicating if the check is considered successful if the config value is missing (defaults to false - an error - if missing)
+            </summary>
+        </member>
         <member name="P:Umbraco.Web.HealthCheck.Checks.Config.AbstractConfigCheck.FileName">
             <summary>
             Gets the name of the file.
@@ -947,6 +952,11 @@
             A model that represents uploading a local package
             </summary>
         </member>
+        <member name="P:Umbraco.Web.Models.PackageInstallModel.IsRestarting">
+            <summary>
+            During installation this can be used to track any pending appdomain restarts
+            </summary>
+        </member>
         <member name="P:Umbraco.Web.Models.LocalPackageInstallModel.IsCompatible">
             <summary>
             A flag to determine if this package is compatible to be installed
@@ -1341,6 +1351,30 @@
             there, then we'll set the maxNumber to '1'
             </remarks>
         </member>
+        <member name="T:Umbraco.Web.PropertyEditors.TextOnlyValueEditor">
+            <summary>
+            Custom value editor which ensures that the value stored is just plain text and that 
+            no magic json formatting occurs when translating it to and from the database values
+            </summary>
+        </member>
+        <member name="T:Umbraco.Web.PropertyEditors.PropertyValueEditorWrapper">
+            <summary>
+            Useful when returning a custom value editor when your property editor is attributed, it ensures the attribute
+            values are copied across to your custom value editor.
+            </summary>
+        </member>
+        <member name="M:Umbraco.Web.PropertyEditors.TextOnlyValueEditor.ConvertDbToEditor(Umbraco.Core.Models.Property,Umbraco.Core.Models.PropertyType,Umbraco.Core.Services.IDataTypeService)">
+            <summary>
+            A method used to format the database value to a value that can be used by the editor
+            </summary>
+            <param name="property"></param>
+            <param name="propertyType"></param>
+            <param name="dataTypeService"></param>
+            <returns></returns>
+            <remarks>
+            The object returned will always be a string and if the database type is not a valid string type an exception is thrown
+            </remarks>
+        </member>
         <member name="T:Umbraco.Web.PropertyEditors.ValueConverters.ContentPickerPropertyConverter">
             <summary>
             The content picker property value converter.
@@ -1550,12 +1584,12 @@
             <param name="contentFetcher">A function to fetch content of type <paramref name="expectedType"/></param>
             <returns>The requested content, or null if either it does not exist or <paramref name="actualType"/> does not match <paramref name="expectedType"/></returns>
         </member>
-        <member name="T:Umbraco.Web.PropertyEditors.ValueConverters.MultipleMediaPickerPropertyConverter">
+        <member name="T:Umbraco.Web.PropertyEditors.ValueConverters.LegacyMediaPickerPropertyConverter">
             <summary>
-            The multiple media picker property value converter.
+            The multiple media picker and double legacy media picker property value converter, should be deleted for v8
             </summary>
         </member>
-        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.MultipleMediaPickerPropertyConverter.IsConverter(Umbraco.Core.Models.PublishedContent.PublishedPropertyType)">
+        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.LegacyMediaPickerPropertyConverter.IsConverter(Umbraco.Core.Models.PublishedContent.PublishedPropertyType)">
             <summary>
             Checks if this converter can convert the property editor and registers if it can.
             </summary>
@@ -1566,7 +1600,7 @@
             The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
-        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.MultipleMediaPickerPropertyConverter.ConvertDataToSource(Umbraco.Core.Models.PublishedContent.PublishedPropertyType,System.Object,System.Boolean)">
+        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.LegacyMediaPickerPropertyConverter.ConvertDataToSource(Umbraco.Core.Models.PublishedContent.PublishedPropertyType,System.Object,System.Boolean)">
             <summary>
             Convert the raw string into a nodeId integer array or a single integer
             </summary>
@@ -1583,7 +1617,7 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
-        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.MultipleMediaPickerPropertyConverter.ConvertSourceToObject(Umbraco.Core.Models.PublishedContent.PublishedPropertyType,System.Object,System.Boolean)">
+        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.LegacyMediaPickerPropertyConverter.ConvertSourceToObject(Umbraco.Core.Models.PublishedContent.PublishedPropertyType,System.Object,System.Boolean)">
             <summary>
             Convert the source nodeId into a IPublishedContent or IEnumerable of IPublishedContent (or DynamicPublishedContent) depending on data type setting
             </summary>
@@ -1600,7 +1634,7 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
-        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.MultipleMediaPickerPropertyConverter.GetPropertyCacheLevel(Umbraco.Core.Models.PublishedContent.PublishedPropertyType,Umbraco.Core.PropertyEditors.PropertyCacheValue)">
+        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.LegacyMediaPickerPropertyConverter.GetPropertyCacheLevel(Umbraco.Core.Models.PublishedContent.PublishedPropertyType,Umbraco.Core.PropertyEditors.PropertyCacheValue)">
             <summary>
             The get property cache level.
             </summary>
@@ -1614,7 +1648,7 @@
             The <see cref="T:Umbraco.Core.PropertyEditors.PropertyCacheLevel"/>.
             </returns>
         </member>
-        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.MultipleMediaPickerPropertyConverter.GetPropertyValueType(Umbraco.Core.Models.PublishedContent.PublishedPropertyType)">
+        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.LegacyMediaPickerPropertyConverter.GetPropertyValueType(Umbraco.Core.Models.PublishedContent.PublishedPropertyType)">
             <summary>
             The get property value type.
             </summary>
@@ -1625,7 +1659,7 @@
             The <see cref="T:System.Type"/>.
             </returns>
         </member>
-        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.MultipleMediaPickerPropertyConverter.IsMultipleDataType(System.Int32,System.String)">
+        <member name="M:Umbraco.Web.PropertyEditors.ValueConverters.LegacyMediaPickerPropertyConverter.IsMultipleDataType(System.Int32,System.String)">
             <summary>
             The is multiple data type.
             </summary>
@@ -2675,9 +2709,15 @@
             </summary>
             <param name="app"></param>
         </member>
+        <member name="M:Umbraco.Web.UmbracoDefaultOwinStartup.ConfigureUmbracoUserManager(Owin.IAppBuilder)">
+            <summary>
+            Configure the Identity user manager for use with Umbraco Back office
+            </summary>
+            <param name="app"></param>
+        </member>
         <member name="E:Umbraco.Web.UmbracoDefaultOwinStartup.MiddlewareConfigured">
             <summary>
-            Raised when the middelware has been configured
+            Raised when the middleware has been configured
             </summary>
         </member>
         <member name="T:Umbraco.Web.IUmbracoContextAccessor">
@@ -5215,12 +5255,6 @@
             Overridden to ensure that the value is validated
             </summary>
             <returns></returns>
-        </member>
-        <member name="T:Umbraco.Web.PropertyEditors.PropertyValueEditorWrapper">
-            <summary>
-            Useful when returning a custom value editor when your property editor is attributed, it ensures the attribute
-            values are copied across to your custom value editor.
-            </summary>
         </member>
         <member name="T:Umbraco.Web.PropertyEditors.GridPropertyEditor.GridPropertyEditorApplicationStartup">
             <summary>
@@ -9256,7 +9290,7 @@
         </member>
         <member name="F:Umbraco.Web.WebApi.Filters.AngularAntiForgeryHelper.AngularCookieName">
             <summary>
-            The cookie name that is set for angular to use to pass in to the header value for "X-XSRF-TOKEN"
+            The cookie name that is set for angular to use to pass in to the header value for "X-UMB-XSRF-TOKEN"
             </summary>
         </member>
         <member name="F:Umbraco.Web.WebApi.Filters.AngularAntiForgeryHelper.AngularHeadername">
@@ -9836,6 +9870,34 @@
             A helper class for handling Members
             </summary>
         </member>
+        <member name="M:Umbraco.Web.Security.MembershipHelper.IsProtected(System.String)">
+            <summary>
+            Check if a document object is protected by the "Protect Pages" functionality in umbraco
+            </summary>
+            <param name="path">The full path of the document object to check</param>
+            <returns>True if the document object is protected</returns>
+        </member>
+        <member name="M:Umbraco.Web.Security.MembershipHelper.MemberHasAccess(System.String)">
+            <summary>
+            Check if the current user has access to a document
+            </summary>
+            <param name="path">The full path of the document object to check</param>
+            <returns>True if the current user has access or if the current document isn't protected</returns>
+        </member>
+        <member name="M:Umbraco.Web.Security.MembershipHelper.HasAccess(System.String,System.Web.Security.RoleProvider)">
+            <summary>
+            This will check if the member has access to this path
+            </summary>
+            <param name="path"></param>        
+            <param name="roleProvider"></param>
+            <returns></returns>
+            <remarks>
+            This is essentially the same as the PublicAccessServiceExtensions.HasAccess however this will use the PCR cache 
+            of the already looked up roles for the member so this doesn't need to happen more than once.
+            This does a safety check in case of things like unit tests where there is no PCR and if that is the case it will use 
+            lookup the roles directly.
+            </remarks>
+        </member>
         <member name="M:Umbraco.Web.Security.MembershipHelper.IsUmbracoMembershipProviderActive">
             <summary>
             Returns true if the current membership provider is the Umbraco built-in one.
@@ -9993,6 +10055,18 @@
             <remarks>
             This should 100% supercede the StateManager.Cookies
             </remarks> 
+        </member>
+        <member name="M:Umbraco.Web.HttpCookieExtensions.GetCookieValue(System.Net.Http.Headers.HttpRequestHeaders,System.String)">
+            <summary>
+            Retrieves an individual cookie from the cookies collection
+            </summary>
+            <param name="requestHeaders"></param>
+            <param name="cookieName"></param>
+            <returns></returns>
+            <remarks>
+            Adapted from: https://stackoverflow.com/a/29057304/5018 because there's an issue with .NET WebApi cookie parsing logic 
+            when using requestHeaders.GetCookies() when an invalid cookie name is present.
+            </remarks>
         </member>
         <member name="M:Umbraco.Web.HttpCookieExtensions.ExpireCookie(System.Web.HttpContextBase,System.String)">
             <summary>
@@ -10897,6 +10971,15 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="F:Umbraco.Web.Editors.BackOfficeController.TreeControllerTypes">
+            <summary>
+            A lazy reference to all tree controller types
+            </summary>
+            <remarks>
+            We are doing this because if we constantly resolve the tree controller types from the PluginManager it will re-scan and also re-log that
+            it's resolving which is unecessary and annoying. 
+            </remarks>
+        </member>
         <member name="M:Umbraco.Web.Editors.BackOfficeController.LegacyTreeJs">
             <summary>
             Returns the JavaScript blocks for any legacy trees declared
@@ -11354,6 +11437,19 @@
             <typeparam name="T"></typeparam>
             <param name="url"></param>
             <param name="actionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Umbraco.Web.Install.FilePermissionHelper.TestDirectories(System.String[],System.Collections.Generic.List{System.String}@,System.Boolean)">
+            <summary>
+            This will test the directories for write access
+            </summary>
+            <param name="directories"></param>
+            <param name="errorReport"></param>
+            <param name="writeCausesRestart">
+            If this is false, the easiest way to test for write access is to write a temp file, however some folder will cause
+            an App Domain restart if a file is written to the folder, so in that case we need to use the ACL APIs which aren't as
+            reliable but we cannot write a file since it will cause an app domain restart.
+            </param>
             <returns></returns>
         </member>
         <member name="M:Umbraco.Web.Install.InstallHelper.GetAllSteps">
@@ -14584,6 +14680,14 @@
             <param name="url"></param>
             <param name="action"></param>
             <param name="additionalRouteVals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Umbraco.Web.UrlHelperRenderExtensions.GetAbsoluteMediaUrl(System.Web.Mvc.UrlHelper,Umbraco.Core.Models.IPublishedContent)">
+            <summary>
+            Generates a Absolute Media Item URL based on the current context
+            </summary>
+            <param name="urlHelper"></param>
+            <param name="mediaItem"></param>
             <returns></returns>
         </member>
         <member name="T:Umbraco.Web.WebApi.IsBackOfficeAttribute">
@@ -18395,6 +18499,15 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
+        <member name="F:umbraco.cms.presentation.developer.editMacro.macroKey">
+            <summary>
+            macroAlias control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
         <member name="F:umbraco.cms.presentation.developer.editMacro.Pane1_2">
             <summary>
             Pane1_2 control.
@@ -20214,11 +20327,6 @@
             <param name="path">The full path of the document object to check</param>
             <returns>True if the current user has access or if the current document isn't protected</returns>
         </member>
-        <member name="M:Umbraco.Web.UmbracoHelper.GetCurrentMember">
-            <summary>
-            Gets (or adds) the current member from the current request cache
-            </summary>
-        </member>
         <member name="M:Umbraco.Web.UmbracoHelper.MemberIsLoggedOn">
             <summary>
             Whether or not the current member is logged in (based on the membership provider)
@@ -20573,7 +20681,15 @@
             Returns an MD5 hash of the string specified
             </summary>
             <param name="text">The text to create a hash from</param>
-            <returns>Md5 has of the string</returns>
+            <returns>Md5 hash of the string</returns>
+        </member>
+        <member name="M:Umbraco.Web.UmbracoHelper.CreateHash(System.String)">
+            <summary>
+            Generates a hash based on the text string passed in.  This method will detect the 
+            security requirements (is FIPS enabled) and return an appropriate hash.
+            </summary>
+            <param name="text">The text to create a hash from</param>
+            <returns>Hash of the text string</returns>
         </member>
         <member name="M:Umbraco.Web.UmbracoHelper.StripHtml(System.Web.IHtmlString,System.String[])">
             <summary>
@@ -21668,6 +21784,16 @@
             </summary>
             <remarks>The <c>RenderingEngine</c> becomes unknown.</remarks>
         </member>
+        <member name="M:Umbraco.Web.Routing.PublishedContentRequest.GetRolesForLogin(System.String)">
+            <summary>
+            Returns the current members roles if a member is logged in
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+            <remarks>
+            This ensures that the callback is only executed once in case this method is accessed a few times
+            </remarks>
+        </member>
         <member name="F:Umbraco.Web.Routing.PublishedContentRequest._umbracoPage">
             <summary>
             The "umbraco page" object.
@@ -22412,7 +22538,15 @@
             Returns an MD5 hash of the string specified
             </summary>
             <param name="text">The text to create a hash from</param>
-            <returns>Md5 has of the string</returns>
+            <returns>Md5 hash of the string</returns>
+        </member>
+        <member name="M:umbraco.library.CreateHash(System.String)">
+            <summary>
+            Generates a hash based on the text string passed in.  This method will detect the 
+            security requirements (is FIPS enabled) and return an appropriate hash.
+            </summary>
+            <param name="text">The text to create a hash from</param>
+            <returns>hash of the string</returns>
         </member>
         <member name="M:umbraco.library.DateGreaterThan(System.String,System.String)">
             <summary>

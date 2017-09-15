@@ -155,15 +155,12 @@ C:\Users\mitto\Source\Repos\BourneCars\obj\Debug\BourneCars.pdb
 C:\Users\mitto\Source\Repos\BourneCars\bin\ApplicationInsights.config
 C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\csc.exe
 C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\vbc.exe
 C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\VBCSCompiler.exe
 C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\mitto\Source\Repos\BourneCars\bin\bin\AutoMapper.Net4.dll
 C:\Users\mitto\Source\Repos\BourneCars\bin\BourneCars.dll.config
 C:\Users\mitto\Source\Repos\BourneCars\bin\BourneCars.dll
 C:\Users\mitto\Source\Repos\BourneCars\bin\BourneCars.pdb
@@ -227,3 +224,6 @@ C:\Users\mitto\Source\Repos\BourneCars\bin\Umbraco.Web.UI.xml
 C:\Users\mitto\Source\Repos\BourneCars\bin\UmbracoExamine.xml
 C:\Users\mitto\Source\Repos\BourneCars\obj\Debug\BourneCars.csprojResolveAssemblyReference.cache
 C:\Users\mitto\Source\Repos\BourneCars\obj\Debug\BourneCars.csproj.CoreCompileInputs.cache
+C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\mitto\Source\Repos\BourneCars\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\mitto\Source\Repos\BourneCars\bin\bin\AutoMapper.Net4.dll
