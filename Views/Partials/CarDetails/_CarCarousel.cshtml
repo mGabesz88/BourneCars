@@ -18,7 +18,7 @@
                     @for (int i = 0; i < currentPage.imageGallery.Count; i++)
                     {
                         <div class="@(i==0 ? "active":null) item" data-slide-number="@i">
-                            <img src="@currentPage.imageGallery[i].Url" alt="" class="img-responsive">
+                            <img src="@(currentPage.imageGallery[i].Url)?width=817&height=440&mode=crop" alt="" class="img-responsive">
                         </div>
                     }
                 </div>
@@ -36,7 +36,7 @@
         {
             <li class="col-md-15 col-sm-15 col-xs-6">
                 <a id="carousel-selector-@i" class="@(i == 0 ? "selected":null)">
-                    <img src="@currentPage.imageGallery[i].Url" alt="" class="img-responsive">
+                    <img src="@(currentPage.imageGallery[i].Url)?width=145&height=98&mode=crop" alt="" class="img-responsive">
                 </a>
             </li>
         }
