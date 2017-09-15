@@ -1,25 +1,26 @@
-﻿<!-- main slider carousel -->
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- ******************************************
+    CAR DETAILS DESCRIPTION
+********************************************** -->
+@{
+    var currentPageId = UmbracoContext.Current.PageId;
+    var currentPage = Umbraco.Content(currentPageId);
+
+}
+
+<!-- main slider carousel -->
 <div class="row">
     <div class="col-md-12" id="slider">
         <div class="col-md-12" id="carousel-bounding-box">
             <div id="myCarousel" class="carousel slide">
                 <!-- main slider carousel items -->
                 <div class="carousel-inner">
-                    <div class="active item" data-slide-number="0">
-                        <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-7er-rt-2015-0029.jpg?itok=dxV2fMhf" alt="" class="img-responsive">
-                    </div>
-                    <div class="item" data-slide-number="1">
-                        <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-7er-rt-2015-0028.jpg?itok=dENU3btn" alt="" class="img-responsive">
-                    </div>
-                    <div class="item" data-slide-number="2">
-                        <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-7er-rt-2015-0007.jpg?itok=zhvYfQPl" alt="" class="img-responsive">
-                    </div>
-                    <div class="item" data-slide-number="3">
-                        <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-7er-rt-2015-0006.jpg?itok=dDRMtO3d" alt="" class="img-responsive">
-                    </div>
-                    <div class="item" data-slide-number="4">
-                        <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/bmw-7er-rt-2015-0002.jpg?itok=KDrMwwac" alt="" class="img-responsive">
-                    </div>
+                    @for (int i = 0; i < currentPage.imageGallery.Count; i++)
+                    {
+                        <div class="@(i==0 ? "active":null) item" data-slide-number="@i">
+                            <img src="@currentPage.imageGallery[i].Url" alt="" class="img-responsive">
+                        </div>
+                    }
                 </div>
                 <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
                 <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
@@ -31,47 +32,14 @@
 <div class="row-fluid" id="slider-thumbs">
     <!-- thumb navigation carousel items -->
     <ul class="list-inline">
-        <li class="col-md-15 col-sm-15 col-xs-6">
-            <a id="carousel-selector-0" class="selected">
-                <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/flexslider_thumbnail/public/bmw-7er-rt-2015-0029.jpg?itok=jyirlIEc" alt="" class="img-responsive">
-            </a>
-        </li>
-        <li class="col-md-15 col-sm-15 col-xs-6">
-            <a id="carousel-selector-1">
-                <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/flexslider_thumbnail/public/bmw-7er-rt-2015-0028.jpg?itok=SVdnWGw6" alt="" class="img-responsive">
-            </a>
-        </li>
-        <li class="col-md-15 col-sm-15 col-xs-6">
-            <a id="carousel-selector-2">
-                <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/flexslider_thumbnail/public/bmw-7er-rt-2015-0007.jpg?itok=xZm8QIdU" alt="" class="img-responsive">
-            </a>
-        </li>
-        <li class="col-md-15 col-sm-15 col-xs-6">
-            <a id="carousel-selector-3">
-                <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/flexslider_thumbnail/public/bmw-7er-rt-2015-0006.jpg?itok=bHEbJrNr" alt="" class="img-responsive">
-            </a>
-        </li>
-        <li class="col-md-15 col-sm-15 col-xs-6">
-            <a id="carousel-selector-4">
-                <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/flexslider_thumbnail/public/bmw-7er-rt-2015-0002.jpg?itok=rwRlYqgJ" alt="" class="img-responsive">
-            </a>
-        </li>
-        
-        <li class="col-md-15 col-sm-15 col-xs-6">
-            <a id="carousel-selector-4">
-                <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/flexslider_thumbnail/public/bmw-7er-rt-2015-0002.jpg?itok=rwRlYqgJ" alt="" class="img-responsive">
-            </a>
-        </li>
-        <li class="col-md-15 col-sm-15 col-xs-6">
-            <a id="carousel-selector-4">
-                <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/flexslider_thumbnail/public/bmw-7er-rt-2015-0002.jpg?itok=rwRlYqgJ" alt="" class="img-responsive">
-            </a>
-        </li>
-        <li class="col-md-15 col-sm-15 col-xs-6">
-            <a id="carousel-selector-4">
-                <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/flexslider_thumbnail/public/bmw-7er-rt-2015-0002.jpg?itok=rwRlYqgJ" alt="" class="img-responsive">
-            </a>
-        </li>
+        @for (int i = 0; i < currentPage.imageGallery.Count; i++)
+        {
+            <li class="col-md-15 col-sm-15 col-xs-6">
+                <a id="carousel-selector-@i" class="@(i == 0 ? "selected":null)">
+                    <img src="@currentPage.imageGallery[i].Url" alt="" class="img-responsive">
+                </a>
+            </li>
+        }
     </ul>
 </div>
 <div class="clearfix"></div>
