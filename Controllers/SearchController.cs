@@ -31,7 +31,7 @@ namespace BourneCars.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitForm(ContactUsModel model)
+        public ActionResult SubmitForm(SearchFormModel model)
         {
             if (ModelState.IsValid)
             {
