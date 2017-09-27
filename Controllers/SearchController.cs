@@ -47,21 +47,6 @@ namespace BourneCars.Controllers
             return CurrentUmbracoPage();
         }
 
-        private List<SelectListItem> GetMakesFromCms()
-        {
-            List<SelectListItem> listOfMakes = new List<SelectListItem>();
-            string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
-            listOfMakes.Add(new SelectListItem { Value = prevalue, Text = prevalue });
-
-            IPublishedContent configurationNode = Umbraco.TypedContent(AppSettingsHelper.GetIntFromAppSetting("configurationFolder"));
-
-            foreach (var child in configurationNode.Children)
-            {
-                listOfMakes.Add(new SelectListItem { Value = child.Name, Text = child.Name });
-            }
-            return listOfMakes;
-        }
-
         private List<SelectListItem> GetMinPriceSetting()
         {
             List<SelectListItem> minPriceList = new List<SelectListItem>();
