@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "911174b9f57dc0dd")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7ab29e9f1f15dad7")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -866,6 +866,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IEnumerable<IPublishedContent> ImageGallery
 		{
 			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("imageGallery"); }
+		}
+
+		///<summary>
+		/// Model
+		///</summary>
+		[ImplementPropertyType("model")]
+		public string Model
+		{
+			get { return this.GetPropertyValue<string>("model"); }
 		}
 
 		///<summary>

@@ -55,7 +55,8 @@ namespace BourneCars.Helpers
                     FuelType = item.GetPropertyValue<string>("fuel"),
                     RegistrationYear = item.GetPropertyValue<DateTime>("registrationYear").ToString("yyyy"),
                     Transmission = item.GetPropertyValue<string>("transmission"),
-                    Price = item.GetPropertyValue<int>("price")
+                    Price = item.GetPropertyValue<int>("price"),
+                    Model = item.GetPropertyValue<string>("model"),
                 };
                 allCars.Add(car);
             }
