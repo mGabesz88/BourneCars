@@ -16,7 +16,20 @@
             if (TempData["Search"] != null)
             {
                 var SearchFormModel = (BourneCars.Models.SearchFormModel)TempData["searchFormModel"];
-                allCars = allCars.Where(c => c.Make == SearchFormModel.CarManufactureType).ToList();
+                if (SearchFormModel.CarManufactureType != "Please Select")
+                {
+                    allCars = allCars.Where(c => c.Make == SearchFormModel.CarManufactureType).ToList();
+                }
+
+                if (SearchFormModel.CarModel != "All Models" && SearchFormModel.CarModel != "Please Select")
+                {
+                    allCars = allCars.Where(c => c.Model == SearchFormModel.CarModel).ToList();
+                }
+
+                allCars = allCars.Where(c => c.Price >= SearchFormModel.MinPrice).ToList();
+                allCars = allCars.Where(c => c.Price <= SearchFormModel.MaxPrice).ToList();
+                
+
             }
         }
             @{
