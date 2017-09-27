@@ -11,6 +11,8 @@ namespace BourneCars.Models
 
         public List<SelectListItem> CarManufactureTypes { get; set; }
 
+        public string CarModel { get; set; }
+
         public int MinPrice { get; set; }
         
         public List<SelectListItem> MinPrices { get; set; }

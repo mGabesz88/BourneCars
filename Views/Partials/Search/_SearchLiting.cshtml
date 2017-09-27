@@ -6,46 +6,69 @@
     var currentPageId = UmbracoContext.Current.PageId;
     var currentPage = Umbraco.TypedContent(currentPageId).Children;
 
+    //Get all the cars as strongly types objects
+    var allCars = new List<BourneCars.Models.Car>();
+    foreach (var item in currentPage)
+    {
+        var car = new BourneCars.Models.Car()
+        {
+            Id = item.Id,
+            Make = item.GetPropertyValue<string>("CompanyMake"),
+            Image = item.GetPropertyValue<IPublishedContent>("podImage").Url,
+            Url = item.Url,
+            Name = item.Name,
+            Mileage = item.GetPropertyValue<string>("milage"),
+            FuelType = item.GetPropertyValue<string>("fuel"),
+            RegistrationYear = item.GetPropertyValue<DateTime>("registrationYear").ToString("yyyy"),
+            Transmission = item.GetPropertyValue<string>("transmission"),
+            Price = item.GetPropertyValue<int>("price")
+        };
+        allCars.Add(car);
+    }
+
 }
 <div class="col-md-9 col-sm-12">
     <div class="car-list-wrapper clearfix">
         <div class="car-list clearfix row">
+        @{ 
+            if (TempData["Search"] != null)
+            {
+                var SearchFormModel = (BourneCars.Models.SearchFormModel)TempData["searchFormModel"];
+                allCars = allCars.Where(c => c.Make == SearchFormModel.CarManufactureType).ToList();
+            }
+        }
             @{
-                foreach (var carDetails in currentPage)
+                foreach (var carDetails in allCars)
                 {
-                    var urlTo = carDetails.Url;
 
                     <div class="col-md-4">
                         <div class="post-media entry">
-                            @{
-                                var image = carDetails.GetPropertyValue<IPublishedContent>("podImage");
-                            }
-                            <a href=@urlTo><img src="@image.Url" alt="@image.Name" class="img-responsive"></a>
+                            <a href=@carDetails.Url><img src="@carDetails.Image" alt="@carDetails.Name" class="img-responsive"></a>
                         </div><!-- end post-media -->
                     </div><!-- end col -->
                     <div class="col-md-8">
                         <div class="car-top clearfix">
                             <div class="pull-left">
-                                <h3><a href=@urlTo>@Html.Raw(carDetails.GetPropertyValue("titleOfthePage"))</a>
+                                <h3><a href=@carDetails.Url>@carDetails.Name</a>
                                 </h3>
                             </div><!-- end pull-left -->
                         </div><!-- end car-top -->
                         <div class="car-details clearfix">
                             <div class="car-price">
-                                <p>£@Html.Raw(carDetails.GetPropertyValue("price"))</p>
+                                <p>£@carDetails.Price</p>
                             </div>
                         </div><!-- end details -->
                         <div class="car-details clearfix">
                             <ul class="list-inline">
-                                <li><i class="fa fa-road"></i> Mileage&nbsp; <small>@Html.Raw(carDetails.GetPropertyValue("milage"))</small></li>
-                                <li><i class="fa fa-car"></i> Fuel Type <small>@Html.Raw(carDetails.GetPropertyValue("fuel"))</small></li>
-                                <li><i class="fa fa-clock-o"></i> Reg.Year <small>@Html.Raw(carDetails.GetPropertyValue<DateTime>("registrationYear").ToString("yyyy"))</small></li>
-                                <li><i class="fa fa-gears"></i> Transmission <small>@Html.Raw(carDetails.GetPropertyValue("transmission"))</small></li>
+                                <li><i class="fa fa-road"></i> Mileage&nbsp; <small>@carDetails.Mileage</small></li>
+                                <li><i class="fa fa-car"></i> Fuel Type <small>@carDetails.FuelType</small></li>
+                                <li><i class="fa fa-clock-o"></i> Reg.Year <small>@carDetails.RegistrationYear</small></li>
+                                <li><i class="fa fa-gears"></i> Transmission <small>@carDetails.Transmission</small></li>
                             </ul>
                         </div><!-- end car-details -->
                         <div class="car-bottom clearfix">
                             <div class="pull-left">
-                                <a href="@urlTo" class="stock">MORE INFO</a>
+                                <a href="@carDetails.Url" class="stock">MORE INFO</a>
                             </div><!-- end pull-left -->
                         </div><!-- end car-top -->
                     </div><!-- end col -->

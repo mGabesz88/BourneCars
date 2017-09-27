@@ -35,6 +35,9 @@ namespace BourneCars.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Set TempData for selected cars to implement the filter
+                TempData["Search"] = true;
+                TempData["searchFormModel"] = model;
                 return RedirectToCurrentUmbracoPage();
             }
             return CurrentUmbracoPage();

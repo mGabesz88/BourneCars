@@ -19,7 +19,7 @@
 
                                     <div class="form-input">
                                         <label>Models:</label>
-                                       <select id="models" class="selectpicker">
+                                       <select id="models" name="CarModel" class="selectpicker">
                                            <option>All Models</option>
                                         </select>
                                     </div><!-- end form-input -->
@@ -27,11 +27,27 @@
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-input">
                                         <label>Min Price:</label>
-                                        @Html.DropDownListFor(m => m.MinPrice, Model.MinPrices, new { id = "minPrice", @class = "selectpicker" })
+                                        <select id="MinPrice" name="MinPrice" class="selectpicker">
+                                            <option>1000</option>
+                                            <option>2000</option>
+                                            <option>3000</option>
+                                            <option>4000</option>
+                                            <option>5000</option>
+                                            <option>6000</option>
+                                        </select>
+                                        @*@Html.DropDownListFor(m => m.MinPrice, Model.MinPrices, new { id = "minPrice", @class = "selectpicker" })*@
                                     </div><!-- end form-input -->
                                     <div class="form-input">
                                         <label>Max Price:</label>
-                                         @Html.DropDownListFor(m => m.MaxPrice, Model.MaxPrices, new { id = "maxPrice", @class = "selectpicker" })
+                                        <select id="MaxPrice" name="MaxPrice" class="selectpicker">
+                                            <option>1000</option>
+                                            <option>2000</option>
+                                            <option>3000</option>
+                                            <option>4000</option>
+                                            <option>5000</option>
+                                            <option>6000</option>
+                                        </select>
+                                         @*@Html.DropDownListFor(m => m.MaxPrice, Model.MaxPrices, new { id = "maxPrice", @class = "selectpicker" })*@
                                     </div><!-- end form-input -->
                                 </div><!-- end col -->
                                 <div class="col-md-12 col-xs-12">

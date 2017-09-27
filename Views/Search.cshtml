@@ -6,7 +6,8 @@
 <div class="section">
     <div class="container">
         <div class="row">
-            @{Html.RenderAction("RenderMainSearchForm", "Search");}
+        @Html.Action("RenderMainSearchForm", "Search")
+            @*@{Html.RenderAction("RenderMainSearchForm", "Search");}*@
             @{Html.RenderAction("RenderSearchListing", "Search");}
         </div><!-- end row -->
     </div><!-- end container -->
