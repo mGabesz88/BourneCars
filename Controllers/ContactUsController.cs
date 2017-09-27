@@ -52,7 +52,7 @@ namespace BourneCars.Controllers
 
         private void SendEmail(ContactUsModel model)
         {
-            MailMessage message = new MailMessage(model.EmailAddress, "website@installumbraco.web.local");
+            MailMessage message = new MailMessage(model.EmailAddress, ConfigurationManager.AppSettings["sendEmailTo"]);
             message.IsBodyHtml = true;
             message.Subject = string.Format("Contact form Enquiry from {0} - {1}", model.Name, model.EmailAddress);
             message.Body = string.Format("<b>" + "Name:" + " </b> " + "{0}", model.Name);
@@ -62,13 +62,13 @@ namespace BourneCars.Controllers
             message.Body += string.Format("<b>" + "Phone number:" + " </b> " + "{0}", model.RequiredPhoneNumber);
             message.Body += "<br />";
             message.Body += string.Format("<b>" + "Message:" + " </b>" + "{0}", model.Message);
-            SmtpClient client = new SmtpClient("127.0.0.1", 25);
+            SmtpClient client = new SmtpClient(ConfigurationManager.AppSettings["smtpSetting"], 25);
             client.Send(message);
         }
 
         private void SendContactFormEmail(ContactUsViewModel model)
         {
-            MailMessage message = new MailMessage(model.EmailAddress, "website@installumbraco.web.local");
+            MailMessage message = new MailMessage(model.EmailAddress, ConfigurationManager.AppSettings["sendEmailTo"]);
             message.IsBodyHtml = true;
             if (CurrentPage.Id == int.Parse(ConfigurationManager.AppSettings["contactusPage"]))
             {
@@ -100,7 +100,7 @@ namespace BourneCars.Controllers
                 message.Body += "<br />";
                 message.Body += string.Format("<b>" + "Message:" + " </b>" + "{0}", model.Message);
             }
-            SmtpClient client = new SmtpClient("127.0.0.1", 25);
+            SmtpClient client = new SmtpClient(ConfigurationManager.AppSettings["smtpSetting"], 25);
             client.Send(message);
         }
     }
