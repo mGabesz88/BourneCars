@@ -3462,6 +3462,7 @@
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Helpers\AppSettingsHelper.cs" />
+    <Compile Include="Helpers\CarsHelper.cs" />
     <Compile Include="Helpers\DropDownHelper.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Cars.cs" />

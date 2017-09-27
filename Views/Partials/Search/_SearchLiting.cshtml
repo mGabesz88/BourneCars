@@ -7,25 +7,7 @@
     var currentPage = Umbraco.TypedContent(currentPageId).Children;
 
     //Get all the cars as strongly types objects
-    var allCars = new List<BourneCars.Models.Car>();
-    foreach (var item in currentPage)
-    {
-        var car = new BourneCars.Models.Car()
-        {
-            Id = item.Id,
-            Make = item.GetPropertyValue<string>("CompanyMake"),
-            Image = item.GetPropertyValue<IPublishedContent>("podImage").Url,
-            Url = item.Url,
-            Name = item.Name,
-            Mileage = item.GetPropertyValue<string>("milage"),
-            FuelType = item.GetPropertyValue<string>("fuel"),
-            RegistrationYear = item.GetPropertyValue<DateTime>("registrationYear").ToString("yyyy"),
-            Transmission = item.GetPropertyValue<string>("transmission"),
-            Price = item.GetPropertyValue<int>("price")
-        };
-        allCars.Add(car);
-    }
-
+    var allCars = BourneCars.Helpers.CarsHelper.GetAllCars();
 }
 <div class="col-md-9 col-sm-12">
     <div class="car-list-wrapper clearfix">

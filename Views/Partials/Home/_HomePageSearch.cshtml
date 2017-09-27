@@ -1,4 +1,4 @@
-﻿@inherits UmbracoViewPage<BourneCars.Models.HomePageSearchModel>
+﻿@inherits UmbracoViewPage<BourneCars.Models.SearchFormModel>
 <div class="row">
 <div class="col-md-12">
     <div class="search-tab clearfix">
@@ -11,7 +11,7 @@
             <div role="tabpanel" class="tab-pane fade in active" id="tab01">
                 <div class="search-wrapper">
                     @{
-                        using (Html.BeginUmbracoForm("SubmitForm", "search", FormMethod.Post))
+                        using (Html.BeginUmbracoForm("SubmitForm", "Search"))
                         {
                              @Html.AntiForgeryToken()
                             <div class="row">
@@ -19,15 +19,31 @@
                                     @Html.DropDownListFor(m => m.CarManufactureType, Model.CarManufactureTypes, new {id = "carManufactures", @class = "selectpicker"})
                                 </div><!-- end col -->
                                 <div class="col-md-2 col-sm-6 col-xs-12">
-                                    <select id="models" class="selectpicker">
+                                    <select id="models" class="selectpicker" name="CarModel">
                                         <option>All Models</option>
                                     </select>
                                 </div><!-- end col -->
                                 <div class="col-md-2 col-sm-6 col-xs-12">
-                                    @Html.DropDownListFor(m => m.MinPrice, Model.MinPrices, new { id = "minPrice", @class = "selectpicker" })
+                                    <select id="MinPrice" name="MinPrice" class="selectpicker">
+                                        <option>1000</option>
+                                        <option>2000</option>
+                                        <option>3000</option>
+                                        <option>4000</option>
+                                        <option>5000</option>
+                                        <option>6000</option>
+                                    </select>
+                                    @*@Html.DropDownListFor(m => m.MinPrice, Model.MinPrices, new { id = "minPrice", @class = "selectpicker" })*@
                                 </div><!-- end col -->
                                 <div class="col-md-2 col-sm-6 col-xs-12">
-                                    @Html.DropDownListFor(m => m.MaxPrice, Model.MaxPrices, new { id = "maxPrice", @class = "selectpicker" })
+                                    <select id="MaxPrice" name="MaxPrice" class="selectpicker">
+                                        <option>1000</option>
+                                        <option>2000</option>
+                                        <option>3000</option>
+                                        <option>4000</option>
+                                        <option>5000</option>
+                                        <option>6000</option>
+                                    </select>
+                                    @*@Html.DropDownListFor(m => m.MaxPrice, Model.MaxPrices, new { id = "maxPrice", @class = "selectpicker" })*@
                                 </div><!-- end col -->
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <button class="btn btn-primary btn-block">SEARCH</button>
@@ -43,7 +59,7 @@
 </div><!-- end col -->
 </div><!-- end row -->
 <script>
-    var formData = @Html.Raw(Model.JsonObject);
+    @*var formData = @Html.Raw(Model.JsonObject);*@
 </script>
 <hr class="invis">
 

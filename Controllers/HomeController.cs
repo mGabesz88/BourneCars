@@ -27,11 +27,10 @@ namespace BourneCars.Controllers
 
         public ActionResult RenderHomePageSearch()
         {
-            HomePageSearchModel model =  new HomePageSearchModel();
-            model.CarManufactureTypes = GetMakesFromCms();
+            var model =  new SearchFormModel();
+            model.CarManufactureTypes = CarsHelper.GetMakesFromCms();
             model.MinPrices = GetMinPriceSetting();
             model.MaxPrices = GetMaxPriceSetting();
-            model.JsonObject = JsonFormData();
             return PartialView(HomePartialViewFolder + "/_HomePageSearch.cshtml", model);
         }
 
@@ -49,6 +48,7 @@ namespace BourneCars.Controllers
 
         private List<SelectListItem> GetMakesFromCms()
         {
+            //TODO: Instead of getting makes from the configuration mode, get them from the published cars
             List<SelectListItem> listOfMakes = new List<SelectListItem>();
             string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
             listOfMakes.Add(new SelectListItem { Value = prevalue, Text = prevalue });

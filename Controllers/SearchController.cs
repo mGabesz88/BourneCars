@@ -18,9 +18,13 @@ namespace BourneCars.Controllers
         public  ActionResult RenderMainSearchForm()
         {
             SearchFormModel model = new SearchFormModel();
-            model.CarManufactureTypes = GetMakesFromCms();
+            model.CarManufactureTypes = CarsHelper.GetMakesFromCms();
             model.MinPrices = GetMinPriceSetting();
             model.MaxPrices = GetMaxPriceSetting();
+            if (TempData["Search"] != null)
+            {
+               // model = (SearchFormModel)TempData["searchFormModel"];
+            }
             return PartialView(SearchPartialViewFolder + "/_MainSearchForm.cshtml", model);
         }
 
@@ -38,7 +42,7 @@ namespace BourneCars.Controllers
                 //Set TempData for selected cars to implement the filter
                 TempData["Search"] = true;
                 TempData["searchFormModel"] = model;
-                return RedirectToCurrentUmbracoPage();
+                return RedirectToUmbracoPage(3135);
             }
             return CurrentUmbracoPage();
         }
