@@ -33,40 +33,48 @@
             }
         }
             @{
-                foreach (var carDetails in allCars)
+                if (allCars.Count != 0)
                 {
+                    foreach (var carDetails in allCars)
+                    {
 
-                    <div class="col-md-4">
-                        <div class="post-media entry">
-                            <a href=@carDetails.Url><img src="@carDetails.Image" alt="@carDetails.Name" class="img-responsive"></a>
-                        </div><!-- end post-media -->
-                    </div><!-- end col -->
-                    <div class="col-md-8">
-                        <div class="car-top clearfix">
-                            <div class="pull-left">
-                                <h3><a href=@carDetails.Url>@carDetails.Name</a>
-                                </h3>
-                            </div><!-- end pull-left -->
-                        </div><!-- end car-top -->
-                        <div class="car-details clearfix">
-                            <div class="car-price">
-                                <p>£@carDetails.Price</p>
-                            </div>
-                        </div><!-- end details -->
-                        <div class="car-details clearfix">
-                            <ul class="list-inline">
-                                <li><i class="fa fa-road"></i> Mileage&nbsp; <small>@carDetails.Mileage</small></li>
-                                <li><i class="fa fa-car"></i> Fuel Type <small>@carDetails.FuelType</small></li>
-                                <li><i class="fa fa-clock-o"></i> Reg.Year <small>@carDetails.RegistrationYear</small></li>
-                                <li><i class="fa fa-gears"></i> Transmission <small>@carDetails.Transmission</small></li>
-                            </ul>
-                        </div><!-- end car-details -->
-                        <div class="car-bottom clearfix">
-                            <div class="pull-left">
-                                <a href="@carDetails.Url" class="stock">MORE INFO</a>
-                            </div><!-- end pull-left -->
-                        </div><!-- end car-top -->
-                    </div><!-- end col -->
+                        <div class="col-md-4">
+                            <div class="post-media entry">
+                                <a href=@carDetails.Url><img src="@carDetails.Image" alt="@carDetails.Name" class="img-responsive"></a>
+                            </div><!-- end post-media -->
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="car-top clearfix">
+                                <div class="pull-left">
+                                    <h3>
+                                        <a href=@carDetails.Url>@carDetails.Name</a>
+                                    </h3>
+                                </div><!-- end pull-left -->
+                            </div><!-- end car-top -->
+                            <div class="car-details clearfix">
+                                <div class="car-price">
+                                    <p>£@carDetails.Price</p>
+                                </div>
+                            </div><!-- end details -->
+                            <div class="car-details clearfix">
+                                <ul class="list-inline">
+                                    <li><i class="fa fa-road"></i> Mileage&nbsp; <small>@carDetails.Mileage</small></li>
+                                    <li><i class="fa fa-car"></i> Fuel Type <small>@carDetails.FuelType</small></li>
+                                    <li><i class="fa fa-clock-o"></i> Reg.Year <small>@carDetails.RegistrationYear</small></li>
+                                    <li><i class="fa fa-gears"></i> Transmission <small>@carDetails.Transmission</small></li>
+                                </ul>
+                            </div><!-- end car-details -->
+                            <div class="car-bottom clearfix">
+                                <div class="pull-left">
+                                    <a href="@carDetails.Url" class="stock">MORE INFO</a>
+                                </div><!-- end pull-left -->
+                            </div><!-- end car-top -->
+                        </div><!-- end col -->
+                    }
+                }
+                else
+                {
+                    <h4>There is no card found, please alter your search </h4>
                 }
             }
         </div><!-- end car-list -->
