@@ -29,18 +29,45 @@
     </div>
 </div>
  <!-- thumb navigation carousel -->
-<div class="row-fluid" id="slider-thumbs">
-    <!-- thumb navigation carousel items -->
-    <ul class="list-inline">
-        @for (int i = 0; i < currentPage.imageGallery.Count; i++)
-        {
-            <li class="col-md-15 col-sm-15 col-xs-6">
-                <a id="carousel-selector-@i" class="@(i == 0 ? "selected":null)">
-                    <img src="@(currentPage.imageGallery[i].Url)?width=145&height=98&mode=crop" alt="" class="img-responsive">
-                </a>
+ 
+ <div class="row col-md-12" style="margin-top:10px; margin-left:0px; ">
+    <ul class="list-inline" style="padding-left:20px; padding-right:20px;">
+        @for (int i = 0; i
+        < 4; i++) { <li class="col-md-3 col-sm-3 col-xs-4">
+            <a id="carousel-selector-@i" class="@(i == 0 ? " selected ":null)">
+                      <img src="@(currentPage.imageGallery[i].Url)?width=145&height=98&mode=crop" 
+                            style="width:200px; padding-top:5px; padding-bottom:5px;" alt="" class="img-responsive img-rounded animated fadeInLeft">
+                  </a>
             </li>
-        }
+            }
     </ul>
 </div>
+
+<!-- thumbnail accordion -->
+<div class="row ">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div style="min-height:75px;">
+            <div class="car-table clearfix">
+                <a data-toggle="collapse" class="text-muted" href="#collapse1"><strong>Additional Images</strong><i class="fa fa-angle-down pull-right"></i></a>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="row-fluid" id="slider-thumbs">
+                    <!-- thumb navigation carousel items -->
+                    <ul class="list-inline">
+                        @for (int i = 4; i < currentPage.imageGallery.Count; i++) 
+                        {   <li class="col-md-3 col-sm-3 col-xs-4">
+                                <a id="carousel-selector-@i" class="@(i == 0 ? " selected ":null)">
+                                    <img src="@(currentPage.imageGallery[i].Url)?width=145&height=98&mode=crop" alt="" 
+                                    class="img-responsive img-rounded animated bounceInRight">
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="clearfix"></div>
 <!--/main slider carousel-->

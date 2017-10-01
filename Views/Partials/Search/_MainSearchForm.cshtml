@@ -1,4 +1,12 @@
 ﻿@inherits UmbracoViewPage<BourneCars.Models.SearchFormModel>
+    @if (TempData["searchFormModel"] != null)
+    {
+        BourneCars.Models.SearchFormModel model = (BourneCars.Models.SearchFormModel)TempData["searchFormModel"];
+        Model.CarManufactureType = model.CarManufactureType;
+        Model.CarModel = model.CarModel;
+        Model.MaxPrice = model.MaxPrice;
+        Model.MinPrice = model.MinPrice;
+    }
 <div class="custom-sidebar col-md-3 col-sm-12">
     <div class="widget clearfix">
         <div class="search-tab light-tab clearfix">
