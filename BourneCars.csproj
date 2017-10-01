@@ -657,6 +657,7 @@
     <Content Include="config\404handlers.config" />
     <None Include="Properties\PublishProfiles\bournecars - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Views\NotFound404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
