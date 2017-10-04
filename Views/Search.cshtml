@@ -51,22 +51,18 @@
         $('#MinPrice').change(function () {
             priceValidation();
         });
-
         function priceValidation()
         {
             var maxPrice = $('#MaxPrice option:selected').val();
             var minPrice = $('#MinPrice option:selected').val();
-            console.log('MaxPrice ' + maxPrice);
-            console.log('MinPrice ' + minPrice);
-            if (maxPrice <= minPrice) {
-                console.log('maxPrice < minPrice');
+            if (parseInt(maxPrice) <= parseInt(minPrice)) {
                 $('#priceValidation').removeClass('hidden');
                 $('#priceValidation').addClass('validation-summary-errors');
+                $('#submit').prop('disabled', true);
             } else {
-                console.log('maxPrice < minPrice');
                 $('#priceValidation').removeClass('validation-summary-errors');
                 $('#priceValidation').addClass('hidden');
-                $('btn btn-primary btn-block').prop('disabled', true)
+                $('#submit').prop('disabled', false);
             }
         }
     </script>
