@@ -27,7 +27,7 @@ RECENTLY ADDED CARS
                     @{
                         var image = car.GetPropertyValue<IPublishedContent>("podImage");
                     }
-                    <a href="@car.Url"><img src="@image.Url" alt="@image.Name" class="img-responsive">
+                    <a href="@car.Url"><img src="@image.Url?width=270&height=160&mode=crop" alt="@image.Name" class="img-responsive">
                     <div class="magnifier">
                     </div></a><!-- end magnifier -->
                     <div class="car-price">
