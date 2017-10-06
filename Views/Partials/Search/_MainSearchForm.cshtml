@@ -6,6 +6,7 @@
         Model.CarModel = model.CarModel;
         Model.MaxPrice = model.MaxPrice;
         Model.MinPrice = model.MinPrice;
+        Model.CarModels = model.CarModels;
     }
 <div class="custom-sidebar col-md-3 col-sm-12">
     <div class="widget clearfix">
@@ -27,9 +28,10 @@
 
                                     <div class="form-input">
                                         <label>Models:</label>
-                                       <select id="models" name="CarModel" class="selectpicker">
+                                        @Html.DropDownListFor(m => m.CarModel, Model.CarModels, new { id = "models", @class="selectpicker"})
+                                       @*<select id="models" name="CarModel" class="selectpicker">
                                            <option>All Models</option>
-                                        </select>
+                                        </select>*@
                                     </div><!-- end form-input -->
                                 </div><!-- end col -->
                                 <div class="col-md-12 col-sm-12 col-xs-12">

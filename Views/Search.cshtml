@@ -44,17 +44,17 @@
             });
         }); 
 
-        $('#MaxPrice').change(function () {
+        $('#maxPrice').change(function () {
             priceValidation();
         });
 
-        $('#MinPrice').change(function () {
+        $('#minPrice').change(function () {
             priceValidation();
         });
         function priceValidation()
         {
-            var maxPrice = $('#MaxPrice option:selected').val();
-            var minPrice = $('#MinPrice option:selected').val();
+            var maxPrice = $('#maxPrice option:selected').val();
+            var minPrice = $('#minPrice option:selected').val();
             if (parseInt(maxPrice) <= parseInt(minPrice)) {
                 $('#priceValidation').removeClass('hidden');
                 $('#priceValidation').addClass('validation-summary-errors');
