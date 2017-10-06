@@ -10,10 +10,11 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="tab01">
                 <div class="search-wrapper">
+                    <span id="priceValidation" class="hidden">The max price should be bigger then the min price </span>
                     @{
                         using (Html.BeginUmbracoForm("SubmitForm", "Search"))
                         {
-                             @Html.AntiForgeryToken()
+                            @Html.AntiForgeryToken()
                             <div class="row">
                                 <div class="col-md-2 col-sm-6 col-xs-12">
                                     @Html.DropDownListFor(m => m.CarManufactureType, Model.CarManufactureTypes, new {id = "carManufactures", @class = "selectpicker"})
@@ -24,16 +25,16 @@
                                     </select>
                                 </div><!-- end col -->
                                 <div class="col-md-2 col-sm-6 col-xs-12">
-                                    @Html.DropDownListFor(m => m.MinPrice, Model.MinPrices, new { id = "minPrice", @class = "selectpicker" })
+                                    @Html.DropDownListFor(m => m.MinPrice, Model.MinPrices, new {id = "minPrice", @class = "selectpicker"})
                                 </div><!-- end col -->
                                 <div class="col-md-2 col-sm-6 col-xs-12">
-                                    @Html.DropDownListFor(m => m.MaxPrice, Model.MaxPrices, new { id = "maxPrice", @class = "selectpicker" })
+                                    @Html.DropDownListFor(m => m.MaxPrice, Model.MaxPrices, new {id = "maxPrice", @class = "selectpicker"})
                                 </div><!-- end col -->
                                 <div class="col-md-4 col-sm-6 col-xs-12">
-                                    <button class="btn btn-primary btn-block">SEARCH</button>
+                                    <button type="submit" id="submit" class="btn btn-primary btn-block">SEARCH</button>
                                 </div><!-- end col -->
                             </div><!-- end row -->
-                           
+
                         }
                     }
                 </div><!-- end search-wrapper -->
