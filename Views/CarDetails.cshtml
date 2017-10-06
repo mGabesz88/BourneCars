@@ -1,6 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "MasterTemplate.cshtml";
+    Layout = "MasterTemplate.cshtml";
 }
 
 @{
@@ -9,50 +9,55 @@
 
 }
 <div class="section">
-<div class="container">
-    <div class="row">
-        <div class="col-md-9 col-sm-12">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-title clearfix">                        
-                        <h5 id="carTitle">@feature.GetPropertyValue("titleOfthePage")</h5>
-                        <hr class="custom">
-                    </div><!-- end section-title -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-title clearfix">
+                            <h5 id="carTitle">@feature.GetPropertyValue("titleOfthePage")</h5>
+                            <hr class="custom">
+                        </div><!-- end section-title -->
+                    </div>
                 </div>
-            </div>
-            <div class="single-car-wrapper clearfix">
-                @{Html.RenderAction("RenderCarCarousel", "CarDetails");}
-                @{Html.RenderAction("RenderCarDescription", "CarDetails");}
-                @{Html.RenderAction("RenderCarFeatures", "CarDetails");}
-            </div><!-- end single-car-wrapper -->
-        </div><!-- end col -->
-    @{
-        if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
-        {
-            <p>Your message was sent successfully</p>
-        }
-        else
-        {
-            Html.RenderAction("RenderCarDetailsForm", "CarDetails");
-        }
-    }
-           
-    </div><!-- end row -->
-</div><!-- end container -->
+                <div class="single-car-wrapper clearfix">
+                    @{Html.RenderAction("RenderCarCarousel", "CarDetails");}
+                    @{Html.RenderAction("RenderCarDescription", "CarDetails");}
+                    @{Html.RenderAction("RenderCarFeatures", "CarDetails");}
+                </div><!-- end single-car-wrapper -->
+            </div><!-- end col -->
+            @{
+                if (TempData["ContactSuccess"] != null && (bool)TempData["ContactSuccess"])
+                {
+                    <p>Your message was sent successfully</p>
+                }
+                else
+                {
+                    Html.RenderAction("RenderCarDetailsForm", "CarDetails");
+                }
+            }
+
+        </div><!-- end row -->
+    </div><!-- end container -->
 </div><!-- end section -->
 @section ScriptForOwlsCarousel
 {
     <script type="text/javascript">
-        (function($) {
+        (function ($) {
             "use strict";
             $('#myCarousel').carousel({
                 interval: 4000
             });
 
             // handles the carousel thumbnails
-            $('[id^=carousel-selector-]').click( function(){
+            $('[id^=carousel-selector-]').click(function () {
                 var id_selector = $(this).attr("id");
-                var id = id_selector.substr(id_selector.length -1);
+                var id = id_selector.substr(id_selector.length - 2);
+                console.log(id);
+                if (id < 0) {
+                    id = id.substr(1);
+                    console.log("New Id: " + id);
+                }
                 id = parseInt(id);
                 $('#myCarousel').carousel(id);
                 $('[id^=carousel-selector-]').removeClass('selected');
@@ -60,11 +65,12 @@
             });
 
             // when the carousel slides, auto update
-            $('#myCarousel').on('slid', function (e) {
+            $('#myCarousel').on('slid.bs.carousel', function (e) {
                 var id = $('.item.active').data('slide-number');
                 id = parseInt(id);
+                console.log("AutoSlide Id:" + id);
                 $('[id^=carousel-selector-]').removeClass('selected');
-                $('[id=carousel-selector-'+id+']').addClass('selected');
+                $('[id=carousel-selector-' + id + ']').addClass('selected');
             });
         })(jQuery);
     </script>

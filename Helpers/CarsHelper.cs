@@ -37,6 +37,13 @@ namespace BourneCars.Helpers
             return allModelsOfThisMake;
         }
 
+        internal static List<string> GetAllModels()
+        {
+            var allCars = GetAllCars();
+            var allModels = allCars.Select(c => c.Model).Distinct<string>().ToList();
+            return allModels;
+        }
+
         public static List<Car> GetAllCars()
         {
             var allCars = new List<Car>();

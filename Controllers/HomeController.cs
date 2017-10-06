@@ -29,8 +29,10 @@ namespace BourneCars.Controllers
         {
             var model =  new SearchFormModel();
             model.CarManufactureTypes = CarsHelper.GetMakesFromCms();
-            model.MinPrices = GetMinPriceSetting();
-            model.MaxPrices = GetMaxPriceSetting();
+            model.MinPrices = PricesHelper.GetMinPriceSetting();
+            model.MinPrice = 0;
+            model.MaxPrices = PricesHelper.GetMaxPriceSetting();
+            model.MaxPrice = 2000000;
             return PartialView(HomePartialViewFolder + "/_HomePageSearch.cshtml", model);
         }
 
@@ -46,74 +48,6 @@ namespace BourneCars.Controllers
             return preValues;
         }
 
-        private List<SelectListItem> GetMakesFromCms()
-        {
-            //TODO: Instead of getting makes from the configuration mode, get them from the published cars
-            List<SelectListItem> listOfMakes = new List<SelectListItem>();
-            string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
-            listOfMakes.Add(new SelectListItem { Value = prevalue, Text = prevalue });
-
-            IPublishedContent configurationNode = Umbraco.TypedContent(AppSettingsHelper.GetIntFromAppSetting("configurationFolder"));
-
-            foreach (var child in configurationNode.Children)
-            {
-                listOfMakes.Add(new SelectListItem { Value = child.Name, Text = child.Name});
-            }
-            return listOfMakes;
-        }
-
-        private List<SelectListItem> GetMinPriceSetting()
-        {
-            List<SelectListItem> minPriceList = new List<SelectListItem>();
-            string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
-            minPriceList.Add(new SelectListItem { Value = prevalue, Text = prevalue });
-
-            IPublishedContent configurationNode = Umbraco.TypedContent(AppSettingsHelper.GetIntFromAppSetting("configurationFolder"));
-
-
-            foreach (var child in (IEnumerable<string>)configurationNode.GetPropertyValue("minPrice"))
-            {
-                minPriceList.Add(new SelectListItem { Value = child, Text = child });
-            }
-            return minPriceList;
-        }
-
-        private List<SelectListItem> GetMaxPriceSetting()
-        {
-            List<SelectListItem> minPriceList = new List<SelectListItem>();
-            string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
-            minPriceList.Add(new SelectListItem { Value = prevalue, Text = prevalue });
-
-            IPublishedContent configurationNode = Umbraco.TypedContent(AppSettingsHelper.GetIntFromAppSetting("configurationFolder"));
-
-
-            foreach (var child in (IEnumerable<string>)configurationNode.GetPropertyValue("maxPrice"))
-            {
-                minPriceList.Add(new SelectListItem { Value = child, Text = child });
-            }
-            return minPriceList;
-        }
-
-        private string JsonFormData()
-        {
-            List<Cars> listOfMakes = new List<Cars>();
-            string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
-           
-            IPublishedContent configurationNode = Umbraco.TypedContent(AppSettingsHelper.GetIntFromAppSetting("configurationFolder"));
-
-            foreach (var child in configurationNode.Children)
-            {  
-                var cars = new Cars
-                {
-                    make = child.Name,
-                    model = (string[])child.GetPropertyValue("model")
-                };
-
-                listOfMakes.Add(cars);
-            }
-            string output = JsonConvert.SerializeObject(listOfMakes);
-            return output;
-        }
 
     }
 }

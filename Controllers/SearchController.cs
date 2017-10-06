@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using BourneCars.Helpers;
 using BourneCars.Models;
@@ -19,14 +20,19 @@ namespace BourneCars.Controllers
         {
             SearchFormModel model = new SearchFormModel();
             model.CarManufactureTypes = CarsHelper.GetMakesFromCms();
-            model.MinPrices = GetMinPriceSetting();
-            model.MaxPrices = GetMaxPriceSetting();
+            model.MinPrices = PricesHelper.GetMinPriceSetting();
+            model.MinPrice = 0;
+            model.MaxPrices = PricesHelper.GetMaxPriceSetting();
+            model.MaxPrice = 2000000;
+            model.CarModels = GetAllModels();
             if (TempData["Search"] != null)
             {
                // model = (SearchFormModel)TempData["searchFormModel"];
             }
             return PartialView(SearchPartialViewFolder + "/_MainSearchForm.cshtml", model);
         }
+
+
 
         public ActionResult RenderSearchListing()
         {
@@ -41,42 +47,35 @@ namespace BourneCars.Controllers
             {
                 //Set TempData for selected cars to implement the filter
                 TempData["Search"] = true;
+                model.CarModels = GetModels(model.CarManufactureType);
                 TempData["searchFormModel"] = model;
                 return RedirectToUmbracoPage(3135);
             }
             return CurrentUmbracoPage();
         }
 
-        private List<SelectListItem> GetMinPriceSetting()
+
+
+        private List<SelectListItem> GetAllModels()
         {
-            List<SelectListItem> minPriceList = new List<SelectListItem>();
-            string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
-            minPriceList.Add(new SelectListItem { Value = prevalue, Text = prevalue });
-
-            IPublishedContent configurationNode = Umbraco.TypedContent(AppSettingsHelper.GetIntFromAppSetting("configurationFolder"));
-
-
-            foreach (var child in (IEnumerable<string>)configurationNode.GetPropertyValue("minPrice"))
+            List<SelectListItem> models = new List<SelectListItem>();
+            models.Add(new SelectListItem() { Text = "All Models", Value = "All Models" });
+            foreach (var model in CarsHelper.GetAllModels())
             {
-                minPriceList.Add(new SelectListItem { Value = child, Text = child });
+                models.Add(new SelectListItem() { Text = model, Value = model });
             }
-            return minPriceList;
+            return models;
         }
 
-        private List<SelectListItem> GetMaxPriceSetting()
+        private List<SelectListItem> GetModels(string manufacturer)
         {
-            List<SelectListItem> minPriceList = new List<SelectListItem>();
-            string prevalue = AppSettingsHelper.GetStringFromAppSetting("defaultDropDOwnValue");
-            minPriceList.Add(new SelectListItem { Value = prevalue, Text = prevalue });
-
-            IPublishedContent configurationNode = Umbraco.TypedContent(AppSettingsHelper.GetIntFromAppSetting("configurationFolder"));
-
-
-            foreach (var child in (IEnumerable<string>)configurationNode.GetPropertyValue("maxPrice"))
+            List<SelectListItem> models = new List<SelectListItem>();
+            models.Add(new SelectListItem() { Text = "All Models", Value = "All Models" });
+            foreach (var model in CarsHelper.GetAllModels(manufacturer))
             {
-                minPriceList.Add(new SelectListItem { Value = child, Text = child });
+                models.Add(new SelectListItem() { Text = model, Value = model });
             }
-            return minPriceList;
+            return models;
         }
     }
 }

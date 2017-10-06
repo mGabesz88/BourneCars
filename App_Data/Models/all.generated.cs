@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7ab29e9f1f15dad7")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7e9e83ccb5bf6907")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1787,6 +1787,41 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool UmbracoHideNavi
 		{
 			get { return this.GetPropertyValue<bool>("umbracoHideNavi"); }
+		}
+	}
+
+	/// <summary>NotFound404</summary>
+	[PublishedContentModel("notFound404")]
+	public partial class NotFound404 : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "notFound404";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public NotFound404(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NotFound404, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("UmbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return this.GetPropertyValue<bool>("UmbracoNaviHide"); }
 		}
 	}
 
