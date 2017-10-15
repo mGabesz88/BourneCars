@@ -7,7 +7,7 @@ RECENTLY ADDED CARS
 @{
 
     var searchNodeId = "3135";
-    var cars = Umbraco.TypedContent(searchNodeId).Children.OrderByDescending(n => n.CreateDate).Take(4);
+    var cars = Umbraco.TypedContent(searchNodeId).Children.OrderByDescending(n => n.CreateDate).Where(n => (bool)n.GetPropertyValue("featured") != true).Take(4);
 }
 <hr class="invis">
 <div class="row">
