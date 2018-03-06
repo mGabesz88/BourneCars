@@ -1,0 +1,59 @@
+﻿
+@inherits UmbracoTemplatePage
+@{
+    var homePage = @Umbraco.TypedContent(1086);
+}
+<div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="section-title clearfix">
+        <h5>Contact Details</h5>
+        <hr class="custom">
+    </div><!-- end section-title -->
+
+    <div class="contact-departments contact-version clearfix">
+        <div class="contact-carousel owl-carousel owl-theme">
+            <div>
+                <h5 class="custom-title">Get in touch</h5>
+                <ul class="contact-widget clearfix">
+                    <li>
+                        <i class="fa fa-map-marker alignleft"></i>
+                        <strong>Address:</strong>
+                        @homePage.GetPropertyValue("addressLine1"),<br>
+                        @homePage.GetPropertyValue("addressLine2"),  @homePage.GetPropertyValue("postcode")
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o alignleft"></i>
+                        <strong>Have any questions?</strong>
+                        @homePage.GetPropertyValue("email")
+                    </li>
+                    <li>
+                        <i class="fa fa-phone alignleft"></i>
+                        <strong>Call us </strong>
+                        @homePage.GetPropertyValue("phoneNumber")
+                    </li>
+                </ul>
+            </div>
+        </div><!-- end carousel -->
+        <div class="contact-version social-icons">
+            <ul class="list-inline">
+                <li><strong>We Are Social:</strong></li>
+                <li><a target="_blank" href="@homePage.GetPropertyValue("facebookPage")"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    
+     <ul class="contact-widget clearfix">
+         <li>
+             <h5 class="custom-title">Why Finance Through a Dealership</h5>
+             <iframe src="https://player.vimeo.com/video/165439884" width="365" height="230" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+         </li>
+         <li>
+             <h5 class="custom-title">What is Hire Purchase?</h5>
+             <iframe src="https://player.vimeo.com/video/165439884" width="365" height="230" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+         </li>
+         <li>
+             <h5 class="custom-title">What is Personal Contract Purchase?</h5>
+             <iframe src="https://player.vimeo.com/video/165439884" width="365" height="230" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+         </li>
+    </ul>
+</div><!-- end col -->
+

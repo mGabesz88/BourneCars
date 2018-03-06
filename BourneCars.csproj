@@ -651,13 +651,20 @@
     <Content Include="config\ExamineIndex.config" />
     <Content Include="config\EmbeddedMedia.config" />
     <Content Include="config\Dashboard.config" />
-    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\ClientDependency.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
     <None Include="Properties\PublishProfiles\bournecars - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Views\NotFound404.cshtml" />
+    <Content Include="Views\Finance.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Partials\Finance\_FinanceDetails.cshtml" />
+    <Content Include="Views\Partials\Finance\_ContactUsDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3456,6 +3463,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\FinancePageController.cs" />
     <Compile Include="Controllers\FormDataController.cs" />
     <Compile Include="Controllers\CarDetailsController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
@@ -3486,6 +3494,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\FinancePage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -324,3 +324,4 @@ OpenCover/
 
 # ImageProcessor DiskCache 
 **/App_Data/cache/
+/Views/Shared

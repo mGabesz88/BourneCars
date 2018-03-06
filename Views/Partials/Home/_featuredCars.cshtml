@@ -1,7 +1,7 @@
 ﻿@inherits umbraco.MacroEngines.DynamicNodeContext
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 <!-- ******************************************
-RECENTLY ADDED CARS
+Featured CARS
 ************************************************ -->
 
 @{
@@ -13,53 +13,47 @@ RECENTLY ADDED CARS
 <div class="row">
     <div class="col-md-12">
         <div class="section-title clearfix">
-            <h4>Featured Cars</h4>
+            <h4>Recently added</h4>
             <hr class="custom">
         </div><!-- end section-title -->
     </div><!-- end col -->
 </div><!-- end row -->
 @{
     foreach (var car in cars)
-    {
-            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn">
-                <div class="car-wrapper clearfix">
-                    <div class="post-media entry">
-                        @{
-                            var image = car.GetPropertyValue<IPublishedContent>("podImage");
-                        }
-                        <a href="@car.Url">
-                            <img src="@image.Url?width=270&height=160&mode=crop" alt="@image.Name" class="img-responsive">
-                            <div class="magnifier">
-                            </div>
-                        </a><!-- end magnifier -->
-                        <div class="car-price">
-                            <p>£@Html.Raw(car.GetPropertyValue("price"))</p>
-                        </div>
-                        <ul class="list-inline">
-                            <li class="car-km">
-                                <p>
-                                    <i class="fa fa-road"></i> @Html.Raw(car.GetPropertyValue("milage"))
-                                </p>
-                            </li>
-                            <li class="car-oil">
-                                <p>
-                                    <i class="fa fa-car"></i> @Html.Raw(car.GetPropertyValue("fuel"))
-                                </p>
-                            </li>
-                            <li class="car-date">
-                                <p>
-                                    <i class="fa fa-clock-o"></i> @Html.Raw(car.GetPropertyValue<DateTime>("registrationYear").ToString("yyyy"))
-                                </p>
-                            </li>
-                        </ul>
-                    </div><!-- end post-media -->
-                    <div class="car-title clearfix">
-                        <h4><a href="@car.Url">@Html.Raw(car.GetPropertyValue("titleOfthePage"))</a></h4>
-                    </div><!-- end car-title -->
-                </div><!-- end clearfix -->
-            </div><!-- end col -->
+    { 
+        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn">
+            <div class="car-wrapper clearfix">
+                <div class="post-media entry">
+                    @{
+                        var image = car.GetPropertyValue<IPublishedContent>("podImage");
+                    }
+                    <a href="@car.Url"><img src="@image.Url?width=270&height=160&mode=crop" alt="@image.Name" class="img-responsive">
+                        <div class="magnifier">
+                        </div></a><!-- end magnifier -->
+                    <div class="car-price">
+                        <p>£@Html.Raw(car.GetPropertyValue("price"))</p>
+                    </div>
+                    <ul class="list-inline">
+                        <li class="car-km">
+                            <p><i class="fa fa-road"></i> @Html.Raw(car.GetPropertyValue("milage"))
+                            </p></li>
+                        <li class="car-oil">
+                            <p><i class="fa fa-car"></i> @Html.Raw(car.GetPropertyValue("fuel"))
+                            </p></li>
+                        <li class="car-date">
+                            <p><i class="fa fa-clock-o"></i> @Html.Raw(car.GetPropertyValue<DateTime>("registrationYear").ToString("yyyy"))
+                            </p></li>
+                    </ul>
+                </div><!-- end post-media -->
+                <div class="car-title clearfix">
+                    <h4><a href="@car.Url">@Html.Raw(car.GetPropertyValue("titleOfthePage"))</a></h4>
+                </div><!-- end car-title -->
+            </div><!-- end clearfix -->
+        </div><!-- end col -->
     }
 }
+
+
 
 
 

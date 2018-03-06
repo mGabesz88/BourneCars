@@ -30,7 +30,7 @@
                 <td>Last serviced</td>
                 <td><strong>@Html.Raw(feature.GetPropertyValue("lastServiced")) miles</strong></td>
                 <td>Fuel</td>
-                <td><strong>Petrol</strong></td>
+                <td><strong>@Html.Raw(feature.GetPropertyValue("fuel"))</strong></td>
             </tr>
             <tr>
                 <td>MOT</td>
